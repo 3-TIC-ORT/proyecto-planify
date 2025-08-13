@@ -16,6 +16,6 @@ form.addEventListener('submit', function(Preventivo) {
   else if (Text === "papastriglio" && password === "123456") {
     message.innerHTML = "<p class='success'>Inicio de sesión exitoso 🎉</p>";
   } else {
-    message.innerHTML = "<p class='error'>Correo o contraseña incorrectos.</p>";
+    message.innerHTML = "<p class='error'>Usuario o contraseña incorrectos.</p>";
   }
 });

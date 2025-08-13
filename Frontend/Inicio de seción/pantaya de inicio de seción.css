@@ -48,8 +48,10 @@ body {
   
   .error {
     color: red;
-    font-size: 0.9em;
+    font-size: 1em;
     margin-top: 5px;
+    text-align: center;
+    margin-top: 15px;
   }
   
   .success {
