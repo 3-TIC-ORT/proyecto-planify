@@ -19,10 +19,9 @@ form.addEventListener('submit', function(Preventivo) {
     message.innerHTML = "<p class='success'>Inicio de sesión exitoso </p>";
    
     setTimeout(() => {
-      window.location.href = "Pantalla de inicio/pantalla de inicio.HTML"; // Aquí va el nombre del archivo al que quieres ir
+      window.location.href = "C:\\Users\\49980496\\Downloads<\\proyecto-planify\\Frontend\\pantalla de inicio.HTML"
     }, 1000);
   } 
-
   
   else{
     message.innerHTML = "<p class='error'>Usuario o contraseña incorrectos.</p>";
