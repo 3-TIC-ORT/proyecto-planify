@@ -19,7 +19,7 @@ form.addEventListener('submit', function(Preventivo) {
     message.innerHTML = "<p class='success'>Inicio de sesión exitoso </p>";
    
     setTimeout(() => {
-      window.location.href = "C:\\Users\\49980496\\Downloads<\\proyecto-planify\\Frontend\\pantalla de inicio.HTML"
+      window.location.href = "C:/Users/49980496/Downloads/proyecto-planify/Frontend/pantalla de inicio.HTML";
     }, 1000);
   } 
   
