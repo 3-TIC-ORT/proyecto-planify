@@ -1,0 +1,1 @@
+let micanvas=document.getElementById("La Grafica").getContext("2d")
