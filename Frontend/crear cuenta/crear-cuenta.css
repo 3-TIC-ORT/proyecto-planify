@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url("Creá\ tu\ Cuenta\ Planify.jpg");
+    background-size: cover;   /* ocupa todo sin deformar */
+    background-position: center;
+    background-repeat: no-repeat;
+}
