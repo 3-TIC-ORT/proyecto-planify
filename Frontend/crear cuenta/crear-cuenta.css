@@ -1,8 +1,50 @@
 body {
     margin: 0;
+    padding: 0;
     height: 100vh;
     background-image: url("Creá\ tu\ Cuenta\ Planify.jpg");
     background-size: cover;   /* ocupa todo sin deformar */
     background-position: center;
     background-repeat: no-repeat;
+}
+.usuario {
+    
+        width: 34.9%;              /* más ancho, podés ajustar al gusto */
+        padding: 10px;
+        margin: 10px auto;       /* auto lo centra horizontalmente */
+        display: block;          /* necesario para que margin:auto funcione */
+        position: relative ; top: 148px;
+        font-size: 16px;
+        outline: none;
+        transition: 0.3s;
+}
+
+
+.Contraseña  
+
+{
+    width: 34.9%;              
+    padding: 10px;
+    margin: 10px auto;       
+    display: block;          
+    position: relative ; top: 238px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+
+
+}
+
+.contraseña2{
+
+    width: 80%;              
+    padding: 10px;
+    margin: 10px auto;       
+    display: block;          
+    position: relative ; top: 300px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+
+
 }
