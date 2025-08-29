@@ -9,11 +9,11 @@ body {
 }
 .usuario {
     
-        width: 34.9%;              /* más ancho, podés ajustar al gusto */
+        width: 478px;              /* más ancho, podés ajustar al gusto */
         padding: 10px;
         margin: 10px auto;       /* auto lo centra horizontalmente */
         display: block;          /* necesario para que margin:auto funcione */
-        position: relative ; top: 148px;
+        position: relative ; top: 199px;
         font-size: 16px;
         outline: none;
         transition: 0.3s;
@@ -23,11 +23,11 @@ body {
 .Contraseña  
 
 {
-    width: 34.9%;              
+    width: 478px;              
     padding: 10px;
     margin: 10px auto;       
     display: block;          
-    position: relative ; top: 238px;
+    position: relative ; top: 290px;
     font-size: 16px;
     outline: none;
     transition: 0.3s;
@@ -37,14 +37,44 @@ body {
 
 .contraseña2{
 
-    width: 80%;              
+    width: 478px;              
     padding: 10px;
     margin: 10px auto;       
     display: block;          
-    position: relative ; top: 300px;
+    position: relative ; top: 370px;
     font-size: 16px;
     outline: none;
     transition: 0.3s;
 
 
 }
+
+
+
+.registrarse {
+    width: 300px;          /* igual al ancho del botón grande */
+    height: 60px;          /* igual al alto */
+    font-size: 20px;       /* tamaño de texto similar */
+    background-color: #1BA5B0; /* mismo color de Figma */
+    color: white;
+    border: none;
+    border-radius: 12px;   /* bordes redondeados */
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute ;
+    margin-left: 39%;
+    margin-top: 29%;
+ 
+}
+
+
+  
+  
+  
+
+
+
+
+
+
+
