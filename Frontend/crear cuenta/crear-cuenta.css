@@ -17,6 +17,9 @@ body {
         font-size: 16px;
         outline: none;
         transition: 0.3s;
+        border: 1px,solid,black;
+        background-color: #F3F3F3;
+
 }
 
 
@@ -31,6 +34,9 @@ body {
     font-size: 16px;
     outline: none;
     transition: 0.3s;
+    border: 1px,solid,black;
+    background-color: #F3F3F3;
+
 
 
 }
@@ -45,7 +51,8 @@ body {
     font-size: 16px;
     outline: none;
     transition: 0.3s;
-
+    border: 1px,solid,black;
+    background-color: #F3F3F3;
 
 }
 
@@ -58,23 +65,38 @@ body {
     background-color: #1BA5B0; /* mismo color de Figma */
     color: white;
     border: none;
-    border-radius: 12px;   /* bordes redondeados */
+    border-radius: 10px;   /* bordes redondeados */
     cursor: pointer;
     transition: 0.3s;
     position: absolute ;
     margin-left: 39%;
     margin-top: 29%;
+    font-size: 30px;
+    line-height: 30px;
  
 }
 
 
   
   
-  
+  .error {
+  background-color: #ffe0e0;
+  color: #d60000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px;
+  border: 1px solid #d60000;
+  border-radius: 5px;
+  text-align: center;
+}
 
-
-
-
-
-
-
+.success {
+    background-color: #e0ffe0;
+    color: #008000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+    border: 1px solid #008000;
+    border-radius: 5px;
+    text-align: center;
+  }
