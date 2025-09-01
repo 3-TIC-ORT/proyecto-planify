@@ -1,3 +1,4 @@
+document.getElementById("registroForm").addEventListener("submit", function(e) {
     e.preventDefault(); 
 
     let usuario = document.getElementById("usuario").value.trim();
@@ -12,10 +13,12 @@
     }
 
     if (password !== confirmar) {
-        mensaje.textContent = "Las contraseñas no coinciden";
+        mensaje.textContent = "⚠️ La contraseña debe ser igual en los dos espacios";
         mensaje.className = "error";
         return;
     }
+
+    
 
     mensaje.textContent = "Cuenta creada con éxito ✅";
     mensaje.className = "success";
@@ -23,4 +26,4 @@
     setTimeout(() => {
         window.location.href = "file:///C:/Users/50088774/Desktop/proyecto-planify/Frontend/pantalla-principal/panatalla-principal.html";
     }, 1000);
-;
+});
