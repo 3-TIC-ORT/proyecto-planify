@@ -17,7 +17,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
 
   // Crear gráfico nuevo
   chart = new Chart(ctx, {
-    type: "bar", // podés cambiar a "line", "pie", etc.
+    type: "pie", // podés cambiar a "line", "pie", etc.
     data: {
       labels: ["gastos", "ingresos"],
       datasets: [{
