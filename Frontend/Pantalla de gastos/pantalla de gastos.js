@@ -8,7 +8,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   let n2 = parseFloat(document.getElementById("Texto de ingresos").value) || 0;
 
   // Contexto del canvas
-  const ctx = document.getElementById("miGrafico").getContext("2d");
+  let ctx = document.getElementById("miGrafico").getContext("2d");
 
   // Si ya hay un gráfico, lo destruyo antes de crear otro
   if (chart) {
@@ -19,7 +19,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   chart = new Chart(ctx, {
     type: "pie", // podés cambiar a "line", "pie", etc.
     data: {
-      labels: ["gastos", "ingresos"],
+      labels: ["ingresos", "gastos"],
       datasets: [{
         label: "Valores ingresados",
         data: [n1, n2],
@@ -30,11 +30,13 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
     },
     options: {
       responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
+      
     }
   });
+  if (isNaN(n1) || isNaN(n2)) {
+    alert("Por favor, introduce valores numéricos válidos para ingresos y gastos.");
+    return;
+    }
+  let promedio = (n1 + n2) / 2;
+  document.getElementById("promedio").textContent = "El balance es:" + promedio;
 });
