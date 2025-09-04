@@ -11,10 +11,11 @@
     <script defer src="pantalla de gastos.js"></script>
 </head>
 <body>
+    <input type="text" id="Texto de días" inputmode="date" step="any" placeholder="que dia es?">
     <input type="text" id="Texto de ingresos" inputmode="decimal" step="any" placeholder="Cuanto gastas por semana">
     <input type="text" id="Texto de gastos" inputmode="decimal" step="any" placeholder="Cuanto ganas por semana" required>
     <button id="btnGenerar">Generar gráfico</button>
-    <canvas id="miGrafico" width="0.5rem" height="0.5rem"></canvas>
+    <canvas id="miGrafico" width="40vw" height="50vh"></canvas>
     <div id="resultado">
         <h2>Resultado:</h2>
         <p id="promedio"></p>
