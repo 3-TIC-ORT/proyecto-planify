@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Bloc de Notas</title>
+  <link rel="stylesheet" href="notas.css">
 </head>
 <body>
-    <a href="file:///C:/Users/50088774/Desktop/pantalla-principal/panatalla-principal.html">volver al inicio</a>
+  <div class="notepad">
+    <textarea id="texto" placeholder="Escribe tus notas aquí..."></textarea>
+    <div class="buttons">
+      <button onclick="guardarNota()">💾 Guardar</button>
+      <button onclick="cargarNota()">📂 Cargar</button>
+      <button onclick="borrarNota()">🗑️ Borrar</button>
+    </div>
+  </div>
+<script src="notas.js"></script>
 
+</select>
 </body>
 </html>
