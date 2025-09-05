@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="eventos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="eventos.css">
 </head>
 <body>
-    <label for="importancia"> elije la importancia</label>
-  <select name="elejir importancia" id="importancia" >
-  <option value="no importante">no importante</option>
-  <option value="poco importante">poco importante</option>
-  <option value="muy importante">muy importante</option>
-  <option value=""></option>
-</select>
+  <label for="importancia">Elije la importancia</label>
+  <select name="elejir importancia" id="importancia">
+    <option value=""></option>
+    <option value="no importante">No importante</option>
+    <option value="poco importante">Poco importante</option>
+    <option value="muy importante">Muy importante</option>
+  </select>
+
+  <label for="evento">Qué tipo de evento es</label>
+  <select name="tipodeevento" id="evento">
+    <option value=""></option>
+    <option value="examen">Examen</option>
+    <option value="reunion">Reunión</option>
+    <option value="entrega">Entrega</option>
+  </select>
+
+  <input type="text" id="direcion" placeholder="Ingresa la dirección">
+
+  <input type="number" id="quedia"placeholder="que dia se rinde">
+
+<input type="number" id="diaentrega" placeholder="que dia se entrega">
+
+<input type="number" id="diareunion" placeholder="que dia es la reunion">
+
+<input type="text"id="mes" placeholder="en que mes">
 
 
-<label for="categoria">Que tipo de evento es</label>
-<select name="tipodeevento" id="evento" >
-<option value="examen">examen</option>
-<option value="reunion">reunion</option>
-<option value="entrega">entrega</option>
-<option value=""></option>
-<script src="eventos.js"></script>
+  <script src="eventos.js"></script>
 </body>
 </html>
