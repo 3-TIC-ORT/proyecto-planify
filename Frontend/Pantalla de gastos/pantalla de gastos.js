@@ -8,7 +8,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   // Obtener valores ingresados
   let gasto = parseFloat(document.getElementById("Texto de gastos").value) || 0;
   let ingreso = parseFloat(document.getElementById("Texto de ingresos").value) || 0;
- papastriglio
+  let fecha = (document.getElementById("Texto de días").value)
   // Contexto del canvas
   let ctx = document.getElementById("miGrafico").getContext("2d");
 
@@ -43,14 +43,16 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
     }
   let promedio = (ingreso - gasto);
   document.getElementById("promedio").textContent = "El balance es:" + promedio;
+
+  valoresG.push(gasto)
+  valoresI.push(ingreso)
+  fechas.push(fecha)
 });
 
-ocument.getElementById("btnGenerar").addEventListener("click", () => { 
-   let = parseFloat(document.getElementById("Texto de gastos").value) || 0  
-   let ingre = parseFloat(document.getElementById("Texto de ingresos").value) || 0;
+document.getElementById("batGenerar").addEventListener ("click", () => { 
 
   // Contexto del canvas
-  let ctx = document.getElementById("elGrafico").getContext("2d");
+  let ese = document.getElementById("meGrafico").getContext("2d");
 
   // Si ya hay un gráfico, lo destruyo antes de crear otro
   if (chart) {
@@ -58,13 +60,12 @@ ocument.getElementById("btnGenerar").addEventListener("click", () => {
   }
 
   // Crear gráfico nuevo
-  chart = new Chart(ctx, {
-    type: "bar", // podés cambiar a "line", "pie", etc.
+  papa = new Chart(ese, {
+    type: "line", 
     data: {
-      labels: ["ingresos", "gastos"],
+      labels: [fechas],
       datasets: [{
-        label: "Valores ingresados",
-        data: [ingreso, gasto],
+        data: [valoresI, valoresG],
         backgroundColor: ["#36A2EB", "#FF6384"], // colores
         borderColor: ["#1E88E5", "#E53935"],
         borderWidth: 1
@@ -76,4 +77,6 @@ ocument.getElementById("btnGenerar").addEventListener("click", () => {
           y: { beginAtZero: true }
       }
   }
-  });
+  })
+
+});
