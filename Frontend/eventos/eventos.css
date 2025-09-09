@@ -11,3 +11,15 @@
 #diareunion{
 display: none
 }
+
+
+.notepad {
+  width: 600px;
+  height: 400px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
