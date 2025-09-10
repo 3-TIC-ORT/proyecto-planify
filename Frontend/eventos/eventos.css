@@ -1,17 +1,6 @@
-#direcion {
+#direcion, #quedia, #diaentrega, #diareunion, #mes {
   display: none;
 }
-
-#quedia {
-  display: none;
-}
-#diaenrega{
-    display: none
-}
-#diareunion{
-display: none
-}
-
 
 .notepad {
   width: 600px;

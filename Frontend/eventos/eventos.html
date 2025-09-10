@@ -8,8 +8,6 @@
 </head>
 <body>
 
-
-
   <input type="text" id="nombre" placeholder="nombre del evento" >
 
   <label for="importancia">Elije la importancia</label>
@@ -30,18 +28,17 @@
 
   <input type="text" id="direcion" placeholder="Ingresa la dirección">
 
-  <input type="number" id="quedia"placeholder="que dia se rinde">
+  <input type="number" id="quedia" placeholder="que dia se rinde">
+  <input type="number" id="diaentrega" placeholder="que dia se entrega">
+  <input type="number" id="diareunion" placeholder="que dia es la reunion">
+  <input type="text" id="mes" placeholder="en que mes">
 
-<input type="number" id="diaentrega" placeholder="que dia se entrega">
+  <div class="notepad">
+    <textarea id="texto" placeholder="detalles del evento"></textarea>
+  </div>
 
-<input type="number" id="diareunion" placeholder="que dia es la reunion">
+  <button id="guardarBtn">Guardar Evento</button>
 
-<input type="text"id="mes" placeholder="en que mes">
-
-<div class="notepad">
-
-  <textarea id="texto" placeholder="detalles del evento"></textarea>
-   </div>
   <script src="eventos.js"></script>
 </body>
 </html>
