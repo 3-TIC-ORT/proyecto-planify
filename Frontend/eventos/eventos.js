@@ -7,28 +7,26 @@ const reunion2 = document.getElementById("diareunion");
 const mesInput = document.getElementById("mes");
 const importancia = document.getElementById("importancia");
 const guardarBtn = document.getElementById("guardarBtn");
+const borrarUltimoBtn = document.getElementById("borrarUltimoBtn");
+const listaEventos = document.getElementById("listaEventos");
 
 const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 
-// Array para guardar los eventos
 let eventos = [];
 
-// Ocultar inputs al cargar
 [direcion, dia, entregar, reunion2, mesInput].forEach(input => {
   input.style.display = "none";
   input.disabled = true;
 });
 
-// Función para validar días según mes
 function validarDia(input, mes) {
-  let valor = parseInt(input.value);
+  let valor = parseInt(input.value || input); 
   if (["enero","marzo","mayo","julio","agosto","octubre","diciembre"].includes(mes) && valor > 31) return false;
   if (["abril","junio","septiembre","noviembre"].includes(mes) && valor > 30) return false;
   if (mes === "febrero" && valor > 28) return false;
   return true;
 }
 
-// Mostrar inputs según tipo de evento
 select.addEventListener("change", function() {
   [direcion, dia, entregar, reunion2, mesInput].forEach(input => {
     input.style.display = "none";
@@ -96,7 +94,7 @@ function guardarEvento() {
   else if (categoria === "examen") diaValor = parseInt(dia.value);
   else if (categoria === "entrega") diaValor = parseInt(entregar.value);
 
-  if (!validarDia({value: diaValor}, mes)) {
+  if (!validarDia(diaValor, mes)) {
     alert("Fecha incorrecta");
     return;
   }
@@ -116,9 +114,31 @@ function guardarEvento() {
   };
 
   eventos.push(evento);
-  alert("Evento guardado correctamente!");
   console.log(eventos);
+
+  const listaEventos = document.getElementById("listaEventos");
+  const h3 = document.createElement("h3");
+  h3.textContent = `${evento.nombre} - ${evento.categoria} (${evento.mes} ${evento.dia})`;
+  listaEventos.appendChild(h3);
+
+  alert("Evento guardado correctamente!");
 }
 
-// Enganchar botón guardar
+borrarUltimoBtn.addEventListener("click", () => {
+  if (eventos.length === 0) {
+    alert("No hay eventos para borrar");
+    return;
+  }
+
+  eventos.pop();
+
+
+  const ultimoElemento = listaEventos.lastElementChild;
+  if (ultimoElemento) {
+    ultimoElemento.remove();
+  }
+
+  console.log("Eventos después de borrar:", eventos);
+});
+
 guardarBtn.addEventListener("click", guardarEvento);
