@@ -9,7 +9,7 @@ import fs from "fs";
 console.log(json)
     // Lo que puede ingresar el usuario
     let nombre, mail, contra;
-    let usuarionuevo = {"nombre":"Pepito", "mail":"mail", "password": "contra"};
+    let usuarionuevo = {"nombre":"Felipe Perez Asaad", "mail":"Fperezasaad@gmail.com", "password": "brainrots1234"};
 // Mete lo que ingresa el usuario al json    
 json.push(usuarionuevo);
     // Convierte objeto de js en cadena de json
@@ -18,12 +18,14 @@ json.push(usuarionuevo);
 
 
     // LOGIN
-let usuarios_login = fs.readFileSync("usuarios.json" , "UTF-8")
-let json_login = JSON.parse(usuarios_login);
-
+    // Lee el json y convierte objetos de js en cadena de json
+    let usuarios_login = fs.readFileSync("usuarios.json" , "UTF-8")
+    let json_login = JSON.parse(usuarios_login);
+// Recorre el json
 for (let i = 0; i < json_login.length; i++){
-    if (json_login[i].nombre == "LLuu" && json_login[i].mail == "lu@mail.com"){
-
+    // Busca la info de cada usuario en el json 
+    if (json_login[i].nombre == "#Luu" && json_login[i].mail == "lu@gmail.com" && json_login[i].password == 1234){
+            console.log("Encontramos tu perfil Lu")
     }
 }
 
