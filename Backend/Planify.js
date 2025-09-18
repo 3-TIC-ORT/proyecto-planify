@@ -2,14 +2,14 @@ import fs from "fs";
 
 // SIGNUP 
     // Lee el json de usuarios
-    let usuarios = fs.readFileSync("usuarios.json" , "UTF-8")
-    // Creea una info a formato json
+    let usuarios = fs.readFileSync ("usuarios.json" , "UTF-8")
+    // Crea una info a formato json
     let json = JSON.parse(usuarios);
 // Se muestra en la terminal el json, poniendo [numero] y .nombre o etc se muestra otra cosa
 console.log(json)
     // Lo que puede ingresar el usuario
     let nombre, mail, contra;
-    let usuarionuevo = {"nombre":"Felipe Perez Asaad", "mail":"Fperezasaad@gmail.com", "password": "brainrots1234"};
+    let usuarionuevo = {"nombre": "Dante Striglio", "mail": "Dantetriglio@mail.com", "password": "1234"};
 // Mete lo que ingresa el usuario al json    
 json.push(usuarionuevo);
     // Convierte objeto de js en cadena de json
