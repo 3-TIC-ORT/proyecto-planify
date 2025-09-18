@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Cuenta</title>
-    <link rel="stylesheet" href="crear-cuenta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Cuenta</title>
+  <link rel="stylesheet" href="crear-cuenta.css">
 </head>
 <body>
-    <form id="registroForm">
-        
-        <input type="text" id="usuario" class="usuario" placeholder="Escriba aquí" required>
-        <input type="password" id="password" class="Contraseña" required placeholder="Escriba aquí">
-        <input type="password" id="confirmar" class="contraseña2" placeholder="Escriba aquí" required>
-        <button type="submit" class="registrarse">Registrar</button>
-        <p id="mensaje"></p>
-    </form>
-
-    <script src="crear-cuenta.js"></script>
+  <form id="registroForm">
+   <div class="contenedor">
+    <div class="mitadizquierda">
+      <img src="image 17.jpg" alt="Imagen de fondo">
+      <div class="textogrande">
+        <h1>PLANIFY</h1>
+      </div>
+      <div class="textochico"></div>
+    </div>
+    <div class="mitadderecha">
+      <!-- Aquí irán los inputs -->
+      <input type="text" id="usuario" class="usuario" placeholder="Escriba aquí" required>
+      <input type="password" id="password" class="Contraseña" required placeholder="Escriba aquí">
+      <input type="password" id="confirmar" class="contraseña2" placeholder="Escriba aquí" required>
+      <button type="submit" class="registrarse">Registrar</button>
+      <p id="mensaje"></p>
+    </div>
+</div>
+  </form>
+  <script src="crear-cuenta.js"></script>
 </body>
 </html>

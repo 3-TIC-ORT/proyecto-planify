@@ -1,102 +1,38 @@
 body {
     margin: 0;
-    padding: 0;
+    display: flex; /* divide la pantalla en dos columnas */
     height: 100vh;
-    background-image: url("Creá\ tu\ Cuenta\ Planify.jpg");
-    background-size: cover;   /* ocupa todo sin deformar */
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.usuario {
-    
-        width: 478px;              /* más ancho, podés ajustar al gusto */
-        padding: 10px;
-        margin: 10px auto;       /* auto lo centra horizontalmente */
-        display: block;          /* necesario para que margin:auto funcione */
-        position: relative ; top: 199px;
-        font-size: 16px;
-        outline: none;
-        transition: 0.3s;
-        border: 1px,solid,black;
-        background-color: #F3F3F3;
-
-}
-
-
-.Contraseña  
-
-{
-    width: 478px;              
-    padding: 10px;
-    margin: 10px auto;       
-    display: block;          
-    position: relative ; top: 290px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-    border: 1px,solid,black;
-    background-color: #F3F3F3;
-
-
-
-}
-
-.contraseña2{
-
-    width: 478px;              
-    padding: 10px;
-    margin: 10px auto;       
-    display: block;          
-    position: relative ; top: 370px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-    border: 1px,solid,black;
-    background-color: #F3F3F3;
-
-}
-
-
-
-.registrarse {
-    width: 300px;          /* igual al ancho del botón grande */
-    height: 60px;          /* igual al alto */
-    font-size: 20px;       /* tamaño de texto similar */
-    background-color: #1BA5B0; /* mismo color de Figma */
-    color: white;
-    border: none;
-    border-radius: 10px;   /* bordes redondeados */
-    cursor: pointer;
-    transition: 0.3s;
-    position: absolute ;
-    margin-left: 39%;
-    margin-top: 29%;
-    font-size: 30px;
-    line-height: 30px;
- 
-}
-
-
+  }
   
+  .mitadizquierda {
+    width: 52vw;
+    height: 100vh; /* alto correcto */
+    position: relative;
+  }
   
-  .error {
-  background-color: #ffe0e0;
-  color: #d60000;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 8px;
-  border: 1px solid #d60000;
-  border-radius: 5px;
-  text-align: center;
-}
+  .mitadizquierda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* para que no se deforme */
+  }
+  
+  .mitadderecha {
+    width: 48vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.success {
-    background-color: #e0ffe0;
-    color: #008000;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px;
-    border: 1px solid #008000;
-    border-radius: 5px;
-    text-align: center;
+  .contenedor {
+    display: flex;   
+    height: 100vh;   
+  }
+
+  .tectogrande{
+    font-size: 128px;
+    font-style: in;
+
   }
