@@ -10,6 +10,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   let ingreso = parseFloat(document.getElementById("Texto de ingresos").value) || 0;
   let fecha = document.getElementById("fecha").value;
   // Contexto del canvas
+
   let ctx = document.getElementById("miGrafico").getContext("2d");
 
   // Si ya hay un gráfico, lo destruyo antes de crear otro
