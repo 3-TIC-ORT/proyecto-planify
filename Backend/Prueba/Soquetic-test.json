@@ -1,0 +1,41 @@
+{
+    "tests": [
+      {
+        "name": "Signup nuevo usuario",
+        "function": "signup",
+        "params": ["Juan", "juan@mail.com", "1234"],
+        "expect": {
+          "success": true,
+          "message": "Usuario creado con éxito"
+        }
+      },
+      {
+        "name": "Signup usuario repetido",
+        "function": "signup",
+        "params": ["Juan", "juan@mail.com", "1234"],
+        "expect": {
+          "success": false,
+          "message": "El mail ya está registrado"
+        }
+      },
+      {
+        "name": "Login correcto",
+        "function": "login",
+        "params": ["juan@mail.com", "1234"],
+        "expect": {
+          "success": true,
+          "message": "Login exitoso"
+        }
+      },
+      {
+        "name": "Login incorrecto",
+        "function": "login",
+        "params": ["juan@mail.com", "malaClave"],
+        "expect": {
+          "success": false,
+          "message": "Usuario o contraseña incorrectos"
+        }
+      }
+    ]
+  }
+  
