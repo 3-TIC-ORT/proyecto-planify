@@ -9,7 +9,7 @@ import fs from "fs";
 console.log(json)
     // Lo que puede ingresar el usuario
     let nombre, mail, contra;
-    let usuarionuevo = {"nombre": "Dante Striglio", "mail": "Dantetriglio@mail.com", "password": "1234"};
+    let usuarionuevo = {"nombre": "mati" , "mail": "123@gmail.com", "password": "123",} ;
 // Mete lo que ingresa el usuario al json    
 json.push(usuarionuevo);
     // Convierte objeto de js en cadena de json
@@ -24,10 +24,17 @@ json.push(usuarionuevo);
 // Recorre el json
 for (let i = 0; i < json_login.length; i++){
     // Busca la info de cada usuario en el json 
-    if (json_login[i].nombre == "#Luu" && json_login[i].mail == "lu@gmail.com" && json_login[i].password == 1234){
+    if (json_login[i].nombre == nombre && json_login[i].mail == mail && json_login[i].password == contra){
             console.log("Encontramos tu perfil Lu")
     }
+    else {
+        console.log("usuario no encontrado")
+    }
 }
+
+//NOTAS
+    
+
 
 
 
