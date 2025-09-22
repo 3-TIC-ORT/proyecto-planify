@@ -1,23 +1,37 @@
 [
   {
-    "nombre": "Mati",
-    "mail": "12345@dni",
-    "password": "MLS"
+    "nombre": "mati",
+    "mail": "123@gmail.com",
+    "password": "123",
+    "notas": "Me gusta la manzana"
   },
   {
-    "nombre": "#Luu",
-    "mail": "lu@gmail.com",
-    "password": "1234"
+    "nombre": "mati",
+    "mail": "123@gmail.com",
+    "password": "123",
+    "notas": "Me gusta la manzana"
   },
   {
-    "nombre": "Pepito",
-    "mail": "mail",
-    "password": "contra"
+    "nombre": "mati",
+    "mail": "123@gmail.com",
+    "password": "123",
+    "notas": "Me gusta la manzana"
   },
   {
-    "nombre": "Felipe Perez Asaad",
-    "mail": "Fperezasaad@gmail.com",
-    "password": "brainrots1234"
+    "nombre": "mati",
+    "mail": "123@gmail.com",
+    "password": "123",
+    "notas": "Me gusta la manzana"
+  },
+  {
+    "nombre": "mati",
+    "mail": "123@gmail.com",
+    "password": "123",
+    "notas": "Me gusta la manzana"
+  },
+  {
+    "nombre": "mati",
+    "mail": "123@gmail.com",
+    "password": "123"
   }
-  
 ]
