@@ -13,14 +13,14 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     }
 
     if (password !== confirmar) {
-        mensaje.textContent = "⚠️ La contraseña debe ser igual en los dos espacios";
+        mensaje.textContent = "La contraseña debe ser igual en los dos espacios";
         mensaje.className = "error";
         return;
     }
 
     
 
-    mensaje.textContent = "Cuenta creada con éxito ✅";
+    mensaje.textContent = "Cuenta creada con éxito ";
     mensaje.className = "success";
 
     setTimeout(() => {

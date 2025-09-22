@@ -8,23 +8,25 @@
 </head>
 <body>
   <form id="registroForm">
-   <div class="contenedor">
-    <div class="mitadizquierda">
-      <img src="image 17.jpg" alt="Imagen de fondo">
-      <div class="textogrande">
-        <h1>PLANIFY</h1>
+    <div class="contenedor">
+      
+      <div class="mitadizquierda">
+        <img src="image 17.jpg">
+        <div class="overlay">
+          <h1 class="textogrande">PLANIFY</h1>
+          <p class="textochico">Todo lo que necesitás <br> para organizar tu día</p>
+        </div>
       </div>
-      <div class="textochico"></div>
+
+      <div class="mitadderecha">
+        <input type="text" id="usuario" class="usuario" placeholder="Escriba aquí" required>
+        <input type="password" id="password" class="Contraseña" required placeholder="Escriba aquí">
+        <input type="password" id="confirmar" class="contraseña2" placeholder="Escriba aquí" required>
+        <button type="submit" class="registrarse">Registrar</button>
+        <p id="mensaje"></p>
+      </div>
+
     </div>
-    <div class="mitadderecha">
-      <!-- Aquí irán los inputs -->
-      <input type="text" id="usuario" class="usuario" placeholder="Escriba aquí" required>
-      <input type="password" id="password" class="Contraseña" required placeholder="Escriba aquí">
-      <input type="password" id="confirmar" class="contraseña2" placeholder="Escriba aquí" required>
-      <button type="submit" class="registrarse">Registrar</button>
-      <p id="mensaje"></p>
-    </div>
-</div>
   </form>
   <script src="crear-cuenta.js"></script>
 </body>

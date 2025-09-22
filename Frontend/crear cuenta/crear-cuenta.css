@@ -31,8 +31,20 @@ body {
     height: 100vh;   
   }
 
-  .tectogrande{
-    font-size: 128px;
-    font-style: in;
+  .textogrande{
+    font-size: 40px;
+    position: relative;
+    top: 1rem;
+    margin-top: 0;
+   
 
   }
+  .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centra el texto */
+  text-align: left;
+  color: white; /* texto en blanco */
+  padding: 20px;
+}
