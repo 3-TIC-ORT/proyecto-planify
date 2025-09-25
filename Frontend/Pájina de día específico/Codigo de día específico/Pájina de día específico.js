@@ -10,8 +10,6 @@ let datos = {
   
   // Mostrar información
   let contenedor = document.getElementById("contenido");
-  if (fecha && datos[fecha]) {
-    contenedor.innerText = "Eventos del " + fecha + ": " + datos[fecha];
-  } else {
-    contenedor.innerText = "No hay información para esta fecha.";
+  if (fecha) {
+    contenedor.innerText = fecha;
   }
