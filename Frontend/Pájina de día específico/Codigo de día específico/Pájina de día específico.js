@@ -5,8 +5,8 @@ let datos = {
   };
   
   // Leer parámetro "fecha"
-  let gaga = new URLSearchParams(window.location.search);
-  let fecha = gaga.get("fecha");
+  let url = new URLSearchParams(window.location.search);
+  let fecha = url.get("fecha");
   
   // Mostrar información
   let contenedor = document.getElementById("contenido");
