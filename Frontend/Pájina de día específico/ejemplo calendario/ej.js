@@ -1,12 +1,14 @@
-  function irADia(dia) {
+  
+  function irADia(dia, numero) {
     
-    window.location.href = "C:/Users/49980496/Downloads/proyecto-planify/Frontend/Pájina de día específico/Codigo de día específico/Pájina de día específico.html?fecha=" + dia;
+  window.location.href = "C:/Users/49980496/Downloads/proyecto-planify/Frontend/Pájina de día específico/Codigo de día específico/Pájina de día específico.html?fecha=" + dia + "&numero=" + numero
 
-  }
-  document.getElementById("lunes").addEventListener("click", () => irADia("lunes"));
-document.getElementById("martes").addEventListener("click", () => irADia("martes"));
-document.getElementById("miercoles").addEventListener("click", () => irADia("miercoles"));
-document.getElementById("jueves").addEventListener("click", () => irADia("jueves"));
-document.getElementById("viernes").addEventListener("click", () => irADia("viernes"));
-document.getElementById("sabado").addEventListener("click", () => irADia("sabado"));
-document.getElementById("domingo").addEventListener("click", () => irADia("domingo"));
+ 
+}
+  document.getElementById("lunes").addEventListener("click", () => irADia("lunes",1));
+document.getElementById("martes").addEventListener("click", () => irADia("martes",2));
+document.getElementById("miercoles").addEventListener("click", () => irADia("miercoles",3));
+document.getElementById("jueves").addEventListener("click", () => irADia("jueves",4));
+document.getElementById("viernes").addEventListener("click", () => irADia("viernes",5));
+document.getElementById("sabado").addEventListener("click", () => irADia("sabado",6));
+document.getElementById("domingo").addEventListener("click", () => irADia("domingo",7));
