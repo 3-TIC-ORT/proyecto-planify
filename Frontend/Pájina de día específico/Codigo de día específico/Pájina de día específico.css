@@ -1,0 +1,10 @@
+.cuadrado{
+    height: 4rem;
+    width: 3rem;
+    background-color: green;
+    border-radius: fixed ,1rem, black ;
+}
+.contenido{
+    height: 2rem;
+    width: 8rem;
+}
