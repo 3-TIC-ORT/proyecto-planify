@@ -27,7 +27,7 @@
   color: white;
   font-weight: bold;
   border-left: 1px solid black;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold
   ;             
 }
@@ -87,9 +87,10 @@ width:100% ;
  font-family: "Inter", sans-serif;
  font-weight: bold;
  font-size: 60px;
-transform: scale(1.4);
+transform: scale(1.1);
   transform-origin: center; 
   margin-top: 0;
+  margin-bottom: 0;
 }
 .logo .color {
   color: #1BA5B0;     
@@ -99,11 +100,11 @@ transform: scale(1.4);
   justify-content: space-between; 
   align-items: center;
 
-  margin-top: 3px
+
 }
 .barra{
-width: 100px;
-height: 20px;
+width: 32px;
+height: 6px;
 background-color:#4A4A4A;
 border-radius: 20px
 
@@ -124,15 +125,16 @@ border-radius: 20px
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
   background: white;
-  border: 1px solid #ccc;
+  border: 1px solid black;
 }
 
 .dia {
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: 1fr; /* cada fila se estira automáticamente */
+  grid-auto-rows: 1fr;
   height: 100%;
+
 }
 
 
@@ -151,3 +153,4 @@ border-radius: 20px
   flex-direction: column;
   flex: 1;
 }
+
