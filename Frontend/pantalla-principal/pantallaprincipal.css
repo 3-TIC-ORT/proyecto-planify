@@ -118,3 +118,13 @@ html, body {
 
 .dia.anterior-mes, .dia.siguiente-mes
  { color: transparent; }
+
+ .dia.hoy{
+color: #008691;
+font-weight: bold;
+font-size: 40px;
+ }
+
+
+
+ 
