@@ -5,7 +5,7 @@ const calendario = document.querySelector(".calendario"),
       proximo = document.querySelector(".proximo");
 
 let hoy = new Date();
-let mes = hoy.getMonth(); // corregido
+let mes = hoy.getMonth(); 
 let año = hoy.getFullYear();
 
 const meses = [
