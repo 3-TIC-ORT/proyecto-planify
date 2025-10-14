@@ -70,3 +70,32 @@ anterior.addEventListener("click", mesAnterior);
 proximo.addEventListener("click", mesSiguiente);
 
 generarCalendario();
+
+
+const botonmenu = document.querySelector(".menudeplegable");
+const menulateral = document.querySelector(".menulateral");
+botonmenu.addEventListener("click", () => {
+  menulateral.classList.toggle("activo");
+});
+
+
+const gastos = document.getElementById("gastos")
+const tareas = document.getElementById("tareas")
+const cerrarsesion = document.getElementById("cerrarsesion")
+const notas = document.getElementById("notas")
+
+cerrarsesion.addEventListener("click", () => {
+  window.location.href ="file:///C:/Users/Dante/Desktop/proyecto-planify/Frontend/Inicio%20de%20seci%C3%B3n/Pantaya%20de%20inicio%20de%20seci%C3%B3n.html"
+});
+
+tareas.addEventListener("click", () => {
+  window.location.href ="file:///C:/Users/Dante/Desktop/proyecto-planify/Frontend/eventos/eventos.html"
+});
+
+gastos.addEventListener("click", () => {
+  window.location.href ="file:///C:/Users/Dante/Desktop/proyecto-planify/Frontend/Pantalla%20de%20gastos/Pantalla%20de%20gastos.html"
+});
+
+notas.addEventListener("click", () => {
+  window.location.href ="file:///C:/Users/Dante/Desktop/proyecto-planify/Frontend/notas/notas.html"
+});

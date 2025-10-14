@@ -126,5 +126,89 @@ font-size: 40px;
  }
 
 
+.menulateral {
+  height: 100%;
+  width: 18%;
+  position: absolute;
+  background: #11555A; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
+  gap: 10rem;
 
- 
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+
+.menulateral.activo{
+  display: flex
+}
+
+
+
+
+.texto{
+font-family: "Inter", sans-serif;
+font-size: 20px;
+font-weight: 500;
+color: white;
+white-space: nowrap;
+cursor: pointer;
+
+
+}
+.notas-menu{
+
+  height: 90px;
+  width: 309px;
+  display: flex;
+  align-items: center;
+  gap: 21rem; 
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  justify-content: space-between;
+}
+
+
+.paginaprinci{
+  height: 90px;
+  width: 309px;
+  display: flex;
+  align-items: center;
+  gap: 14.85rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 50px
+
+}
+
+.tareas{
+  height: 90px;
+  width: 309px;
+  display: flex;
+  align-items: center;
+  gap: 13.80rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.gastos{
+  height: 90px;
+  width: 309px;
+  display: flex;
+  align-items: center;
+  gap: 20.35rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.cerrarse{
+margin-bottom: 2rem;
+margin-left: 0.5rem;  
+
+}
+.menu-opciones{
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
