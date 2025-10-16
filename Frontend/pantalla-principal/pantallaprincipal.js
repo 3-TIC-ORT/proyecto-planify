@@ -93,7 +93,7 @@ tareas.addEventListener("click", () => {
 });
 
 gastos.addEventListener("click", () => {
-  window.location.href ="file:///C:/Users/Dante/Desktop/proyecto-planify/Frontend/Pantalla%20de%20gastos/Pantalla%20de%20gastos.html"
+  window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/Pantalla de gastos/Pantalla de gastos.html"
 });
 
 notas.addEventListener("click", () => {
