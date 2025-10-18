@@ -12,8 +12,8 @@ body {
   
   .login-container {
     background: white;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 6rem;
+    box-shadow: 0 3rem 4rem rgba(0,0,0,0.1);
     width: 100%;
     max-width: 60%;
     display: flex;
@@ -21,23 +21,21 @@ body {
     gap: 10%;
   }
   h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+    text-align: center; }
   
   input[type="text"],
   input[type="password"] {
-    width: 93%;
-    padding: 12px;
+    width: 100%;
+    padding: 1rem;
     margin: 8px 0;
-    border: 1px solid #ccc;
+    border: 0,02rem solid #ccc;
     border-radius: 5px;
   }
   
   button {
     width: 100%;
     padding: 12px;
-    background-color: #4CAF50;
+    background-color: #1BA5B0;
     color: white;
     border: none;
     border-radius: 5px;
@@ -47,22 +45,13 @@ body {
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #18959e;
   }
   
   .error {
     color: red;
     font-size: 1em;
-    margin-top: 5px;
     text-align: center;
-    margin-top: 15px;
-  }
-  
-  .success {
-    color: green;
-    font-size: 1em;
-    text-align: center;
-    margin-top: 15px;
   }
   #papa{
     width: 80%;      
@@ -71,14 +60,14 @@ body {
   }
   .textoplanify{
     
-      position: absolute;
-      bottom: 10px;      /* distancia desde abajo */
-      left: 50%;
-      transform: translateX(-50%); /* centra horizontalmente */
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px black; /* mejora visibilidad sobre la imagen */
+  position: absolute;
+  bottom: 10px;      /* distancia desde abajo */
+  left: 50%;
+  transform: translateX(-50%); /* centra horizontalmente */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px black; /* mejora visibilidad sobre la imagen */
   }
 .cuadrodetexto{
 display: grid;
@@ -86,4 +75,9 @@ place-items: center;
 width: 50%;
 height: 100%;
 align-items: center;
+}
+.loginForm{
+  display: flex;
+  justify-content: center;
+  place-items: center;
 }
