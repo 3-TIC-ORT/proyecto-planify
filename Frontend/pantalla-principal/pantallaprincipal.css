@@ -32,21 +32,25 @@ html, body {
 
 .navegacion {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 60%;
+  gap: 2rem;
 }
 
 .anterior, .proximo {
   font-weight: bold;
   font-size: 40px;
   cursor: pointer;
+  text-align: center;  
 }
 
 .fecha {
   font-weight: bold;
   font-size: 40px;
   text-transform: capitalize;
+  width: 350px;
+  text-align: center;
 }
 
 .menudeplegable {
@@ -106,10 +110,10 @@ html, body {
   border: 0.25px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   padding: 5px;
-  font-size: 20px;
+  font-size: 32px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
 }
 
 .dia.sabado, .dia.domingo {

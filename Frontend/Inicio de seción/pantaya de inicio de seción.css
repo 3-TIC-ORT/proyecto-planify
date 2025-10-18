@@ -15,7 +15,7 @@ body {
     padding: 6rem;
     box-shadow: 0 3rem 4rem rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 60%;
+    max-width: 60rem;
     display: flex;
     max-height: 70%;
     gap: 10%;
@@ -80,4 +80,42 @@ align-items: center;
   display: flex;
   justify-content: center;
   place-items: center;
+}
+  #papa {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+.extoplanify{
+  position: absolute;
+  top: 50%;        /* centro vertical */
+  left: 50%;       /* centro horizontal */
+  transform: translate(-50%, -50%); /* centra perfectamente */
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.cuadro-foto {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+.texto-planify {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  width: 90%;
+}
+.texto-planify h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.texto-planify h3 {
+  font-size: 1.2rem;
+  line-height: 1.4;
 }
