@@ -1,7 +1,7 @@
   
   function irADia(dia, numero) {
     
-  window.location.href = "../Codigo de día específico/Pájina de día específico.html?fecha=" + dia + "&numero=" + numero
+  window.location.href = "../Codigo de día específico/Pájina de día específico.html?fecha=" + dia + "&numero=" + numero;
  
 }
   document.getElementById("lunes").addEventListener("click", () => irADia("lunes",1));

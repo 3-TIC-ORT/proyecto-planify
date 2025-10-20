@@ -1,24 +1,26 @@
-
-let fecha = url.get("fecha");
-let numero = url.get("numero")
-
-  let url = new URLSearchParams(window.location.search);
-
-  if (fecha) {
-    contenedor.innerText = fecha + numero;
-  }
+const url = new URLSearchParams(window.location.search);
+const fecha = url.get("fecha");
+const numero = url.get("numero");
 
  let tareas =  {
     examen : "tarea de Hardwar" ,
     pueba: "tarea de mate"
   }
-  let contenedor = document.getElementById("contenedor");  // Asegúrate de que este elemento existe
-  let cuadradoTareas = document.getElementById("cuadrado-tareas");  // Asegúrate de que este elemento existe
+const contenedor = document.getElementById("contenido");
+const cuadradoTareas = document.getElementById("cuadrado-tareas");
+
+if (fecha && numero) {
+  contenedor.textContent = `Día: ${fecha}  Número: ${numero}`
+}
+
 
   tareas.forEach( tarea => {
+    let tarjeta = document.createElement("div");
+    tarjeta.classList.add("tarjeta");
+
     const titulo = document.createElement("h2")
-    titulo.textContent = examen
+    titulo.textContent = tarea.examen
     
+    cuadradoTareas.appendChild(tarjeta)
     tarjeta.appendChild(titulo)
-    cuadrado-tarea.appendChild(tarjeta)
     });
