@@ -52,3 +52,104 @@ button {
 button:hover {
   background: #0056b3;
 }
+
+.menudesplegable{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.barra {
+  width: 32px;
+  height: 6px;
+  background-color: #4A4A4A;
+  border-radius: 20px;
+}
+.menulateral {
+  height: 100%;
+  width: 19%;
+  position: absolute;
+  background: #11555A; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
+
+
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+
+.menulateral.activo{
+  display: flex
+}
+
+
+
+
+.texto{
+font-family: "Inter", sans-serif;
+font-size: 20px;
+font-weight: 500;
+color: white;
+white-space: nowrap;
+cursor: pointer;
+
+
+}
+.notas-menu{
+
+  height: 90px;
+  width: 309px;
+  display: flex;
+  align-items: center;
+  gap: 10.7rem; 
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+
+.paginaprinci{
+  height: 90px;
+  width: 309px;
+  display: flex;
+  align-items: center;
+  gap: 4.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 50px
+
+}
+
+.tareas{
+  height: 90px;
+  width: 309px;
+  display: flex;
+  align-items: center;
+  gap: 3.50rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.gastos{
+  height: 90px;
+  width: 309px;
+  display: flex;
+  align-items: center;
+  gap: 9.65rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.cerrarse{
+  margin-bottom: 0, auto;
+  margin-left: 0.5rem;  
+  
+  }
+.menu-opciones{
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
