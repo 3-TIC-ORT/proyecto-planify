@@ -85,11 +85,11 @@ const cerrarsesion = document.getElementById("cerrarsesion")
 const notas = document.getElementById("notas")
 
 cerrarsesion.addEventListener("click", () => {
-  window.location.href ="file:///C:/Users/Dante/Desktop/proyecto-planify/Frontend/Inicio%20de%20seci%C3%B3n/Pantaya%20de%20inicio%20de%20seci%C3%B3n.html"
+  window.location.href ="C:\Users/50088774/Desktop/proyecto-planify/Frontend/crear cuenta/crear-cuenta.html"
 });
 
 tareas.addEventListener("click", () => {
-  window.location.href ="file:///C:/Users/Dante/Desktop/proyecto-planify/Frontend/eventos/eventos.html"
+  window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/eventos/eventos.html"
 });
 
 gastos.addEventListener("click", () => {
@@ -97,5 +97,5 @@ gastos.addEventListener("click", () => {
 });
 
 notas.addEventListener("click", () => {
-  window.location.href ="file:///C:/Users/Dante/Desktop/proyecto-planify/Frontend/notas/notas.html"
+  window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/notas/notas.html"
 });

@@ -98,7 +98,7 @@ html, body {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr); 
-    grid-template-rows: repeat(6, 1fr);    
+    grid-template-rows: repeat(5, 1fr);    
     width: 100%;
     border: 1px solid black;
   }
@@ -132,12 +132,12 @@ font-size: 40px;
 
 .menulateral {
   height: 100%;
-  width: 18%;
+  width: 19%;
   position: absolute;
   background: #11555A; /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
-  gap: 10rem;
+
 
   flex-direction: column;
   justify-content: space-between;
@@ -167,10 +167,9 @@ cursor: pointer;
   width: 309px;
   display: flex;
   align-items: center;
-  gap: 21rem; 
+  gap: 10.7rem; 
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  justify-content: space-between;
 }
 
 
@@ -179,7 +178,7 @@ cursor: pointer;
   width: 309px;
   display: flex;
   align-items: center;
-  gap: 14.85rem;
+  gap: 4.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   margin-top: 50px
@@ -191,7 +190,7 @@ cursor: pointer;
   width: 309px;
   display: flex;
   align-items: center;
-  gap: 13.80rem;
+  gap: 3.50rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
@@ -201,16 +200,16 @@ cursor: pointer;
   width: 309px;
   display: flex;
   align-items: center;
-  gap: 20.35rem;
+  gap: 9.65rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
 .cerrarse{
-margin-bottom: 2rem;
-margin-left: 0.5rem;  
-
-}
+  margin-bottom: 0, auto;
+  margin-left: 0.5rem;  
+  
+  }
 .menu-opciones{
   display: flex;
   flex-direction: column;
