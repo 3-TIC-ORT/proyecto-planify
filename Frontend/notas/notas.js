@@ -1,7 +1,7 @@
   function guardarNota() {
       let texto = document.getElementById("texto").value;
       localStorage.setItem("notaGuardada", texto);
-      alert("✅ Nota guardada");
+      alert(" Nota guardada");
     }
 
     function cargarNota() {
@@ -9,7 +9,7 @@
       if (nota) {
         document.getElementById("texto").value = nota;
       } else {
-        alert("⚠️ No hay notas guardadas");
+        alert(" No hay notas guardadas");
       }
     }
 
@@ -19,7 +19,7 @@
       alert(" Nota borrada");
     }
 
-    const botonmenu = document.querySelector(".menudeplegable");
+    const botonmenu = document.querySelector(".menudesplegable");
     const menulateral = document.querySelector(".menulateral");
     botonmenu.addEventListener("click", () => {
       menulateral.classList.toggle("activo");

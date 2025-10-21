@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <title>Bloc de Notas</title>
   <link rel="stylesheet" href="notas.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
-
   <div class="menulateral">
     <div class="menu-opciones">
   <div class="paginaprinci">
@@ -25,7 +28,7 @@
 
   <div class="gastos">
   <h4 class="texto" id="gastos">Gastos</h4>
-  <img src="gastos.png">
+  <img src="Group-1.png">
   </div>
   </div>
 <div class="cerrarse">
@@ -33,19 +36,25 @@
 
 </div>
 </div>
-  <div class="menudeplegable">
+<div class="header">
+  <div class="menudesplegable">
     <div class="barra"></div>
      <div class="barra"></div>
       <div class="barra"></div>
   </div>
-  <a href="file:///C:/Users/50088774/Desktop/proyecto-planify/Frontend/pantalla-principal/panatalla-principal.html">volver al inicio</a>
+
+  <div class="presentacion">
+    <h1 class="logo">PLAN<span class="color">IF</span>Y</h1>  
+        <h3 class="subtitulo">Anotá tus ideas</h3>
+  </div>
+</div>
  
-  <div class="notepad">
-    <textarea id="texto" placeholder="Escribe tus notas aquí..."></textarea>
+  <div class="notas">
+    <textarea id="texto" placeholder="Escribe tus notas aquí"></textarea>
     <div class="buttons">
       <button onclick="guardarNota()"> Guardar</button>
       <button onclick="cargarNota()"> Cargar</button>
-      <button onclick="borrarNota()"> Borrar</button>
+      <button class="boton" onclick="borrarNota()"> Borrar</button>
     </div>
   </div>
 <script src="notas.js"></script>
