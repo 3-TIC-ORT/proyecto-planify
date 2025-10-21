@@ -1,11 +1,10 @@
   function guardarNota() {
       let texto = document.getElementById("texto").value;
       localStorage.setItem("notaGuardada", texto);
-<<<<<<< HEAD
+ 
       alert(" Nota guardada");
-=======
       alert("Nota guardada");
->>>>>>> 2e50417f101e4e0e2229c3c27f5b9f372978af69
+
     }
 
     function cargarNota() {
@@ -13,11 +12,10 @@
       if (nota) {
         document.getElementById("texto").value = nota;
       } else {
-<<<<<<< HEAD
+
         alert(" No hay notas guardadas");
-=======
         alert("No hay notas guardadas");
->>>>>>> 2e50417f101e4e0e2229c3c27f5b9f372978af69
+
       }
     }
 
