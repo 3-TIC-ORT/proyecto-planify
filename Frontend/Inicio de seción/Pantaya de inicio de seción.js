@@ -21,6 +21,8 @@ form.addEventListener('submit', function(Preventivo) {
       window.location.href = "C:/Users/49980496/Downloads/proyecto-planify/Frontend/pantalla-principal/panatallaprincipal.html";
     }, 1000);
   } 
+
+
   
   else{
     message.innerHTML = "<p class='error'>Usuario o contraseña incorrectos.</p>";
