@@ -1,7 +1,7 @@
   function guardarNota() {
       let texto = document.getElementById("texto").value;
       localStorage.setItem("notaGuardada", texto);
-      alert("✅ Nota guardada");
+      alert("Nota guardada");
     }
 
     function cargarNota() {
@@ -9,7 +9,7 @@
       if (nota) {
         document.getElementById("texto").value = nota;
       } else {
-        alert("⚠️ No hay notas guardadas");
+        alert("No hay notas guardadas");
       }
     }
 
