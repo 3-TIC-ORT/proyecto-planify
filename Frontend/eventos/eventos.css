@@ -17,7 +17,11 @@
     margin-top: 1px;
 }
 
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.logo {
+  font-weight: bold;
+  font-size: 40px;
+  font-family: "Inter", sans-serif;
+  margin-top: 10px;
   margin: 0;
 }
 .logo .color {
@@ -63,4 +67,18 @@
 .menulateral.activo{
   display: flex;
 
+}
+
+.opciones{
+  display: flex;
+  flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ height: 40px;
+ width: 100%;
+ gap: 5px;
+}
+
+.preguntas{
+  display: flex;
 }

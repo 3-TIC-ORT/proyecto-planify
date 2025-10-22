@@ -19,18 +19,20 @@
           <h3 class="subtitulo">Anotá tus ideas</h3>
     </div>
   </div>
-  <input type="text" id="nombre" placeholder="nombre del evento" >
+  <div class="opciones">
+
+  <input type="text" id="nombre"  class="nombre"    placeholder="nombre del evento" >
 
   <label for="importancia">Elije la importancia</label>
-  <select name="elejir importancia" id="importancia">
+  <select name="elejir importancia" class="importancia" id="importancia">
     <option value=""></option>
     <option value="no importante">No importante</option>
     <option value="poco importante">Poco importante</option>
     <option value="muy importante">Muy importante</option>
   </select>
-
+ 
   <label for="evento">Qué tipo de evento es</label>
-  <select name="tipodeevento" id="evento">
+  <select name="tipodeevento"  id="evento">
     <option value=""></option>
     <option value="examen">Examen</option>
     <option value="reunion">Reunión</option>
@@ -39,18 +41,19 @@
 
   <input type="text" id="direcion" placeholder="Ingresa la dirección">
 
-  <input type="number" id="quedia" placeholder="que dia se rinde">
-  <input type="number" id="diaentrega" placeholder="que dia se entrega">
-  <input type="number" id="diareunion" placeholder="que dia es la reunion">
-  <input type="text" id="mes" placeholder="en que mes">
+  <input type="number" class="preguntas" id="quedia" placeholder="que dia se rinde">
+  <input type="number" class="preguntas" id="diaentrega" placeholder="que dia se entrega">
+  <input type="number" class="preguntas" id="diareunion" placeholder="que dia es la reunion">
+  <input type="text" class="preguntas" id="mes" placeholder="en que mes">
 
-  <div class="notepad">
+  </div>
+  
+  <div class="detalles">
     <textarea id="texto" placeholder="detalles del evento"></textarea>
   </div>
-
+<di></di>v</div>
   <button id="guardarBtn">Guardar Evento</button>
 
-  <div id="listaEventos"></div>
   <button id="borrarUltimoBtn">Borrar  evento</button>
 <div id="listaEventos"></div>
 
