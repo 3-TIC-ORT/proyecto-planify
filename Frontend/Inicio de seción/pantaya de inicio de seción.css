@@ -1,121 +1,49 @@
-
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .login-container {
-    background: white;
-    padding: 6rem;
-    box-shadow: 0 3rem 4rem rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 60rem;
-    display: flex;
-    max-height: 70%;
-    gap: 10%;
-  }
-  h2 {
-    text-align: center; }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 1rem;
-    margin: 8px 0;
-    border: 0,02rem solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 12px;
-    background-color: #1BA5B0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  button:hover {
-    background-color: #18959e;
-  }
-  
-  .error {
-    color: red;
-    font-size: 1em;
-    text-align: center;
-  }
-  #papa{
-    width: 80%;      
-    max-width: 400px; 
-    height: auto;     
-  }
-  .textoplanify{
-    
-  position: absolute;
-  bottom: 10px;      /* distancia desde abajo */
-  left: 50%;
-  transform: translateX(-50%); /* centra horizontalmente */
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px black; /* mejora visibilidad sobre la imagen */
-  }
-.cuadrodetexto{
-display: grid;
-place-items: center;
-width: 50%;
-height: 100%;
-align-items: center;
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
 }
-.loginForm{
+.todo{
+  height: 100%;
+  width: 100%;
+  background-color: whitesmoke;
   display: flex;
   justify-content: center;
-  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
-  #papa {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-.extoplanify{
-  position: absolute;
-  top: 50%;        /* centro vertical */
-  left: 50%;       /* centro horizontal */
-  transform: translate(-50%, -50%); /* centra perfectamente */
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
+#papa{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
 }
-.cuadro-foto {
+.cuadadofoto{
+  width: 52vw;
+  height: 100vh; 
   position: relative;
-  width: 50%;
-  overflow: hidden;
 }
-.texto-planify {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  width: 90%;
+
+.cuadrodetexto{
+  width: 48vw;
+  height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.texto-planify h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.planifitexto{
+  font-size: 80px;
+   position: relative;
+   top: 1rem;
+   margin-top: 0;
+   font-family: "Inter", sans-serif;
+   font-weight: 700; 
 }
-.texto-planify h3 {
-  font-size: 1.2rem;
-  line-height: 1.4;
+.sigo{
+  font-family: "Inter", sans-serif;
+  font-weight: 400; 
+  font-size: 30px;
+  margin: 0;
 }
