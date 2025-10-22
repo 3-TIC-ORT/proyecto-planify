@@ -142,3 +142,10 @@ borrarUltimoBtn.addEventListener("click", () => {
 });
 
 guardarBtn.addEventListener("click", guardarEvento);
+
+
+const botonmenu = document.querySelector(".menudesplegable");
+    const menulateral = document.querySelector(".menulateral");
+    botonmenu.addEventListener("click", () => {
+      menulateral.classList.toggle("activo");
+    });
