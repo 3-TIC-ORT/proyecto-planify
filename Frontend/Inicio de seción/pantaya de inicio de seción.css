@@ -1,9 +1,13 @@
+* {
+  box-sizing: border-box;
+}
 body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 .todo{
   height: 100%;
@@ -27,23 +31,35 @@ body{
 .cuadrodetexto{
   width: 48vw;
   height: 100vh;
-  background-color: whitesmoke;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
-.planifitexto{
-  font-size: 80px;
-   position: relative;
-   top: 1rem;
-   margin-top: 0;
-   font-family: "Inter", sans-serif;
-   font-weight: 700; 
+.Fernanda{
+font-size: 3rem;
+ margin-top: 10%;
+ font-family: "Inter", sans-serif;
+ font-weight: bold; 
 }
-.sigo{
+
+#color{
+  color: #1BA5B0;
+}
+.carla {
+  margin-top: 0;
   font-family: "Inter", sans-serif;
-  font-weight: 400; 
-  font-size: 30px;
-  margin: 0;
+  font-weight: bold;
+}
+.error{
+  color: #FF0000;
+  font-weight: bold;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width:75%;
+  height: 60%;
+  font-family: Arial, Helvetica, sans-serif;
 }

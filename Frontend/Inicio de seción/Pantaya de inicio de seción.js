@@ -25,6 +25,6 @@ form.addEventListener('submit', function(Preventivo) {
 
   
   else{
-    message.innerHTML = "<p class='error'>Usuario o contraseña incorrectos.</p>";
+    message.innerHTML = "<p class='error'>Usuario y/o contraseña incorrectos</p>";
   }
 });
