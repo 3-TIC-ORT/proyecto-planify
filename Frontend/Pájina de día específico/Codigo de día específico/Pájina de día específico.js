@@ -21,6 +21,6 @@ if (fecha && numero) {
     const titulo = document.createElement("h2")
     titulo.textContent = tarea.examen
     
-    cuadradoTareas.appendChild(tarjeta)
     tarjeta.appendChild(titulo)
+    cuadradoTareas.appendChild(tarjeta)
     });
