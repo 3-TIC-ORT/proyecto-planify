@@ -1,74 +1,32 @@
 import fs from "fs";
 
-function leerNotas() {
-  try {
-    let data = fs.readFileSync("notas.json", "utf-8");
-    return JSON.parse(data);
-  } catch (error) {
-    return []; //
-  }
+const RUTA_NOTAS = "backend/notas.json";
+
+// Crea el archivo si no existe
+if (!fs.existsSync(RUTA_NOTAS)) {
+  fs.writeFileSync(RUTA_NOTAS, "[]");
 }
 
-function guardarNotas(notas) {
-  let data = JSON.stringify(notas, null, 2);
-  fs.writeFileSync("notas.json", data);
-}
+// --- GUARDAR NOTA ---
+export function guardarNota(nombreUsuario, titulo, contenido) {
+  const notas = JSON.parse(fs.readFileSync(RUTA_NOTAS, "utf-8"));
 
-export function crearNota(usuario, titulo, contenido) {
-  let notas = leerNotas();
+  // Busca si ya hay notas del usuario
+  let usuarioNotas = notas.find(n => n.nombre === nombreUsuario);
 
-  let nuevaNota = {
-    usuario,
-    titulo,
-    contenido,
-    fecha: new Date().toISOString()
-  };
-
-  notas.push(nuevaNota);
-  guardarNotas(notas);
-
-  console.log(`Nota creada para ${usuario}: "${titulo}"`);
-}
-
-export function mostrarNotas(usuario) {
-  let notas = leerNotas();
-  let notasUsuario = notas.filter(nota => nota.usuario === usuario);
-
-  if (notasUsuario.length === 0) {
-    console.log("No tienes notas todavía.");
-    return;
+  if (!usuarioNotas) {
+    usuarioNotas = { nombre: nombreUsuario, notas: [] };
+    notas.push(usuarioNotas);
   }
 
-  console.log(`Notas de ${usuario}:`);
-  notasUsuario.forEach((n, i) => {
-    console.log(`\n[${i + 1}] ${n.titulo}`);
-    console.log(`   ${n.contenido}`);
-    console.log(`   (${n.fecha})`);
-  });
+  usuarioNotas.notas.push({ titulo, contenido });
+
+  fs.writeFileSync(RUTA_NOTAS, JSON.stringify(notas, null, 2));
 }
 
-export function editarNota(usuario, tituloViejo, nuevoTitulo, nuevoContenido) {
-  let notas = leerNotas();
-  let nota = notas.find(n => n.usuario === usuario && n.titulo === tituloViejo);
-
-  if (!nota) {
-    console.log("Nota no encontrada.");
-    return;
-  }
-
-  nota.titulo = nuevoTitulo;
-  nota.contenido = nuevoContenido;
-  guardarNotas(notas);
-
-  console.log(`Nota "${tituloViejo}" actualizada.`);
-}
-
-export function eliminarNota(usuario, titulo) {
-  let notas = leerNotas();
-  let nuevasNotas = notas.filter(
-    n => !(n.usuario === usuario && n.titulo === titulo)
-  );
-
-  guardarNotas(nuevasNotas);
-  console.log(`Nota "${titulo}" eliminada.`);
+// --- OBTENER NOTAS ---
+export function obtenerNotas(nombreUsuario) {
+  const notas = JSON.parse(fs.readFileSync(RUTA_NOTAS, "utf-8"));
+  const usuarioNotas = notas.find(n => n.nombre === nombreUsuario);
+  return usuarioNotas ? usuarioNotas.notas : [];
 }
