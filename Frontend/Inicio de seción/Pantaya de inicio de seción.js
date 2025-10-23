@@ -1,7 +1,6 @@
 let form = document.getElementById('loginForm');
 let message = document.getElementById('message');
-
-
+let button = document.getElementById("Registrarme")
 
 form.addEventListener('submit', function(Preventivo) {
   Preventivo.preventDefault(); 
@@ -27,4 +26,7 @@ form.addEventListener('submit', function(Preventivo) {
   else{
     message.innerHTML = "<p class='error'>Usuario y/o contraseña incorrectos</p>";
   }
+});
+button.addEventListener("click", () => {
+  window.location.href = "../crear cuenta/crear-cuenta.html";
 });
