@@ -79,13 +79,17 @@ botonmenu.addEventListener("click", () => {
 });
 
 
+const Pantallaprincipal  = document.getElementById("paginaprincipal")
 const gastos = document.getElementById("gastos")
 const tareas = document.getElementById("tareas")
 const cerrarsesion = document.getElementById("cerrarsesion")
 const notas = document.getElementById("notas")
 
+Pantallaprincipal.addEventListener("click", () => {
+  window.location.href= "C:\Users/50088774/Desktop/proyecto-planify/Frontend/pantalla-principal/panatallaprincipal.html"
+});
 cerrarsesion.addEventListener("click", () => {
-  window.location.href ="C:\Users/50088774/Desktop/proyecto-planify/Frontend/crear cuenta/crear-cuenta.html"
+  window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/crear cuenta/crear-cuenta.html"
 });
 
 tareas.addEventListener("click", () => {
