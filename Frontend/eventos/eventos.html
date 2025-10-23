@@ -6,6 +6,34 @@
   <title>Document</title>
   <link rel="stylesheet" href="eventos.css">
 </head>
+
+<div class="menulateral">
+  <div class="menu-opciones">
+<div class="paginaprinci">
+  <h4 class="texto" id="paginaprincipal">Pagina Principal</h4>
+  <img src="Group-1.png" class="fotopagina">
+</div>
+<div class="notas-menu">
+  <h4 class="texto" id="notas">Notas</h4>
+  <img src="arcticons_standardnotes.png" class="fotonotas">
+</div>
+
+<div class="tareas">
+  <h4 class="texto" id="tareas">Tareas/Reuniones</h4>
+  <img src="Vector.png" class="fototareas">
+</div>
+
+<div class="gastos">
+<h4 class="texto" id="gastos">Gastos</h4>
+<img src="Group-1.png">
+</div>
+</div>
+<div class="cerrarse">
+<h4 class="texto" id="cerrarsesion">cerrar Sesion</h4>
+
+</div>
+</div>
+
 <body>
   <div class="header">
     <div class="menudesplegable">
@@ -47,9 +75,10 @@
   <input type="text" class="preguntas" id="mes" placeholder="en que mes">
 
   </div>
+  <div class="contenedorprincipal">
   <div class="todoresto">
   <div class="detalles">
-    <textarea id="texto" placeholder="detalles del evento"></textarea>
+    <textarea id="texto" class="texto2" placeholder="Detalles del evento"></textarea>
   </div>
   <div class="botones">
   <button class="boton" id="guardarBtn">Guardar Evento</button>
@@ -57,8 +86,12 @@
   <button class="boton" id="borrarUltimoBtn">Borrar  evento</button>
 </div>
 </div>
-<div id="listaEventos"></div>
-
+<div class="mitadderecha">
+<div class="listaEventos" id="listaEventos">
+  <h1 class="texto3">Eventos Guardados</h1>
+</div>
+</div>
+</div>
   <script src="eventos.js"></script>
 </body>
 </html>
