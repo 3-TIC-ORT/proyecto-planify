@@ -103,3 +103,5 @@ gastos.addEventListener("click", () => {
 notas.addEventListener("click", () => {
   window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/notas/notas.html"
 });
+
+
