@@ -155,9 +155,9 @@ body{
   width: 596px;
   height: 325px;
   box-shadow: 5px 5px 10px lightgray;
-  border: solid 1px #000000;
+  border: solid 1px #1BA5B0;
   outline: none ;
-  background-color: #F3F3F3;
+  background-color: #f4fafb;
   color: #717171 ;
   border-radius: 15px;
 
@@ -244,14 +244,19 @@ body{
   }
 
   .listaEventos{
-    height:400px;
-    width: 379px;
+    height:425px;
+    width: 403px;
     box-shadow: 5px 5px 10px lightgray;
-    border: solid 1px #000000;
+    border: solid 1px #1BA5B0;
     outline: none ;
-    background-color: #F3F3F3;
-    color: #717171 ;
+    background-color: #f4fafb;
+    
+    color: #000000 ;
+    font-weight: bold;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
 
   }
   .contenedorprincipal{
