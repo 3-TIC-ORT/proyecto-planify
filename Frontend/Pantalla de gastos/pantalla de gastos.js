@@ -52,6 +52,25 @@ fechas.push(fecha)
   let promedio = (ingreso - gasto);
   document.getElementById("promedio").textContent = "El balance es:" + promedio;
 
+  const contenedor = document.getElementById("contenedorDatos"); // div donde se agregan los cuadros
+
+  const cuadro = document.createElement("div");
+  cuadro.classList.add("cuadro-dato");
+
+  // Contenido del cuadro
+  cuadro.innerHTML = `
+    <p><strong>Fecha:</strong> ${fecha}</p>
+    <p><strong>Ingreso:</strong> $${ingreso}</p>
+    <p><strong>Gasto:</strong> $${gasto}</p>
+    <button class="btn-borrar">Borrar</button>
+  `;
+
+  // Botón borrar → elimina el cuadro
+  cuadro.querySelector(".btn-borrar").addEventListener("click", () => {
+    cuadro.remove();
+  });
+
+
 });
 
 document.getElementById("batGenerar").addEventListener ("click", () => { 
