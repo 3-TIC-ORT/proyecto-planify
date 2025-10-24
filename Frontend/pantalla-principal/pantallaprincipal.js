@@ -105,3 +105,16 @@ notas.addEventListener("click", () => {
 });
 
 
+
+contenedorDias.addEventListener("click", (e) => {
+  if (e.target.classList.contains("dia")) {
+    const diaSeleccionado = e.target.textContent.trim();
+    const mesSeleccionado = mes + 1; 
+    const añoSeleccionado = año;
+
+    window.location.href = "../Pájina de día específico/Codigo de día específico/Pájina de día específico.html";
+  }
+});
+
+
+
