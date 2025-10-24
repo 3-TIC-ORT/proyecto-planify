@@ -9,8 +9,51 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   let gasto = parseFloat(document.getElementById("Texto de gastos").value) || 0;
   let ingreso = parseFloat(document.getElementById("Texto de ingresos").value) || 0;
   let fecha = document.getElementById("fecha").value;
-  // Contexto del canvas
 
+  
+  
+  if (isNaN(ingreso) || isNaN(gasto || !fecha )) {
+    alert("Por favor, introduce valores numéricos válidos para ingresos, gastos y Fechas");
+    return;
+  }
+  let promedio = (ingreso - gasto);
+  document.getElementById("promedio").textContent = "El balance es:" + promedio;
+  
+  valoresG.push(gasto)
+  valoresI.push(ingreso)
+  fechas.push(fecha)
+  
+
+  const contenedor = document.getElementById("contenedorDatos");
+  const cuadro = document.createElement("div");
+  cuadro.classList.add("cuadro-dato");
+
+  cuadro.innerHTML = `
+    <p><strong>Fecha:</strong> ${fecha}</p>
+    <p><strong>Ingreso:</strong> $${ingreso}</p>
+    <p><strong>Gasto:</strong> $${gasto}</p>
+    <button class="btn-borrar">Borrar</button>
+  `;
+
+  // 🔴 BOTÓN BORRAR — elimina cuadro y también datos del gráfico
+  cuadro.querySelector(".btn-borrar").addEventListener("click", () => {
+    // Buscar índice de la fecha en el array
+    const index = fechas.indexOf(fecha);
+    if (index !== -1) {
+      fechas.splice(index, 1);
+      valoresI.splice(index, 1);
+      valoresG.splice(index, 1);
+    }
+
+    // Eliminar cuadro visual
+    cuadro.remove();
+  });
+
+  contenedor.appendChild(cuadro);
+  
+  
+  
+  
   let ctx = document.getElementById("miGrafico").getContext("2d");
 
   // Si ya hay un gráfico, lo destruyo antes de crear otro
@@ -40,37 +83,6 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
       }
     }
   });
-
-valoresG.push(gasto)
-valoresI.push(ingreso)
-fechas.push(fecha)
-
-  if (isNaN(ingreso) || isNaN(gasto)) {
-    alert("Por favor, introduce valores numéricos válidos para ingresos y gastos.");
-    return;
-  }
-  let promedio = (ingreso - gasto);
-  document.getElementById("promedio").textContent = "El balance es:" + promedio;
-
-  const contenedor = document.getElementById("contenedorDatos"); // div donde se agregan los cuadros
-
-  const cuadro = document.createElement("div");
-  cuadro.classList.add("cuadro-dato");
-
-  // Contenido del cuadro
-  cuadro.innerHTML = `
-    <p><strong>Fecha:</strong> ${fecha}</p>
-    <p><strong>Ingreso:</strong> $${ingreso}</p>
-    <p><strong>Gasto:</strong> $${gasto}</p>
-    <button class="btn-borrar">Borrar</button>
-  `;
-
-  // Botón borrar → elimina el cuadro
-  cuadro.querySelector(".btn-borrar").addEventListener("click", () => {
-    cuadro.remove();
-  });
-
-
 });
 
 document.getElementById("batGenerar").addEventListener ("click", () => { 
