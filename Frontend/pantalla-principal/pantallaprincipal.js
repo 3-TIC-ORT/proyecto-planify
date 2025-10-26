@@ -112,7 +112,7 @@ contenedorDias.addEventListener("click", (e) => {
     const mesSeleccionado = mes + 1; 
     const añoSeleccionado = año;
 
-    window.location.href = "../Pájina de día específico/Codigo de día específico/Pájina de día específico.html";
+   window.location.href = `../Pájina de día específico/Codigo de día específico/Pájina de día específico.html?dia=${diaSeleccionado}&mes=${mesSeleccionado}&año=${añoSeleccionado}`;
   }
 });
 

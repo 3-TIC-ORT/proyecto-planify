@@ -1,26 +1,31 @@
-const url = new URLSearchParams(window.location.search);
-const fecha = url.get("fecha");
-const numero = url.get("numero");
 
- let tareas =  {
-    examen : "tarea de Hardwar" ,
-    pueba: "tarea de mate"
-  }
-const contenedor = document.getElementById("contenido");
 const cuadradoTareas = document.getElementById("cuadrado-tareas");
 
-if (fecha && numero) {
-  contenedor.textContent = `Día: ${fecha}  Número: ${numero}`
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const url = new URLSearchParams(window.location.search);
+  const dia = url.get("dia");
+  const mes = url.get("mes");
+  const año = url.get("año");
 
+  const contenedor = document.getElementById("contenido");
 
-  tareas.forEach( tarea => {
-    let tarjeta = document.createElement("div");
-    tarjeta.classList.add("tarjeta");
+  if (dia && mes && año && contenedor) {
+    contenedor.textContent = `${dia} / ${mes} / ${año}`;
+  }
+});
 
-    const titulo = document.createElement("h2")
-    titulo.textContent = tarea.examen
-    
-    tarjeta.appendChild(titulo)
-    cuadradoTareas.appendChild(tarjeta)
-    });
+let tareas = [
+  { titulo: "examen", descripcion: "tarea de Hardwar" },
+  { titulo: "pueba", descripcion: "tarea de mate" }
+];
+
+tareas.forEach(tarea => {
+  let tarjeta = document.createElement("div");
+  tarjeta.classList.add("tarjeta");
+
+  const titulo = document.createElement("h2");
+  titulo.textContent = `${tarea.titulo}: ${tarea.descripcion}`;
+
+  tarjeta.appendChild(titulo);
+  cuadradoTareas.appendChild(tarjeta);
+});

@@ -17,7 +17,7 @@ form.addEventListener('submit', function(Preventivo) {
   else if (Text === "papastriglio" && password === "123456") {
    
     setTimeout(() => {
-      window.location.href = "C:/Users/49980496/Downloads/proyecto-planify/Frontend/pantalla-principal/panatallaprincipal.html";
+      window.location.href = "../pantalla-principal/panatallaprincipal.html";
     }, 1000);
   } 
 

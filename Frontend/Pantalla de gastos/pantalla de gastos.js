@@ -34,18 +34,13 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
     <p><strong>Gasto:</strong> $${gasto}</p>
     <button class="btn-borrar">Borrar</button>
   `;
-
-  // 🔴 BOTÓN BORRAR — elimina cuadro y también datos del gráfico
   cuadro.querySelector(".btn-borrar").addEventListener("click", () => {
-    // Buscar índice de la fecha en el array
     const index = fechas.indexOf(fecha);
     if (index !== -1) {
       fechas.splice(index, 1);
       valoresI.splice(index, 1);
       valoresG.splice(index, 1);
     }
-
-    // Eliminar cuadro visual
     cuadro.remove();
   });
 
@@ -56,12 +51,11 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   
   let ctx = document.getElementById("miGrafico").getContext("2d");
 
-  // Si ya hay un gráfico, lo destruyo antes de crear otro
+
   if (chart) {
     chart.destroy();
   }
 
-  // Crear gráfico nuevo
   chart = new Chart(ctx, {
     type: "bar", // podés cambiar a "line", "pie", etc.
     data: {
