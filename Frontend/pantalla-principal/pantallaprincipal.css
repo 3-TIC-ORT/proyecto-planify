@@ -61,6 +61,7 @@ html, body {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  z-index: 3;
 }
 
 .barra {
@@ -138,7 +139,7 @@ font-size: 40px;
   background: #11555A; /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
-
+  z-index: 2;
 
   flex-direction: column;
   justify-content: space-between;
@@ -215,4 +216,29 @@ cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 10px
+}
+
+.categorias{
+  position: absolute;
+  top: 0;
+  left: 10rem;
+  z-index: 1;
+}
+
+.contenedorrojo{
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF6262;
+  font-weight: normal;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+
+}
+
+
+.categoria{
+ font-size: 32px;
+ font-weight: bold;
 }
