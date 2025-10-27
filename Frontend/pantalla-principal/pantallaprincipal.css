@@ -222,7 +222,7 @@ cursor: pointer;
   top: 0;
   left: 10rem;
   z-index: 1;
-}
+} 
 
 .contenedorrojo{
   border-radius: 5px;
@@ -242,6 +242,6 @@ cursor: pointer;
  font-weight: bold;
 }
 
-dia.feriado{
+.dia.feriado{
   color : #FF6262
 }

@@ -49,10 +49,10 @@
   </div>
   <div class="opciones">
 
-  <input type="text" id="nombre"  class="nombre"    placeholder="Nombre Del Evento" >
+  <input type="text" id="nombre"  class="nombre" required    placeholder="Nombre Del Evento" >
 
     <label for="importancia" >Elije la importancia</label>
-    <select name="elejir importancia" class="importancia" id="importancia">
+    <select name="elejir importancia" class="importancia" id="importancia" required>
       <option value=""></option>
       <option value="no importante">No importante</option>
       <option value="poco importante">Poco importante</option>
@@ -60,19 +60,19 @@
     </select>
   
     <label for="evento" >Qué tipo de evento es</label>
-    <select name="tipodeevento"  class="evento" id="evento">
+    <select name="tipodeevento"  class="evento" id="evento" required>
       <option value=""></option>
       <option value="examen">Examen</option>
       <option value="reunion">Reunión</option>
       <option value="entrega">Entrega</option>
     </select>
 
-  <input type="text" id="direcion" placeholder="Ingresa la dirección">
+  <input type="text" class="preguntas" id="direcion" placeholder="Ingresa la dirección" required>
 
-  <input type="number" class="preguntas" id="quedia" placeholder="que dia se rinde">
-  <input type="number" class="preguntas" id="diaentrega" placeholder="que dia se entrega">
-  <input type="number" class="preguntas" id="diareunion" placeholder="que dia es la reunion">
-  <input type="text" class="preguntas" id="mes" placeholder="en que mes">
+  <input type="number" class="preguntas" id="quedia" placeholder="que dia se rinde" required>
+  <input type="number" class="preguntas" id="diaentrega" placeholder="que dia se entrega" required>
+  <input type="number" class="preguntas" id="diareunion" placeholder="que dia es la reunion" required>
+  <input type="text" class="preguntas" id="mes" placeholder="en que mes" required>
 
   </div>
   <div class="contenedorprincipal">
@@ -87,8 +87,10 @@
 </div>
 </div>
 <div class="mitadderecha">
+  
 <div class="listaEventos" id="listaEventos">
   <h1 class="texto3">Eventos Guardados</h1>
+  <div class="contenedoreventos"></div>
 </div>
 </div>
 </div>

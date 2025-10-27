@@ -53,7 +53,6 @@ select.addEventListener("change", function() {
   }
 });
 
-// Validar día al escribir
 dia.addEventListener("input", () => {
   let mes = mesInput.value.trim().toLowerCase();
   if (!validarDia(dia, mes)) dia.value = "";
@@ -67,7 +66,6 @@ reunion2.addEventListener("input", () => {
   if (!validarDia(reunion2, mes)) reunion2.value = "";
 });
 
-// Función para guardar evento
 function guardarEvento() {
   const nombre = nombreInput.value.trim();
   const categoria = select.value;

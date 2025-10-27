@@ -83,6 +83,12 @@ body{
 
   .preguntas{
   display: flex;
+  height: 21px;
+  width: auto;
+  color: #717171;
+  background-color: #F3F3F3;
+  border: solid 1px black;
+  border-radius: 5px;
   }
 
   .paula{
@@ -256,7 +262,8 @@ body{
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items: top;
+    align-items: center;
+    flex-direction: column;
 
   }
   .contenedorprincipal{
@@ -267,4 +274,11 @@ body{
     gap: 3rem;               
     margin-top: 2rem;
     width: 100%;
+  }
+
+  .contenedoreventos{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
