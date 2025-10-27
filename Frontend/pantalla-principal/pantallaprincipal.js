@@ -117,4 +117,34 @@ contenedorDias.addEventListener("click", (e) => {
 });
 
 
+let feriados = [
+  "01-01", 
+  "03-03", 
+  "04-03", 
+  "24-03", 
+  "02-04",
+  "17-04", 
+  "18-04", 
+  "01-05", 
+  "02-05", 
+  "25-05", 
+  "16-06", 
+  "20-06", 
+  "09-07", 
+  "15-08", 
+  "17-08", 
+  "12-10",
+  "20-11", 
+  "08-12",
+  "25-12"  
+]
+
+document.querySelector(".dias").forEach(element => {
+  let dia = dia.dataset.fecha
+  let diames = fecha.slice(0,5);
+
+  if (feriados.includes(diames))
+    dia.classList.add("feriado")
+});
+
 
