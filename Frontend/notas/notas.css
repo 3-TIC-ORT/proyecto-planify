@@ -215,3 +215,17 @@
   transition: tranform 0,5 ease;
 
   }
+
+
+  .boton3{
+    background-color: white;
+    height: 45px;
+    width: 127px;
+    color: #1BA5B0;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    border-radius: 5px;
+    border: solid 1px #1BA5B0;
+    font-size: 16px ;
+    transition: tranform 0,5 ease;
+    }

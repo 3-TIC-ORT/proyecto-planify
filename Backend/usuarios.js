@@ -1,53 +1,41 @@
 import fs from "fs";
 
-// --- Función para registrar usuario ---
-function signup(nombre, mail, contra) {
-  // Lee el JSON de usuarios (si no existe, crea uno vacío)
-  let json = [];
-  if (fs.existsSync("usuarios.json")) {
-    let usuarios = fs.readFileSync("usuarios.json", "UTF-8");
-    json = JSON.parse(usuarios);
+let usuarioActivo = null; // guarda el usuario que inició sesión
+
+function cargarUsuarios() {
+  if (!fs.existsSync("backend/usuarios.json")) {
+    fs.writeFileSync("backend/usuarios.json", "[]");
   }
-
-  // Verifica si el nombre de usuario ya existe
-  let usuarioExistente = json.find(u => u.nombre === nombre);
-
-  if (usuarioExistente) {
-    console.log("❌ Error: ese nombre de usuario ya existe. Elija otro.");
-    return; // Sale de la función
-  }
-
-  // Crea el nuevo usuario
-  let usuarionuevo = { nombre, mail, password: contra };
-
-  // Agrega y guarda
-  json.push(usuarionuevo);
-  let nuevoJson = JSON.stringify(json, null, 2);
-  fs.writeFileSync("usuarios.json", nuevoJson);
-
-  console.log("✅ Usuario registrado con éxito:", nombre);
+  return JSON.parse(fs.readFileSync("backend/usuarios.json", "UTF-8"));
 }
 
+function guardarUsuarios(usuarios) {
+  fs.writeFileSync("backend/usuarios.json", JSON.stringify(usuarios, null, 2));
+}
 
-// --- Función para iniciar sesión ---
-function login(nombre, mail, contra) {
-  // Lee el JSON
-  if (!fs.existsSync("usuarios.json")) {
-    console.log("No hay usuarios registrados.");
-    return;
-  }
+export function signup(nombre, contra) {
+  const usuarios = cargarUsuarios();
+  const existe = usuarios.find(u => u.nombre === nombre);
+  if (existe) return { exito: false, mensaje: "El nombre de usuario ya existe" };
 
-  let usuarios_login = fs.readFileSync("usuarios.json", "UTF-8");
-  let json_login = JSON.parse(usuarios_login);
+  usuarios.push({ nombre, password: contra });
+  guardarUsuarios(usuarios);
+  return { exito: true, mensaje: "Usuario registrado con éxito" };
+}
 
-  // Busca coincidencia
-  let usuarioEncontrado = json_login.find(
-    u => u.nombre === nombre && u.mail === mail && u.password === contra
-  );
+export function login(nombre, contra) {
+  const usuarios = cargarUsuarios();
+  const usuario = usuarios.find(u => u.nombre === nombre && u.password === contra);
+  if (!usuario) return { exito: false, mensaje: "Usuario o contraseña incorrectos" };
 
-  if (usuarioEncontrado) {
-    console.log("Bienvenido,", usuarioEncontrado.nombre);
-  } else {
-    console.log("Usuario o contraseña incorrectos.");
-  }
+  usuarioActivo = nombre; // guarda el usuario actual
+  return { exito: true, mensaje: "Inicio de sesión exitoso", usuario: nombre };
+}
+
+export function obtenerUsuarioActivo() {
+  return usuarioActivo;
+}
+
+export function logout() {
+  usuarioActivo = null;
 }

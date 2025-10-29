@@ -1,8 +1,11 @@
+
+
 body{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: white;
+  overflow: hidden;
   }
 
 
@@ -144,17 +147,7 @@ body{
   margin-top: 1rem;
   }
 
-  .boton{
-  background-color: #1BA5B0;
-  color: white;
-  width: 137px;
-  height: 40px;
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 10px;
-  border: solid 2px #1BA5B0;
-  }
+
 
   .texto2{
   margin-top: 1rem;
@@ -282,3 +275,36 @@ body{
     display: flex;
     flex-direction: column;
   }
+
+  .boton2{
+    background-color: white;
+    color: #1BA5B0;
+    width: 137px;
+    height: 40px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    border: solid 2px #1BA5B0;
+    }
+
+    .boton{
+      background-color: #1BA5B0;
+    height: 40px;
+    width: 137px;
+    color: white;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    border-radius: 10px;
+    border: solid 1px #1BA5B0;
+    font-size: 16px;
+  
+    }
+  
+.persona{
+    position: absolute;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    right: 3rem;
+    top: 1vh;
+}
