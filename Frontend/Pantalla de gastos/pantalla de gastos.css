@@ -8,7 +8,7 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background: white;
+    background-color: white;
 }
 
 canvas {
@@ -78,7 +78,7 @@ span{
 }
 
 .flatpickr-day {
-  border: 1px solid black; /* separadores entre días */
+  border: 5px solid black; /* separadores entre días */
   margin: 1px;
   border-radius: 4px;
 }
@@ -98,4 +98,19 @@ span{
 
 .flatpickr-day.today {
   border: 2px solid #007bff;
+}
+.botones{
+    width: 60%;
+    height: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.rastrillo{
+    background-color: #1BA5B0;
+    font-size: large;
+    color: white;
+    border: none;
+    height:5vh;
+    padding:  0 0 0;
 }
