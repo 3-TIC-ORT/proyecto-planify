@@ -55,3 +55,47 @@ span{
 .carla{
     margin-top: 0;
 }
+.datos{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.parilla{
+    min-width: 20rem;
+    max-width: 40rem;
+    font-size: large;
+}
+.date{
+    width: 10vw;
+    font-size: medium;
+}
+.flatpickr-calendar {
+  border: 2px solid black;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.flatpickr-day {
+  border: 1px solid black; /* separadores entre días */
+  margin: 1px;
+  border-radius: 4px;
+}
+
+.flatpickr-day:hover {
+  background: #e0f0ff;
+  color: black;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: #007bff !important; /* azul seleccionado */
+  color: white !important;
+  border-color: #0056b3 !important;
+}
+
+.flatpickr-day.today {
+  border: 2px solid #007bff;
+}

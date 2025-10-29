@@ -84,6 +84,7 @@ font-size: normal;
   font-size: larger;
   border: none;
  border-radius: 0.5rem;
+ cursor: pointer;
 justify-content: center;
 
 }

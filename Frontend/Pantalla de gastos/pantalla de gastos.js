@@ -1,3 +1,8 @@
+   flatpickr("#fecha", {
+      dateFormat: "Y-m-d", // formato de fecha
+      defaultDate: "today", // comienza en hoy
+      locale: "es", // idioma español
+    });
 
 let valoresG=[]
 let valoresI=[]
