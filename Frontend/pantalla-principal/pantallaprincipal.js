@@ -35,7 +35,6 @@ let feriados = [
   "25-12"  
 ]
 
-// 🔹 Marca los feriados en el calendario
 function marcarFeriados() {
   document.querySelectorAll(".dia").forEach(dia => {
     if (!dia.classList.contains("anterior-mes") && !dia.classList.contains("siguiente-mes")) {
@@ -123,22 +122,22 @@ const cerrarsesion = document.getElementById("cerrarsesion")
 const notas = document.getElementById("notas")
 
 Pantallaprincipal.addEventListener("click", () => {
-  window.location.href= "C:\Users/50088774/Desktop/proyecto-planify/Frontend/pantalla-principal/panatallaprincipal.html"
+  window.location.href= "../pantalla-principal/panatallaprincipal.html"
 })
 cerrarsesion.addEventListener("click", () => {
-  window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/crear cuenta/crear-cuenta.html"
+  window.location.href ="../crear cuenta/crear-cuenta.html"
 })
 
 tareas.addEventListener("click", () => {
-  window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/eventos/eventos.html"
+  window.location.href ="../eventos/eventos.html"
 })
 
 gastos.addEventListener("click", () => {
-  window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/Pantalla de gastos/Pantalla de gastos.html"
+  window.location.href = "../Pantalla de gastos/Pantalla de gastos.html"
 })
 
 notas.addEventListener("click", () => {
-  window.location.href ="C:/Users/50088774/Desktop/proyecto-planify/Frontend/notas/notas.html"
+  window.location.href ="../notas/notas.html"
 })
 
 
