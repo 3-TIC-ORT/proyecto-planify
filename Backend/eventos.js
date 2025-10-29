@@ -1,31 +1,40 @@
 import fs from "fs";
+import { obtenerUsuarioActivo } from "./usuarios.js";
 
-const RUTA_EVENTOS = "backend/eventos.json";
-
-// Crea el archivo si no existe
-if (!fs.existsSync(RUTA_EVENTOS)) {
-  fs.writeFileSync(RUTA_EVENTOS, "[]");
+function cargarEventos() {
+  if (!fs.existsSync("backend/eventos.json")) fs.writeFileSync("backend/eventos.json", "[]");
+  return JSON.parse(fs.readFileSync("backend/eventos.json", "UTF-8"));
 }
 
-// --- GUARDAR EVENTO ---
-export function guardarEvento(nombreUsuario, nombreTarea, importancia, descripcion) {
-  const eventos = JSON.parse(fs.readFileSync(RUTA_EVENTOS, "utf-8"));
+function guardarEventos(eventos) {
+  fs.writeFileSync("backend/eventos.json", JSON.stringify(eventos, null, 2));
+}
 
-  let usuarioEventos = eventos.find(e => e.nombre === nombreUsuario);
+export function guardarEvento(tipo, nombre, importancia, datos) {
+  const usuario = obtenerUsuarioActivo();
+  if (!usuario) return { exito: false, mensaje: "No hay usuario activo" };
 
-  if (!usuarioEventos) {
-    usuarioEventos = { nombre: nombreUsuario, eventos: [] };
-    eventos.push(usuarioEventos);
+  const eventos = cargarEventos();
+  const nuevoEvento = { usuario, tipo, nombre, importancia, fechaCreacion: new Date().toISOString() };
+
+  if (tipo === "reunion") {
+    nuevoEvento.direccion = datos.direccion;
+    nuevoEvento.dia = datos.dia;
+    nuevoEvento.mes = datos.mes;
+  } else if (tipo === "examen" || tipo === "entrega") {
+    nuevoEvento.dia = datos.dia;
+    nuevoEvento.mes = datos.mes;
   }
 
-  usuarioEventos.eventos.push({ nombreTarea, importancia, descripcion });
+  eventos.push(nuevoEvento);
+  guardarEventos(eventos);
 
-  fs.writeFileSync(RUTA_EVENTOS, JSON.stringify(eventos, null, 2));
+  return { exito: true, mensaje: "Evento guardado" };
 }
 
-// --- OBTENER EVENTOS ---
-export function obtenerEventos(nombreUsuario) {
-  const eventos = JSON.parse(fs.readFileSync(RUTA_EVENTOS, "utf-8"));
-  const usuarioEventos = eventos.find(e => e.nombre === nombreUsuario);
-  return usuarioEventos ? usuarioEventos.eventos : [];
+export function obtenerEventos() {
+  const usuario = obtenerUsuarioActivo();
+  if (!usuario) return [];
+  const eventos = cargarEventos();
+  return eventos.filter(e => e.usuario === usuario);
 }
