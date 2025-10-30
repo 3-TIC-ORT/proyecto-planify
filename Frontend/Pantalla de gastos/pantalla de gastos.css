@@ -18,10 +18,7 @@ canvas {
     padding: 10px;
 }
 .textocuadrado{
-    width: 20%;
     height: auto;
-    
-    background-color: peru;
 }
 header{
     width: 100%;
@@ -73,35 +70,7 @@ span{
     font-size: medium;
 }
 /*papa*/
-.flatpickr-calendar {
-  border: 2px solid black;
-  border-radius: 10px;
-  font-family: Arial, sans-serif;
-}
 
-.flatpickr-day {
-  border: 5px solid black; /* separadores entre días */
-  margin: 1px;
-  border-radius: 4px;
-}
-
-.flatpickr-day:hover {
-  background: #e0f0ff;
-  color: black;
-}
-
-.flatpickr-day.selected,
-.flatpickr-day.startRange,
-.flatpickr-day.endRange {
-  background: #007bff !important; /* azul seleccionado */
-  color: white !important;
-  border-color: #0056b3 !important;
-}
-
-.flatpickr-day.today {
-  border: 2px solid #007bff;
-}
-/*papa*/
 .botones{
     width: 60%;
     height: 3rem;
@@ -124,8 +93,11 @@ span{
 }
 .graficos{
  width: 50%;
-    height: 80%;
-    margin-left: 5%;
+ height: 90%;
+ border-radius: 10px;
+ background-color: whitesmoke;
+ border: 2px solid#6d6d6d91;
+ box-shadow: 5px 5px 10px gray;
 }
 #miGrafico,
 #meGrafico {
@@ -144,4 +116,32 @@ main{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+.cuadradoescroleable{
+    width: 25%;
+    height: 100%;
+    overflow-y: auto;
+    margin-top: 2rem;
+    border-radius: 20px;
+    padding-top: 0.7rem;
+    scroll-behavior: smooth;
+    border: 2px solid #6d6d6d91;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 10px gray;
+}
+.resul{
+    font-size: medium;
+    font-weight: bold;
+}
+.cuadro-dato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-borrar{
+    background-color: #1BA5B0;
+    border-radius: 10px;
+    border: none;
+    padding: .4rem;
+    color: white;
 }

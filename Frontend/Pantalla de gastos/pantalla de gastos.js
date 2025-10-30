@@ -2,6 +2,7 @@ flatpickr("#fecha", {
   dateFormat: "Y-m-d", // formato de fecha
   defaultDate: "today", // comienza en hoy
   locale: "es", // idioma español
+
 });
 
 let valoresG=[]
@@ -34,13 +35,13 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
 
 
   cuadro.innerHTML = `
+    <p class="resul">Resultado:<p>
     <p><strong>Fecha:</strong> ${fecha}</p>
     <p><strong>Ingreso:</strong> $${ingreso}</p>
-    <p><strong>Gasto:</strong> $${gasto}</p>
-    <button class="btn-borrar">Borrar</button>
+    <p><strong>Gasto:</strong> $${gasto}</p>    <button class="btn-borrar">Borrar</button>
   `;
   cuadro.querySelector(".btn-borrar").addEventListener("click", () => {
-    const index = fechas.indexOf(fecha);
+    let index = fechas.indexOf(fecha);
     if (index !== -1) {
       fechas.splice(index, 1);
       valoresI.splice(index, 1);
