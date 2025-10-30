@@ -28,3 +28,23 @@ export function obtenerNotas() {
   const notas = cargarNotas();
   return notas.filter(n => n.usuario === usuario);
 }
+
+export function borrarNota(indice) {
+  const usuario = obtenerUsuarioActivo();
+  if (!usuario) return { exito: false, mensaje: "No hay usuario activo" };
+
+  const notas = cargarNotas();
+  const notasUsuario = notas.filter(n => n.usuario === usuario);
+
+  if (indice < 0 || indice >= notasUsuario.length) {
+    return { exito: false, mensaje: "Índice inválido" };
+  }
+
+  // esto hace que se elimine la nota del usuario activo
+  const notaAEliminar = notasUsuario[indice];
+  const nuevasNotas = notas.filter(n => n !== notaAEliminar);
+
+  guardarNotas(nuevasNotas);
+  return { exito: true, mensaje: "Nota eliminada con éxito" };
+}
+
