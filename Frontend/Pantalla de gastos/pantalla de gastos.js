@@ -10,7 +10,6 @@ let fechas =[]
 let chart; // variable global para guardar el gráfico
 
 document.getElementById("btnGenerar").addEventListener("click", () => {
-  // Obtener valores ingresados
   let gasto = parseFloat(document.getElementById("Texto de gastos").value) || 0;
   let ingreso = parseFloat(document.getElementById("Texto de ingresos").value) || 0;
   let fecha = document.getElementById("fecha").value;
@@ -32,6 +31,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   const contenedor = document.getElementById("contenedorDatos");
   const cuadro = document.createElement("div");
   cuadro.classList.add("cuadro-dato");
+
 
   cuadro.innerHTML = `
     <p><strong>Fecha:</strong> ${fecha}</p>
@@ -60,18 +60,26 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   if (chart) {
     chart.destroy();
   }
-
   chart = new Chart(ctx, {
-    type: "bar", // podés cambiar a "line", "pie", etc.
+    type: "bar",
     data: {
-      labels: ["Ingresos", "Gastos"],
-      datasets: [{
-        label: "Valores ingresados",
-        data: [ingreso, gasto],
-        backgroundColor: ["#36A2EB", "#FF6384"], // colores
-        borderColor: ["#1E88E5", "#E53935"],
-        borderWidth: 2
-      }]
+      labels: ["Valores"], 
+      datasets: [
+        {
+          label: "Ingresos",
+          data: [ingreso],
+          backgroundColor: "#36A2EB", 
+          borderColor: "#1E88E5",
+          borderWidth: 2
+        },
+        {
+          label: "Gastos",
+          data: [gasto],
+          backgroundColor: "#FF6384",
+          borderColor: "#E53935",
+          borderWidth: 2
+        }
+      ]
     },
     options: {
       responsive: true,
@@ -82,10 +90,9 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
       }
     }
   });
-});
+})
 
 document.getElementById("batGenerar").addEventListener ("click", () => { 
-
   let ese = document.getElementById("meGrafico").getContext("2d");
 
   // Si ya hay un gráfico, lo destruyo antes de crear otro
