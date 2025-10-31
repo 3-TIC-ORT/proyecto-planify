@@ -22,7 +22,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
     return;
   }
   let promedio = (ingreso - gasto);
-  document.getElementById("promedio").textContent = "El balance es:" + promedio;
+  document.getElementById("promedio").textContent = promedio+"$";
   
   valoresG.push(gasto)
   valoresI.push(ingreso)
@@ -64,7 +64,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   chart = new Chart(ctx, {
     type: "bar",
     data: {
-      labels: ["Valores"], 
+      labels: [""], 
       datasets: [
         {
           label: "Ingresos",
@@ -96,7 +96,6 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
 document.getElementById("batGenerar").addEventListener ("click", () => { 
   let ese = document.getElementById("meGrafico").getContext("2d");
 
-  // Si ya hay un gráfico, lo destruyo antes de crear otro
   if (chart) {
     chart.destroy();
   }
@@ -133,7 +132,7 @@ document.getElementById("batGenerar").addEventListener ("click", () => {
         },
         y: { 
           beginAtZero: true,
-          title: { display: true, text: "Valores" }
+          title: { display: true}
         }
       }
     }

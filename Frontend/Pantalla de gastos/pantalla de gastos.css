@@ -15,10 +15,12 @@ canvas {
     background: white;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 .textocuadrado{
     height: auto;
+    padding-inline-start: 3vw;
+    padding-inline-end: 3vw;
 }
 header{
     width: 100%;
@@ -92,7 +94,7 @@ span{
     max-height:100%;
 }
 .graficos{
- width: 50%;
+ width: 60%;
  height: 90%;
  border-radius: 10px;
  background-color: whitesmoke;
@@ -118,8 +120,9 @@ main{
     align-items: center;
 }
 .cuadradoescroleable{
-    width: 25%;
+    width: auto;
     height: 100%;
+    min-width: 15vw;
     overflow-y: auto;
     margin-top: 2rem;
     border-radius: 20px;
@@ -144,4 +147,15 @@ main{
     border: none;
     padding: .4rem;
     color: white;
+}
+.resultado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -32%;
+}
+.promedio{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
 }
