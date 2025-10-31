@@ -1,12 +1,13 @@
 import fs from "fs";
 import { obtenerUsuarioActivo } from "./usuarios.js";
 
-function cargarDatos() {
+
+export function cargarDatos() {
   if (!fs.existsSync("backend/gastos.json")) fs.writeFileSync("backend/gastoss.json", "[]");
   return JSON.parse(fs.readFileSync("backend/gastos.json", "UTF-8"));
 }
 
-function guardarDatos(datos) {
+export function guardarDatos(datos) {
   fs.writeFileSync("backend/gastos.json", JSON.stringify(datos, null, 2));
 }
 

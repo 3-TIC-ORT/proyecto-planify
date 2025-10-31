@@ -1,3 +1,5 @@
+startServer()
+
 let form = document.getElementById('loginForm');
 let message = document.getElementById('message');
 let button = document.getElementById("Registrarme")

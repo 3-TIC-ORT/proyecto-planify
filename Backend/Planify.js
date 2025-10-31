@@ -2,7 +2,7 @@ import { subscribeGETEvent, subscribePOSTEvent, startServer } from "soquetic";
 import { signup, login, logout, obtenerUsuarioActivo } from "./usuarios.js";
 import { guardarNota, obtenerNotas, borrarNota} from "./notas.js";
 import { guardarEvento, obtenerEventos } from "./eventos.js";
-import { guardarGasto, obtenerGastos } from "./gastos.js";
+import { guardarDatos, cargarDatos } from "./gastos.js";
 
 // -------------------- GET Events --------------------
 subscribeGETEvent("obtenerNotas", () => obtenerNotas());
