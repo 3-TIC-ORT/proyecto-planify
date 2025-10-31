@@ -1,8 +1,8 @@
-startServer()
+connect2Server(3000)
 
 let form = document.getElementById('loginForm');
 let message = document.getElementById('message');
-let button = document.getElementById("Registrarme")
+let button = document.getElementById("Registrarme");
 
 form.addEventListener('submit', function(Preventivo) {
   Preventivo.preventDefault(); 
@@ -16,19 +16,31 @@ form.addEventListener('submit', function(Preventivo) {
   }
 
 
-  else if (Text === "papastriglio" && password === "123456") {
+  else if (Text === nombre && password === contra) {
    
     setTimeout(() => {
       window.location.href = "../pantalla-principal/panatallaprincipal.html";
     }, 1000);
   } 
 
+  else if (Text !== "" && password !== ""){
+postEvent("login", {nombre: Text, contra: password});
 
-  
-  else{
-    message.innerHTML = "<p class='error'>Usuario y/o contraseña incorrectos</p>";
-  }
+  } 
 });
+
+ import function login (params){
+
+  if (exito === true ){
+     window.location.href = "../pantalla-principal/panatallaprincipal.html"
+  }
+  else if (exito === false){
+  message.innerHTML ="<p class='error'> Contraseña y/o Usuario Incorrectos.</p>";
+  }
+}
+
 button.addEventListener("click", () => {
   window.location.href = "../crear cuenta/crear-cuenta.html";
 });
+
+

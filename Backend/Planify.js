@@ -12,7 +12,11 @@ subscribeGETEvent("usuarioActivo", () => obtenerUsuarioActivo());
 
 // -------------------- POST Events --------------------
 subscribePOSTEvent("signup", (data) => signup(data.nombre, data.contra));
-subscribePOSTEvent("login", (data) => login(data.nombre, data.contra));
+
+subscribePOSTEvent("login", (data) => {;
+    console.log(`El nombre es ${data.nombre}`)
+    console.log(`La contraseña es ${data.contra}`)
+});
 subscribePOSTEvent("logout", () => logout());
 subscribePOSTEvent("guardarNota", (data) => guardarNota(data.contenido));
 subscribePOSTEvent("guardarEvento", (data) => guardarEvento(data.nombre, data.tipo, data.importancia, data.extra));

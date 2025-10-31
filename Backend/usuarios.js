@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { read, readFileSync } from "fs";
 
 let usuarioActivo = null; // guarda el usuario que inició sesión
 
@@ -30,6 +30,7 @@ export function login(nombre, contra) {
 
   usuarioActivo = nombre; // guarda el usuario actual
   return { exito: true, mensaje: "Inicio de sesión exitoso", usuario: nombre };
+  
 }
 
 export function obtenerUsuarioActivo() {
@@ -39,3 +40,5 @@ export function obtenerUsuarioActivo() {
 export function logout() {
   usuarioActivo = null;
 }
+
+readFileSync("usuarios.json", "utf-8")
