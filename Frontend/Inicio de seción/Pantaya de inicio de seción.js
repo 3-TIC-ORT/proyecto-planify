@@ -6,7 +6,7 @@ let button = document.getElementById("Registrarme");
 
 form.addEventListener('submit', function(Preventivo) {
   Preventivo.preventDefault(); 
-  
+
  const nombre = document.getElementById('text').value;
   const password = document.getElementById('password').value;
 
@@ -14,7 +14,7 @@ form.addEventListener('submit', function(Preventivo) {
     message.innerHTML = "<p class='error'>Por favor completa todos los campos.</p>";
     return;
   }
-
+  
   // Enviamos los datos al backend
   postEvent("login", { nombre: nombre, contra: password }, (resultado) => {
     if (resultado.exito === true) {
