@@ -6,8 +6,19 @@ import { guardarDatos, cargarDatos } from "./gastos.js";
 
 // -------------------- GET Events --------------------
 subscribeGETEvent("obtenerNotas", () => obtenerNotas());
+const usuario = obtenerUsuarioActivo();
+const data = JSON.parse(fs.readFileSync("Backend/notas.js" ,"utf-8"));
+return data.filter(nota => nota.usuario === usuario)
+
 subscribeGETEvent("obtenerEventos", () => obtenerEventos());
+const usuario = obtenerUsuarioActivo();
+const data = JSON.parse(fs.readFileSync("Backend/eventos.js" ,"utf-8"));
+return data.filter(evento => evento.usuario === usuario)
+
 subscribeGETEvent("obtenerGastos", () => obtenerGastos());
+const usuario = obtenerUsuarioActivo();
+const data = JSON.parse(fs.readFileSync("Backend/gastos.js" ,"utf-8"));
+return data.filter(gasto => gasto.usuario === usuario)
 subscribeGETEvent("usuarioActivo", () => obtenerUsuarioActivo());
 
 // -------------------- POST Events --------------------
