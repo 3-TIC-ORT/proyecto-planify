@@ -13,6 +13,8 @@
   <form id="registroForm">
     <div class="contenedor">
       
+
+
       <div class="mitadizquierda">
         <img src="image 17.jpg">
         <div class="overlay">
@@ -22,13 +24,23 @@
       </div>
 
       <div class="mitadderecha">
-        <input type="text" id="usuario" class="usuario" placeholder="Escriba aquí" required>
-        <input type="password" id="password" class="Contraseña" required placeholder="Escriba aquí">
-        <input type="password" id="confirmar" class="contraseña2" placeholder="Escriba aquí" required>
+        <div class="header">
+          <h1 class="logo">PLAN<span class="color">IF</span>Y</h1>  
+          <h3 class="subtitulo">Crea tu cuenta</h3>
+        </div>
+        <div class="imputs">
+        <h2 class="texto">Usuario:</h2>
+        <input type="text" id="usuario" class="contraseña" placeholder="Escriba aquí" required>
+        <h2 class="texto">Contraseña:</h2>
+        <input type="password" id="password" class="contraseña" required placeholder="Escriba aquí">
+        <h2 class="texto">Contraseña:</h2>
+        <input type="password" id="confirmar" class="contraseña" placeholder="Escriba aquí" required>
+        <div class="boton1">
         <button type="submit" class="registrarse">Registrar</button>
+      </div>
         <p id="mensaje"></p>
       </div>
-
+    </div>
     </div>
   </form>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>

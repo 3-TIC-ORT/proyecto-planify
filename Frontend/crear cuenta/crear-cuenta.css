@@ -1,8 +1,10 @@
 body {
     margin: 0;
-    display: flex; 
+    padding: 0;
+    box-sizing: border-box;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
   }
   
   .mitadizquierda {
@@ -20,10 +22,9 @@ body {
   .mitadderecha {
     width: 48vw;
     height: 100vh;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 
@@ -60,3 +61,64 @@ body {
     text-align: center;
     color: white;
   }
+
+  .texto{
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .imputs{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    position: absolute;
+    margin-top: 90px;
+  }
+
+  .contraseña{
+    border: black 1px solid;
+    background-color: #F3F3F3;
+    color: #717171;
+    height: 28px;
+    width: 260px;
+  }
+
+  .registrarse{
+    width: 120px;
+    height: 60px;
+    background-color: #1BA5B0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .boton1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .logo {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Inter", sans-serif;
+    margin-top: 10px;
+    margin: 0;
+    }
+    .logo .color {
+    color: #1BA5B0;
+    }
+  
+    .subtitulo{
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 1px;
+  }
+
