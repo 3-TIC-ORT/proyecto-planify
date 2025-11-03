@@ -14,18 +14,20 @@ form.addEventListener('submit', function(Preventivo) {
     message.innerHTML = "<p class='error'>Por favor completa todos los campos.</p>";
     return;
   }
+  if(nombre ===! "" || password ===! ""){
+    postEvent("login", { nombre: nombre, contra: password })
+  }
   
-  // Enviamos los datos al backend
-  postEvent("login", { nombre: nombre, contra: password }, (resultado) => {
-    if (resultado.exito === true) {
-      // Redirige después de 1 segundo
-      setTimeout(() => {
-        window.location.href = "../pantalla-principal/panatallaprincipal.html";
-      }, 1000);
-    } else {
-      message.innerHTML = `<p class="error">${resultado.mensaje}</p>`;
-    }
-  });
+
+
+  // Envia los datos al backend
+if (resultado.exito === true) {
+        setTimeout(() => {
+          window.location.href = "../pantalla-principal/panatallaprincipal.html";
+        }, 1000);
+      } else {
+        message.innerHTML = `<p class="error">${resultado.mensaje}</p>`;
+      }
 });
 
 
