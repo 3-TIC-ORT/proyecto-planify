@@ -9,6 +9,7 @@ html, body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .header {
@@ -133,20 +134,23 @@ font-size: 40px;
 
 .menulateral {
   height: 100%;
-  width: 19%;
+  width: 22%;
   position: absolute;
   background: #11555A; /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
   z-index: 2;
-
-  flex-direction: column;
+  gap: 2rem;
+  flex-direction: row;
   justify-content: space-between;
-  display: none;
+  display: flex;
+  transition:   opacity 0.3s;
+  opacity: 0%;
+  
 }
 
 .menulateral.activo{
-  display: flex
+  opacity: 100%;
 }
 
 
@@ -162,55 +166,42 @@ cursor: pointer;
 
 
 }
-.notas-menu{
 
-  height: 90px;
-  width: 309px;
+.titulos{
   display: flex;
-  align-items: center;
-  gap: 10.7rem; 
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  flex-direction: column;
+  gap: 0;
+  margin-left: 1rem;
+  margin-top: 3rem;
 }
 
 
-.paginaprinci{
-  height: 90px;
-  width: 309px;
+
+.fotos{
   display: flex;
-  align-items: center;
-  gap: 4.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-top: 50px
-
-}
-
-.tareas{
-  height: 90px;
-  width: 309px;
-  display: flex;
-  align-items: center;
-  gap: 3.50rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.gastos{
-  height: 90px;
-  width: 309px;
-  display: flex;
-  align-items: center;
-  gap: 9.65rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.cerrarse{
-  margin-bottom: 0, auto;
-  margin-left: 0.5rem;  
+  flex-direction: column;
+  gap: 2.9rem;
+  margin-right: 1px;
+  margin-top: 4.5rem;
   
-  }
+
+}
+
+.cerrar{
+  display: flex;
+  bottom: 1.5rem;
+  left: 1rem;
+  flex-direction: row;
+  position: absolute;
+}
+
+.x{
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+
 .menu-opciones{
   display: flex;
   flex-direction: column;
