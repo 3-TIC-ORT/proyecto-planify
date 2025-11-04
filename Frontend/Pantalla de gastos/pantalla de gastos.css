@@ -26,13 +26,14 @@ header{
     width: 100%;
     height: 15%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .fotocara{
     max-width: 3.5rem;
     max-height: 3.5rem;
-    margin-right: 0.5rem;
-    margin-top: 1vh;
+    right: 0.5rem;
+    top: 1vh;
+    position: absolute;
 }
 .Menu{
  max-width: 2rem;
@@ -159,3 +160,109 @@ main{
     font-weight: bold;
     font-size: 25px;
 }
+
+
+.menudesplegable{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 3;
+  }
+
+  .barra {
+    width: 32px;
+    height: 6px;
+    background-color: #4A4A4A;
+    border-radius: 20px;
+  }
+  .menulateral {
+    height: 100vh;
+    width: 19%;
+    position: absolute;
+    background: #11555A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
+
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+    margin-left: 0;
+  }
+
+  .menulateral.activo{
+    display: flex;
+
+  }
+
+
+
+
+  .texto{
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  cursor: pointer;
+
+
+  }
+  .notas-menu{
+
+    height: 90px;
+    width: 309px;
+    display: flex;
+    align-items: center;
+    gap: 10.7rem; 
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+
+  .paginaprinci{
+    height: 90px;
+    width: 309px;
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 50px
+
+  }
+
+  .tareas{
+    height: 90px;
+    width: 309px;
+    display: flex;
+    align-items: center;
+    gap: 3.50rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .gastos{
+    height: 90px;
+    width: 309px;
+    display: flex;
+    align-items: center;
+    gap: 9.65rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .cerrarse{
+    margin-bottom: 7px ;
+    margin-left: 0.5rem;  
+    
+    }
+
+
+    .presentacion{
+        display: flex;
+        flex-direction: column;
+    }

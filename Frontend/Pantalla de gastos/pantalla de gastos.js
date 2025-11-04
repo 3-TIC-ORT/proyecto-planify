@@ -138,3 +138,36 @@ document.getElementById("batGenerar").addEventListener ("click", () => {
     }
   });
 });
+
+
+const botonmenu = document.querySelector(".menudesplegable");
+const menulateral = document.querySelector(".menulateral");
+botonmenu.addEventListener("click", () => {
+  menulateral.classList.toggle("activo");
+});
+
+
+const Pantallaprincipal  = document.getElementById("paginaprincipal")
+const gastos = document.getElementById("gastos")
+const tareas = document.getElementById("tareas")
+const cerrarsesion = document.getElementById("cerrarsesion")
+const notas = document.getElementById("notas")
+
+Pantallaprincipal.addEventListener("click", () => {
+  window.location.href= "../pantalla-principal/panatallaprincipal.html"
+});
+cerrarsesion.addEventListener("click", () => {
+  window.location.href ="../crear cuenta/crear-cuenta.html"
+});
+
+tareas.addEventListener("click", () => {
+  window.location.href ="../eventos/eventos.html"
+});
+
+gastos.addEventListener("click", () => {
+  window.location.href ="../Pantalla de gastos/Pantalla de gastos.html"
+});
+
+notas.addEventListener("click", () => {
+  window.location.href ="../notas/notas.html"
+});
