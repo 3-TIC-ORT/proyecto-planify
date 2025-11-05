@@ -15,19 +15,17 @@ form.addEventListener('submit', function(Preventivo) {
     return;
   }
   if(nombre ===! "" || password ===! ""){
-    postEvent("login", { nombre: nombre, contra: password })
-  }
-  
-
-
-  // Envia los datos al backend
-if (resultado.exito === true) {
+    postEvent("login", { nombre: nombre, contra: password }, (res) => {
+      if (res && res.exito){
         setTimeout(() => {
           window.location.href = "../pantalla-principal/panatallaprincipal.html";
         }, 1000);
-      } else {
+      }
+      else{
         message.innerHTML = `<p class="error">${resultado.mensaje}</p>`;
       }
+    })
+  }
 });
 
 

@@ -1,3 +1,5 @@
+connect2Server();
+
 document.getElementById("registroForm").addEventListener("submit", function(e) {
     e.preventDefault(); 
 
@@ -19,11 +21,18 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     }
 
     
+    postEvent('signup', { nombre: usuario, contra: password }, (res) => {
+        if (res && res.exito) {
+            mensaje.textContent = "Cueentra crada con exito"
+            mensaje.className = "success"
+            setTimeout(() => {
+                window.location.href ="Frontend/pantalla-principal/panatallaprincipal.html"
+            })
+        }
+        else {
+            mensaje.textContent = "Error al crear cuenta";
+            mensaje.className = "error"
+        }
+    })
 
-    mensaje.textContent = "Cuenta creada con éxito ";
-    mensaje.className = "success";
-
-    setTimeout(() => {
-        window.location.href = "file:///C:/Users/50088774/Desktop/proyecto-planify/Frontend/pantalla-principal/panatalla-principal.html";
-    }, 1000);
 });

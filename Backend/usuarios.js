@@ -1,44 +1,31 @@
-import fs, { read, readFileSync } from "fs";
+const fs = require (fs);
 
-let usuarioActivo = null; // guarda el usuario que inició sesión
+export function signup(data) {
+  const { nombre, contra } = data;
+  const filePath = path.join(__dirname, 'backend', 'usuarios.json'); // Mejor usar path para rutas
 
-function cargarUsuarios() {
-  if (!fs.existsSync("backend/usuarios.json")) {
-    fs.writeFileSync("backend/usuarios.json", "[]");
+  try {
+    let usuarios = [];
+
+    // Verificar si el archivo JSON existe
+    if (fs.existsSync(filePath)) {
+      // Si el archivo existe, lo leemos
+      const dataFile = fs.readFileSync(filePath, 'utf-8');
+      usuarios = JSON.parse(dataFile);
+    } else {
+      // Si el archivo no existe, lo creamos
+      usuarios = [];
+    }
+
+    // Agregar el nuevo usuario
+    usuarios.push({ nombre, contra });
+
+    // Escribir el array de usuarios de nuevo al archivo en formato JSON
+    fs.writeFileSync(filePath, JSON.stringify(usuarios, null, 2));
+
+    return { exito: true, mensaje: "Registro exitoso" };
+  } catch (error) {
+    console.error("Error al crear cuenta:", error);
+    return { exito: false, mensaje: "Error al procesar el archivo" };
   }
-  return JSON.parse(fs.readFileSync("backend/usuarios.json", "UTF-8"));
 }
-
-function guardarUsuarios(usuarios) {
-  fs.writeFileSync("backend/usuarios.json", JSON.stringify(usuarios, null, 2));
-}
-
-export function signup(nombre, contra) {
-  const usuarios = cargarUsuarios();
-  const existe = usuarios.find(u => u.nombre === nombre);
-  if (existe) return { exito: false, mensaje: "El nombre de usuario ya existe" };
-
-  usuarios.push({ nombre, password: contra });
-  guardarUsuarios(usuarios);
-  return { exito: true, mensaje: "Usuario registrado con éxito" };
-}
-
-export function login(nombre, contra) {
-  const usuarios = cargarUsuarios();
-  const usuario = usuarios.find(u => u.nombre === nombre && u.password === contra);
-  if (!usuario) return { exito: false, mensaje: "Usuario o contraseña incorrectos" };
-
-  usuarioActivo = nombre; // guarda el usuario actual
-  return { exito: true, mensaje: "Inicio de sesión exitoso", usuario: nombre };
-  
-}
-
-export function obtenerUsuarioActivo() {
-  return usuarioActivo;
-}
-
-export function logout() {
-  usuarioActivo = null;
-}
-
-readFileSync("usuarios.json", "utf-8")

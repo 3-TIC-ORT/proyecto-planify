@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crear Cuenta</title>
   <link rel="stylesheet" href="crear-cuenta.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <form id="registroForm">
     <div class="contenedor">
-      
+
 
 
       <div class="mitadizquierda">
@@ -25,26 +29,27 @@
 
       <div class="mitadderecha">
         <div class="header">
-          <h1 class="logo">PLAN<span class="color">IF</span>Y</h1>  
+          <h1 class="logo">PLAN<span class="color">IF</span>Y</h1>
           <h3 class="subtitulo">Crea tu cuenta</h3>
         </div>
         <div class="imputs">
-        <h2 class="texto">Usuario:</h2>
-        <input type="text" id="usuario" class="contraseña" placeholder="Escriba aquí" required>
-        <h2 class="texto">Contraseña:</h2>
-        <input type="password" id="password" class="contraseña" required placeholder="Escriba aquí">
-        <h2 class="texto">Contraseña:</h2>
-        <input type="password" id="confirmar" class="contraseña" placeholder="Escriba aquí" required>
-        <div class="boton1">
-        <button type="submit" class="registrarse">Registrar</button>
+          <h2 class="texto">Usuario:</h2>
+          <input type="text" id="usuario" class="contraseña" placeholder="Escriba aquí" required>
+          <h2 class="texto">Contraseña:</h2>
+          <input type="password" id="password" class="contraseña" required placeholder="Escriba aquí">
+          <h2 class="texto">Contraseña:</h2>
+          <input type="password" id="confirmar" class="contraseña" placeholder="Escriba aquí" required>
+          <div class="boton1">
+            <button type="submit" class="registrarse">Registrar</button>
+          </div>
+          <p id="mensaje"></p>
+        </div>
       </div>
-        <p id="mensaje"></p>
-      </div>
-    </div>
     </div>
   </form>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
   <script src="crear-cuenta.js"></script>
 </body>
+
 </html>
