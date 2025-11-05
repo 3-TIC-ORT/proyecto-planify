@@ -1,4 +1,4 @@
-const fs = require (fs);
+import fs from "fs";
 
 export function signup(data) {
   const { nombre, contra } = data;

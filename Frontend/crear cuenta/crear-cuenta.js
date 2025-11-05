@@ -1,4 +1,5 @@
-connect2Server();
+const { postEvent } = window.soquetic;
+
 
 document.getElementById("registroForm").addEventListener("submit", function(e) {
     e.preventDefault(); 
