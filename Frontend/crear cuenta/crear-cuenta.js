@@ -1,4 +1,5 @@
-const { postEvent } = window.soquetic;
+
+connect2server()
 
 
 document.getElementById("registroForm").addEventListener("submit", function(e) {
@@ -9,7 +10,7 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     let confirmar = document.getElementById("confirmar").value;
     let mensaje = document.getElementById("mensaje");
 
-    if (usuario === "" || password === "" || confirmar === "") {
+    if (usuario === "" || contra === "" || confirmar === "") {
         mensaje.textContent = "Todos los campos son obligatorios";
         mensaje.className = "error";
         return;
@@ -24,10 +25,10 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     
     postEvent('signup', { nombre: usuario, contra: password }, (res) => {
         if (res && res.exito) {
-            mensaje.textContent = "Cueentra crada con exito"
+            mensaje.textContent = "Cuenta crada con exito"
             mensaje.className = "success"
             setTimeout(() => {
-                window.location.href ="Frontend/pantalla-principal/panatallaprincipal.html"
+                window.location.href ="Frontend/pantalla-principal/pantallaprincipal.html"
             })
         }
         else {

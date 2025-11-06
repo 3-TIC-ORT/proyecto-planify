@@ -1,10 +1,11 @@
 import { subscribeGETEvent, subscribePOSTEvent, startServer } from "soquetic";
 import { signup } from "./usuarios.js";
 
-// -------------------- GET Events --------------------
+startServer();
 
 // -------------------- POST Events --------------------
 subscribePOSTEvent("signup", signup);
 
-// -------------------- Start server --------------------
+// -------------------- ARRANCAR SERVIDOR --------------------
 startServer(3000, true);
+
