@@ -2,21 +2,16 @@ import fs from "fs";
 import path from "path";
 
 export function signup(data) {
-  const { nombre, contra } = data;
-  const filePath = path.join(__dirname, 'backend', 'usuarios.json'); 
+  let { nombre, contra } = data;
 
   try {
     let usuarios = [];
 
-    if (fs.existsSync(filePath)) {
-      const dataFile = fs.readFileSync(filePath, 'utf-8');
-      usuarios = JSON.parse(dataFile);
-    } else {
-      
-      usuarios = [];
-    }
+    const dataFile = fs.readFileSync('usuarios.json', 'utf-8');
+    usuarios = JSON.parse(dataFile);
+    
     usuarios.push( data );
-    fs.writeFileSync(filePath, JSON.stringify(usuarios, null, 2));
+    fs.writeFileSync('usuarios.json', JSON.stringify(usuarios, null, 2));
 
     return { exito: true, mensaje: "Registro exitoso" };
   } 
@@ -25,3 +20,28 @@ export function signup(data) {
     return { exito: false, mensaje: "Error al procesar el archivo" };
   }
 }
+
+  export function login(data){
+  let { nombre, contra } = data
+    try {
+       let usuarios = [];
+
+       dataFile = fs.readFileSync('usuarios.json' , 'utf-8')
+       usuarios = JSON.parse(dataFile);
+
+       let usuarioencontrado = usuarios.find(
+        (u) => u.nombre === nombre && u.contra === contra);
+
+        if (usuarioencontrado) {
+         return { exito: true, mensaje: "Inicio de sesion exitoso"} 
+        } else {
+        return { exito: false, mensaje: "Nombre o Contraseña no encontrados"}
+      }
+    }
+    catch(error) {
+      console.error("Error al iniciar sesion", error)
+      return {exito: false , mensaje: "Error al procesar el archivo"}
+    }
+  }
+
+  

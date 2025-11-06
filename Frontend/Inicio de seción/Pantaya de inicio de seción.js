@@ -1,4 +1,4 @@
-connect2Server(3000)
+connect2Server()
 
 let form = document.getElementById('loginForm');
 let message = document.getElementById('message');
@@ -8,14 +8,14 @@ form.addEventListener('submit', function(Preventivo) {
   Preventivo.preventDefault(); 
 
  const nombre = document.getElementById('text').value;
-  const password = document.getElementById('password').value;
+  const contra = document.getElementById('password').value;
 
-  if (nombre === "" || password === "") {
+  if (nombre === "" || contra === "") {
     message.innerHTML = "<p class='error'>Por favor completa todos los campos.</p>";
     return;
   }
-  if(nombre ===! "" || password ===! ""){
-    postEvent("login", { nombre: nombre, contra: password }, (res) => {
+  if(nombre ===! "" || contra ===! ""){
+    postEvent("login", { nombre: nombre, contra: contra }, (res) => {
       if (res && res.exito){
         setTimeout(() => {
           window.location.href = "../pantalla-principal/panatallaprincipal.html";

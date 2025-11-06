@@ -1,12 +1,12 @@
 
-connect2server()
+connect2Server()
 
 
 document.getElementById("registroForm").addEventListener("submit", function(e) {
     e.preventDefault(); 
 
     let usuario = document.getElementById("usuario").value.trim();
-    let password = document.getElementById("password").value;
+    let contra = document.getElementById("password").value;
     let confirmar = document.getElementById("confirmar").value;
     let mensaje = document.getElementById("mensaje");
 
@@ -16,14 +16,14 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
         return;
     }
 
-    if (password !== confirmar) {
+    if (contra !== confirmar) {
         mensaje.textContent = "La contraseña debe ser igual en los dos espacios";
         mensaje.className = "error";
         return;
     }
 
     
-    postEvent('signup', { nombre: usuario, contra: password }, (res) => {
+    postEvent('signup', { nombre: usuario, contra: contra }, (res) => {
         if (res && res.exito) {
             mensaje.textContent = "Cuenta crada con exito"
             mensaje.className = "success"
