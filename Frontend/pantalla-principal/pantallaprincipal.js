@@ -126,6 +126,7 @@ Pantallaprincipal.addEventListener("click", () => {
 })
 cerrarsesion.addEventListener("click", () => {
   window.location.href ="../crear cuenta/crear-cuenta.html"
+  
 })
 
 tareas.addEventListener("click", () => {
@@ -140,6 +141,14 @@ notas.addEventListener("click", () => {
   window.location.href ="../notas/notas.html"
 })
 
+window.history.pushState(null, "", window.location.href);
+window.addEventListener("popstate", function () {
+  window.history.pushState(null, "", window.location.href);
+});
+window.history.pushState(null, "", window.location.href);
+window.addEventListener("popstate", function () {
+  window.history.pushState(null, "", window.location.href);
+});
 
 
 contenedorDias.addEventListener("click", (e) => {

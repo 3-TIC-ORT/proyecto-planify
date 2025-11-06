@@ -143,14 +143,13 @@ font-size: 40px;
   gap: 2rem;
   flex-direction: row;
   justify-content: space-between;
-  display: flex;
-  transition:   opacity 0.3s;
-  opacity: 0%;
-  
+  display: none;
 }
+  
+
 
 .menulateral.activo{
-  opacity: 100%;
+display: flex;
 }
 
 
@@ -183,6 +182,7 @@ cursor: pointer;
   gap: 2.9rem;
   margin-right: 1px;
   margin-top: 4.5rem;
+  padding-right: 2rem;
   
 
 }
@@ -193,6 +193,9 @@ cursor: pointer;
   left: 1rem;
   flex-direction: row;
   position: absolute;
+  justify-content: center;
+  align-items: center;
+  gap:6rem;
 }
 
 .x{

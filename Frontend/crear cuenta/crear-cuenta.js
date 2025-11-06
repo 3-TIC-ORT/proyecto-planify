@@ -38,3 +38,8 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     })
 
 });
+
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+   window.history.go(1); // Bloquea el retroceso
+};
