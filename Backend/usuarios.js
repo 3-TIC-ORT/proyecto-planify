@@ -26,7 +26,7 @@ export function signup(data) {
     try {
        let usuarios = [];
 
-       dataFile = fs.readFileSync('usuarios.json' , 'utf-8')
+ const dataFile = fs.readFileSync('usuarios.json' , 'utf-8')
        usuarios = JSON.parse(dataFile);
 
        let usuarioencontrado = usuarios.find(
