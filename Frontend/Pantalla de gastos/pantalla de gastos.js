@@ -2,13 +2,12 @@ flatpickr("#fecha", {
   dateFormat: "Y-m-d", // formato de fecha
   defaultDate: "today", // comienza en hoy
   locale: "es", // idioma español
-
 });
 
 let valoresG=[]
 let valoresI=[]
 let fechas =[]
-let chart; // variable global para guardar el gráfico
+let chart; 
 
 document.addEventListener("DOMContentLoaded", () => {
   postEvent('historial', { 
