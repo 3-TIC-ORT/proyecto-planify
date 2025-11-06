@@ -2,13 +2,23 @@ flatpickr("#fecha", {
   dateFormat: "Y-m-d", // formato de fecha
   defaultDate: "today", // comienza en hoy
   locale: "es", // idioma español
-
 });
 
 let valoresG=[]
 let valoresI=[]
 let fechas =[]
-let chart; // variable global para guardar el gráfico
+let chart; 
+
+document.addEventListener("DOMContentLoaded", () => {
+  postEvent('historial', { 
+    gastos: valoresG, 
+    ingresos: valoresI, 
+    fecha: fechas, 
+    usuario: localStorage["usuario"]
+  }, (res) => {
+    console.log("Historial enviado:", res);
+  });
+});
 
 document.getElementById("btnGenerar").addEventListener("click", () => {
   let gasto = parseFloat(document.getElementById("Texto de gastos").value) || 0;
@@ -49,6 +59,8 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
     }
     cuadro.remove();
   });
+
+
 
   contenedor.appendChild(cuadro);
   
@@ -170,4 +182,11 @@ gastos.addEventListener("click", () => {
 
 notas.addEventListener("click", () => {
   window.location.href ="../notas/notas.html"
+});
+
+
+
+
+getEvent('getHistorial', (res) => {
+
 });

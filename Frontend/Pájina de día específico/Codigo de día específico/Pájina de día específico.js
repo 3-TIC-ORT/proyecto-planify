@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
 let tareas = [
   { titulo: "examen", descripcion: "tarea de Hardwar" },
   { titulo: "pueba", descripcion: "tarea de mate" }

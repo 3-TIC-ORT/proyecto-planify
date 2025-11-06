@@ -17,6 +17,7 @@ form.addEventListener('submit', function(Preventivo) {
   if(nombre ===! "" || contra ===! ""){
     postEvent("login", { nombre: nombre, contra: contra }, (res) => {
       if (res && res.exito){
+        localStorage["usuario"] = nombre;
         setTimeout(() => {
           window.location.href = "../pantalla-principal/panatallaprincipal.html";
         }, 1000);
