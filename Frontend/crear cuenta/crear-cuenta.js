@@ -1,34 +1,33 @@
-
-connect2Server()
+const { postEvent } = window.soquetic;
 
 
 document.getElementById("registroForm").addEventListener("submit", function(e) {
     e.preventDefault(); 
 
     let usuario = document.getElementById("usuario").value.trim();
-    let contra = document.getElementById("password").value;
+    let password = document.getElementById("password").value;
     let confirmar = document.getElementById("confirmar").value;
     let mensaje = document.getElementById("mensaje");
 
-    if (usuario === "" || contra === "" || confirmar === "") {
+    if (usuario === "" || password === "" || confirmar === "") {
         mensaje.textContent = "Todos los campos son obligatorios";
         mensaje.className = "error";
         return;
     }
 
-    if (contra !== confirmar) {
+    if (password !== confirmar) {
         mensaje.textContent = "La contraseña debe ser igual en los dos espacios";
         mensaje.className = "error";
         return;
     }
 
     
-    postEvent('signup', { nombre: usuario, contra: contra }, (res) => {
+    postEvent('signup', { nombre: usuario, contra: password }, (res) => {
         if (res && res.exito) {
-            mensaje.textContent = "Cuenta crada con exito"
+            mensaje.textContent = "Cueentra crada con exito"
             mensaje.className = "success"
             setTimeout(() => {
-                window.location.href ="Frontend/pantalla-principal/pantallaprincipal.html"
+                window.location.href ="Frontend/pantalla-principal/panatallaprincipal.html"
             })
         }
         else {
@@ -38,8 +37,3 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     })
 
 });
-
-window.history.pushState(null, null, window.location.href);
-window.onpopstate = function () {
-   window.history.go(1); // Bloquea el retroceso
-};

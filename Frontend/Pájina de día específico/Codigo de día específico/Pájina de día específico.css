@@ -6,8 +6,53 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
+
 body{
     width: 100vw;
     height: 100vh;
+}
+header{
+    height: 7rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.color{
+    color: #1BA5B0;
+}
+.logo{
+    font-size: 7vh;
+}
+.subtitulo{
+    font-size: 3vh;
+}
+.fotoperfil{
+    max-width: 3.5rem;
+    max-height: 3.5rem;
+    right: 0.5rem;
+    top: 1vh;
+    position: absolute;
+}
+.despegable{
+    max-width: 3.5rem;
+    max-height: 3.5rem;
+    left: 0.5rem;
+    top: 1vh;
+    position: absolute;
+}
+.cuadrado-planify{
+    display: column;
+    align-items: center;
+    justify-content: center;
+}
+.cuadradodetexto{
+    width: 60vw;
+    height: 60vh;
+    display:column;
+    justify-content: center;
+    align-items: center;
 }
