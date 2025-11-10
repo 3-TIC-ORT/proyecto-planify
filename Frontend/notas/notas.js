@@ -1,9 +1,19 @@
+  const notas = document.getElementById("textarea")
+  
   function guardarNota() {
       let texto = document.getElementById("texto").value;
       localStorage.setItem("notaGuardada", texto);
  
       alert(" Nota guardada");
       alert("Nota guardada");
+      PostEvent('guardarnotas', { nota: notas }, (res) => {
+        if (res && res.exito) {
+            mensaje.textContent = "Nota Guardada"
+            mensaje.className = "success"
+        }
+    })
+    
+        
 
     }
 
@@ -67,6 +77,6 @@ window.addEventListener("popstate", function () {
 
 
 
-    
+
     
  
