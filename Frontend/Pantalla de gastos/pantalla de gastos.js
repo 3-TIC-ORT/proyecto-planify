@@ -1,3 +1,4 @@
+connect2Server();
 flatpickr("#fecha", {
   dateFormat: "Y-m-d", // formato de fecha
   defaultDate: "today", // comienza en hoy
@@ -11,14 +12,18 @@ let chart;
 
 document.addEventListener("DOMContentLoaded", () => {
   postEvent('historial', {
-    gastos: valoresG,
-    ingresos: valoresI,
-    fecha: fechas,
+    gastos = ingreso,
+    ingresos= gasto,
+    fecha= fecha,
     usuario: localStorage["usuario"]
   }, (res) => {
-    valoresG.push(res.valoresG),
-    valoresI push(res.valoresI),
-    fechas push (res.fechas)
+    if (res && res.ingreso && res.gasto && res.fecha) {
+      valoresG.push(...res.valoresG);
+      valoresI.push(...res.valoresI);
+      fechas.push(...res.fechas);
+    } else {
+      alert("No se volvió ningún dato del backend");
+    }
   });
 });
 
@@ -29,7 +34,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   let ingreso = parseFloat(document.getElementById("Texto de ingresos").value) || 0;
   let fecha = document.getElementById("fecha").value;
 
-
+let datos = gasto, ingreso, fecha;
 
   if (isNaN(ingreso) || isNaN(gasto || !fecha)) {
     alert("Por favor, introduce valores numéricos válidos para ingresos, gastos y Fechas");
