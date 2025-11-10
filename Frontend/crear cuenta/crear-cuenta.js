@@ -1,5 +1,11 @@
 const { postEvent } = window.soquetic;
 
+const boton =  document.getElementById("iniciarsecionboton")
+
+boton.addEventListener("click" ,()  =>  {
+    window.location.href ="Frontend/Inicio de seción/Pantaya de inicio de seción.html"
+})
+
 
 document.getElementById("registroForm").addEventListener("submit", function(e) {
     e.preventDefault(); 
@@ -37,3 +43,4 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     })
 
 });
+

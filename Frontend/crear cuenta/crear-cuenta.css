@@ -83,7 +83,7 @@ body {
     background-color: #F3F3F3;
     color: #717171;
     height: 28px;
-    width: 260px;
+    width: 460px;
   }
 
   .registrarse{
@@ -128,3 +128,27 @@ body {
     flex-direction: column;
   }
 
+
+  .iniciarsecionboton{
+    width: 120px;
+    height: 60px;
+    background-color: #1BA5B0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .YatenésunaCuenta  {
+    font-family: "Inter", sans-serif;
+    font-size: 34px;
+    margin: 0;
+    }
+    .iniciarsecion{
+     display: flex;
+      align-items: center;
+     width: 100%;
+     flex-direction: column;
+     gap: 2rem  ;
+    }
