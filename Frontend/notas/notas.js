@@ -1,4 +1,6 @@
   const notas = document.getElementById("textarea")
+  const { postEvent } = window.soquetic;
+
   
   function guardarNota() {
       let texto = document.getElementById("texto").value;
@@ -6,7 +8,7 @@
  
       alert(" Nota guardada");
       alert("Nota guardada");
-      PostEvent('guardarnotas', { nota: notas }, (res) => {
+      postEvent('guardarnotas', { nota: notas }, (res) => {
         if (res && res.exito) {
             mensaje.textContent = "Nota Guardada"
             mensaje.className = "success"

@@ -30,7 +30,7 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     
     postEvent('signup', { nombre: usuario, contra: password }, (res) => {
         if (res && res.exito) {
-            mensaje.textContent = "Cueentra crada con exito"
+            mensaje.textContent = "Cuentra crada con exito"
             mensaje.className = "success"
             setTimeout(() => {
                 window.location.href ="Frontend/pantalla-principal/panatallaprincipal.html"
