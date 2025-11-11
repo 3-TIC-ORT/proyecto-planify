@@ -1,15 +1,14 @@
-import fs, { read, readFileSync } from "fs";
-import { networkInterfaces } from "os";
+import fs from "fs";
 
 
 export function guardarnota(data) {
-  let { notas } = data;
+  let { nota } = data;
 
   try {
-  let notas = [];
-  notas = fs.readFileSync('notas.json' , 'utf-8')
-  notas = fs.writeFileSync('notas.json', JSON.stringify(usuarios, null, 2));
-    notas.push(data)
+  let nota = [];
+  nota = fs.readFileSync('notas.json' , 'utf-8')
+  nota = fs.writeFileSync('notas.json', JSON.stringify(usuarios, null, 2));
+    nota.push(data)
 
   return {exito: true, mensaje: "Nota creada con exito"}
 
@@ -24,11 +23,11 @@ export function borrarnota(){
 
 try{
   data = fs.readFileSync('notas.json' , 'utf-8') 
-  let notas = JSON.parse(data)
+  let nota = JSON.parse(data)
 
-  if (notas.length > 0) {
-    notas.pop();
-    fs.writeFileSync('notas.json' , JSON.stringify(notas, null, 2));
+  if (nota.length > 0) {
+    nota.pop();
+    fs.writeFileSync('notas.json' , JSON.stringify(nota, null, 2));
     return {exito: true , mensaje: "Nota mas reciente eliminada con exito."};
   } else {
     return {exito: false , mensaje: "No hay notas para eliminar."}
