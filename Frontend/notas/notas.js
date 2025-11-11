@@ -1,5 +1,4 @@
-  const notas = document.getElementById("textarea")
-  const { postEvent } = window.soquetic;
+  let nota = document.getElementById("textarea")
 
   
   function guardarNota() {
@@ -27,7 +26,12 @@
 
         alert(" No hay notas guardadas");
         alert("No hay notas guardadas");
-
+        postEvent('guardarnotas', { nota: notas }, (res) => {
+          if (res && res.exito) {
+              mensaje.textContent = "Nota Guardada"
+              mensaje.className = "success"
+          }
+      })
       }
     }
 
@@ -35,6 +39,7 @@
       localStorage.removeItem("notaGuardada");
       document.getElementById("texto").value = "";
       alert(" Nota borrada");
+
     }
 
     const botonmenu = document.querySelector(".menudesplegable");
