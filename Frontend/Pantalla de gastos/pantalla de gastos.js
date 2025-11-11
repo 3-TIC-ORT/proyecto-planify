@@ -1,43 +1,52 @@
+connect2Server();
 flatpickr("#fecha", {
   dateFormat: "Y-m-d", // formato de fecha
   defaultDate: "today", // comienza en hoy
   locale: "es", // idioma español
 });
 
-let valoresG=[]
-let valoresI=[]
-let fechas =[]
-let chart; 
+let valoresG = []
+let valoresI = []
+let fechas = []
+let chart;
 
 document.addEventListener("DOMContentLoaded", () => {
-  postEvent('historial', { 
-    gastos: valoresG, 
-    ingresos: valoresI, 
-    fecha: fechas, 
+  postEvent('historial', {
+    gastos = ingreso,
+    ingresos= gasto,
+    fecha= fecha,
     usuario: localStorage["usuario"]
   }, (res) => {
-    console.log("Historial enviado:", res);
+    if (res && res.ingreso && res.gasto && res.fecha) {
+      valoresG.push(...res.valoresG);
+      valoresI.push(...res.valoresI);
+      fechas.push(...res.fechas);
+    } else {
+      alert("No se volvió ningún dato del backend");
+    }
   });
 });
+
+
 
 document.getElementById("btnGenerar").addEventListener("click", () => {
   let gasto = parseFloat(document.getElementById("Texto de gastos").value) || 0;
   let ingreso = parseFloat(document.getElementById("Texto de ingresos").value) || 0;
   let fecha = document.getElementById("fecha").value;
 
-  
-  
-  if (isNaN(ingreso) || isNaN(gasto || !fecha )) {
+let datos = gasto, ingreso, fecha;
+
+  if (isNaN(ingreso) || isNaN(gasto || !fecha)) {
     alert("Por favor, introduce valores numéricos válidos para ingresos, gastos y Fechas");
     return;
   }
   let promedio = (ingreso - gasto);
-  document.getElementById("promedio").textContent = promedio+"$";
-  
+  document.getElementById("promedio").textContent = promedio + "$";
+
   valoresG.push(gasto)
   valoresI.push(ingreso)
   fechas.push(fecha)
-  
+
 
   const contenedor = document.getElementById("contenedorDatos");
   const cuadro = document.createElement("div");
@@ -45,8 +54,8 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
 
 
   cuadro.innerHTML = `
-    <p class="resul">Resultado:<p>
-    <p><strong>Fecha:</strong> ${fecha}</p>
+  <p class="resul">Resultado:<p>
+  <p><strong>Fecha:</strong> ${fecha}</p>
     <p><strong>Ingreso:</strong> $${ingreso}</p>
     <p><strong>Gasto:</strong> $${gasto}</p>    <button class="btn-borrar">Borrar</button>
   `;
@@ -60,13 +69,16 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
     cuadro.remove();
   });
 
-
-
+  getEvent('getHistorial', (res) => {
+  
+  });
+  
+  
   contenedor.appendChild(cuadro);
   
-  
-  
-  
+
+
+
   let ctx = document.getElementById("miGrafico").getContext("2d");
 
 
@@ -76,12 +88,12 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   chart = new Chart(ctx, {
     type: "bar",
     data: {
-      labels: [""], 
+      labels: [""],
       datasets: [
         {
           label: "Ingresos",
           data: [ingreso],
-          backgroundColor: "#36A2EB", 
+          backgroundColor: "#36A2EB",
           borderColor: "#1E88E5",
           borderWidth: 2
         },
@@ -105,7 +117,7 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
   });
 })
 
-document.getElementById("batGenerar").addEventListener ("click", () => { 
+document.getElementById("batGenerar").addEventListener("click", () => {
   let ese = document.getElementById("meGrafico").getContext("2d");
 
   if (chart) {
@@ -114,13 +126,13 @@ document.getElementById("batGenerar").addEventListener ("click", () => {
 
 
   chart = new Chart(ese, {
-    type: "line", 
+    type: "line",
     data: {
-      labels: fechas, 
+      labels: fechas,
       datasets: [
         {
           label: "Ingresos",
-          data: valoresI, 
+          data: valoresI,
           borderColor: "#36A2EB",
           backgroundColor: "#36A2EB33",
           fill: false,
@@ -128,7 +140,7 @@ document.getElementById("batGenerar").addEventListener ("click", () => {
         },
         {
           label: "Gastos",
-          data: valoresG, 
+          data: valoresG,
           borderColor: "#FF6384",
           backgroundColor: "#FF638433",
           fill: false,
@@ -139,12 +151,12 @@ document.getElementById("batGenerar").addEventListener ("click", () => {
     options: {
       responsive: true,
       scales: {
-        x: { 
-          title: { display: true, text: "Fechas" } 
+        x: {
+          title: { display: true, text: "Fechas" }
         },
-        y: { 
+        y: {
           beginAtZero: true,
-          title: { display: true}
+          title: { display: true }
         }
       }
     }
@@ -159,29 +171,29 @@ botonmenu.addEventListener("click", () => {
 });
 
 
-const Pantallaprincipal  = document.getElementById("paginaprincipal")
+const Pantallaprincipal = document.getElementById("paginaprincipal")
 const gastos = document.getElementById("gastos")
 const tareas = document.getElementById("tareas")
 const cerrarsesion = document.getElementById("cerrarsesion")
 const notas = document.getElementById("notas")
 
 Pantallaprincipal.addEventListener("click", () => {
-  window.location.href= "../pantalla-principal/panatallaprincipal.html"
+  window.location.href = "../pantalla-principal/panatallaprincipal.html"
 });
 cerrarsesion.addEventListener("click", () => {
-  window.location.href ="../crear cuenta/crear-cuenta.html"
+  window.location.href = "../crear cuenta/crear-cuenta.html"
 });
 
 tareas.addEventListener("click", () => {
-  window.location.href ="../eventos/eventos.html"
+  window.location.href = "../eventos/eventos.html"
 });
 
 gastos.addEventListener("click", () => {
-  window.location.href ="../Pantalla de gastos/Pantalla de gastos.html"
+  window.location.href = "../Pantalla de gastos/Pantalla de gastos.html"
 });
 
 notas.addEventListener("click", () => {
-  window.location.href ="../notas/notas.html"
+  window.location.href = "../notas/notas.html"
 });
 
 window.history.pushState(null, "", window.location.href);
@@ -189,7 +201,3 @@ window.addEventListener("popstate", function () {
   window.history.pushState(null, "", window.location.href);
 });
 
-
-getEvent('getHistorial', (res) => {
-
-});

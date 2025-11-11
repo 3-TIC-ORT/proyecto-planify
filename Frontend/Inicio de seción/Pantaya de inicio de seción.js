@@ -20,7 +20,7 @@ form.addEventListener('submit', function(Preventivo) {
       if (res && res.exito === true ){
         localStorage["usuario"] = nombre;
         setTimeout(() => {
-          window.location.href = "../Frontend/pantalla-principal/panatallaprincipal.html";
+          window.location.href = "../pantalla-principal/panatallaprincipal.html";
         }, 1000);
       }
       else{

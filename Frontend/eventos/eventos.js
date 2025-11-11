@@ -120,6 +120,9 @@ function guardarEvento() {
   listaEventos.appendChild(h3);
 
   alert("Evento guardado correctamente!");
+
+  postEvent('eventos', { nombre : nombre, categoria : categoria, dia : dia , nivel : nivel, direcion : direcion })
+  
 }
 
 borrarUltimoBtn.addEventListener("click", () => {

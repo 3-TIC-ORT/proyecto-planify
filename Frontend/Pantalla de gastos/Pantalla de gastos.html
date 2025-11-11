@@ -6,7 +6,6 @@
     <title>pájina de gastos</title>
     <link rel="stylesheet" href="pantalla de gastos.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script defer src="pantalla de gastos.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +29,7 @@
   </div>
 
   <div class="gastos">
-  <h4 class="texto" id="gastos">Gastos</h4>
+    <h4 class="texto" id="gastos">Gastos</h4>
   <img src="Group-1.png">
   </div>
   </div>
@@ -42,15 +41,15 @@
     <header>
       <div class="menudesplegable">
         <div class="barra"></div>
-         <div class="barra"></div>
+        <div class="barra"></div>
           <div class="barra"></div>
       </div>
-          <div class="presentacion">
+      <div class="presentacion">
             <h1 class="Planify" id="planifyprincipal">PLAN<span class="Planify" id="color">IF</span>Y</h1>
             <H2 class="carla" id="planifyprincipal2">Cuidá tus Ahorros</H2>
         </div>
         <img class="fotocara" src="Group 10.png" alt="cara">
-    </header>
+      </header>
  
     <div class="datos">
     <input type="date" class="date" id="fecha" inputmode="date" step="any" placeholder="que dia es?">
@@ -64,7 +63,7 @@
 <main >
 
     <div class="graficos">
-        <canvas class="grafico" id="miGrafico" width="0" height="0"></canvas>
+      <canvas class="grafico" id="miGrafico" width="0" height="0"></canvas>
         <canvas class="grafico"  id="meGrafico" width="0" height="0"></canvas>
     </div>
 <div class="cuadradoescroleable">
@@ -72,8 +71,11 @@
 </div>
 </main>
 <div class="resultado" id="resultado">
-        <h2 class="promedio">El Balnce de hoy es:</h2>
+  <h2 class="promedio">El Balnce de hoy es:</h2>
         <p class="promedio" id="promedio"></p>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+    <script  src="pantalla de gastos.js"></script>
 </body>
 </html>

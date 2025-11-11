@@ -1,9 +1,21 @@
+  let nota = document.getElementById("textarea")
+
+  
   function guardarNota() {
       let texto = document.getElementById("texto").value;
       localStorage.setItem("notaGuardada", texto);
  
       alert(" Nota guardada");
       alert("Nota guardada");
+      
+      postEvent('guardarnotas', { nota: notas }, (res) => {
+        if (res && res.exito) {
+            mensaje.textContent = "Nota Guardada"
+            mensaje.className = "success"
+        }
+    })
+    
+        
 
     }
 
@@ -15,7 +27,12 @@
 
         alert(" No hay notas guardadas");
         alert("No hay notas guardadas");
-
+        postEvent('guardarnotas', { nota: notas }, (res) => {
+          if (res && res.exito) {
+              mensaje.textContent = "Nota Guardada"
+              mensaje.className = "success"
+          }
+      })
       }
     }
 
@@ -23,6 +40,7 @@
       localStorage.removeItem("notaGuardada");
       document.getElementById("texto").value = "";
       alert(" Nota borrada");
+
     }
 
     const botonmenu = document.querySelector(".menudesplegable");
@@ -67,6 +85,6 @@ window.addEventListener("popstate", function () {
 
 
 
-    
+
     
  

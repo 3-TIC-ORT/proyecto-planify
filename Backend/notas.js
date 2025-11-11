@@ -1,50 +1,44 @@
-import fs from "fs";
-import { obtenerUsuarioActivo } from "./usuarios.js";
+import fs from 'fs';
 
-function cargarNotas() {
-  if (!fs.existsSync("backend/notas.json")) fs.writeFileSync("backend/notas.json", "[]");
-  return JSON.parse(fs.readFileSync("backend/notas.json", "UTF-8"));
-}
+export function guardarnota(data) {
+  try {
+    
+    let notas = [];
+    if (fs.existsSync('notas.json')) {
+      const contenido = fs.readFileSync('notas.json', 'utf-8');
+      notas = JSON.parse(contenido);
+    }
 
-function guardarNotas(notas) {
-  fs.writeFileSync("backend/notas.json", JSON.stringify(notas, null, 2));
-}
+       notas.push(data.nota);
 
-export function guardarNota(contenido) {
-  const usuario = obtenerUsuarioActivo();
-  if (!usuario) return { exito: false, mensaje: "No hay usuario activo" };
+       fs.writeFileSync('notas.json', JSON.stringify(notas, null, 2));
 
-  const notas = cargarNotas();
-  const nuevaNota = { usuario, contenido, fecha: new Date().toISOString() };
-  notas.push(nuevaNota);
-  guardarNotas(notas);
-
-  return { exito: true, mensaje: "Nota guardada" };
-}
-
-export function obtenerNotas() {
-  const usuario = obtenerUsuarioActivo();
-  if (!usuario) return [];
-  const notas = cargarNotas();
-  return notas.filter(n => n.usuario === usuario);
-}
-
-export function borrarNota(indice) {
-  const usuario = obtenerUsuarioActivo();
-  if (!usuario) return { exito: false, mensaje: "No hay usuario activo" };
-
-  const notas = cargarNotas();
-  const notasUsuario = notas.filter(n => n.usuario === usuario);
-
-  if (indice < 0 || indice >= notasUsuario.length) {
-    return { exito: false, mensaje: "Índice inválido" };
+    return { exito: true, mensaje: "Nota creada con éxito" };
+  } catch (error) {
+    console.error("Error al guardar nota:", error);
+    return { exito: false, mensaje: "Error al procesar el archivo" };
   }
-
-  // esto hace que se elimine la nota del usuario activo
-  const notaAEliminar = notasUsuario[indice];
-  const nuevasNotas = notas.filter(n => n !== notaAEliminar);
-
-  guardarNotas(nuevasNotas);
-  return { exito: true, mensaje: "Nota eliminada con éxito" };
 }
 
+export function borrarnota() {
+  try {
+    if (!fs.existsSync('notas.json')) {
+      return { exito: false, mensaje: "No hay notas para eliminar." };
+    }
+
+    const data = fs.readFileSync('notas.json', 'utf-8');
+    let notas = JSON.parse(data);
+
+    if (notas.length > 0) {
+      
+      notas.pop(); 
+      fs.writeFileSync('notas.json', JSON.stringify(notas, null, 2));
+      return { exito: true, mensaje: "Nota más reciente eliminada con éxito." };
+    } else {
+      return { exito: false, mensaje: "No hay notas para eliminar." };
+    }
+  } catch (error) {
+    console.error("Error al borrar nota:", error);
+    return { exito: false, mensaje: "Error al borrar la nota.", error: error.message };
+  }
+}
