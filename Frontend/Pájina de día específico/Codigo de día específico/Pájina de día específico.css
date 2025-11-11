@@ -45,14 +45,44 @@ header{
     position: absolute;
 }
 .cuadrado-planify{
-    display: column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .cuadradodetexto{
-    width: 60vw;
+    width: 100vw;
     height: 60vh;
-    display:column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 10vw;
+    position: absolute;
+    padding-top: 3vh;
+    padding-right: 10vw;
+}
+#contenido{
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 4vh;
+    font-weight: bolder;
+    font-family: "Inter", sans-serif;
+    word-spacing: -4px;
+}
+.cuadrado{
+box-shadow: 5px 5px 10px lightgray;
+    border: solid 1px #1BA5B0;
+    outline: none;
+    background-color: #f4fafb;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
