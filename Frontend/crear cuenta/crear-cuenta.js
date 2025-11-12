@@ -33,8 +33,8 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
             mensaje.textContent = "Cuentra crada con exito"
             mensaje.className = "success"
             setTimeout(() => {
-                window.location.href ="Frontend/pantalla-principal/panatallaprincipal.html"
-            })
+                window.location.href ="../pantalla-principal/panatallaprincipal.html"
+            }, 1000)
         }
         else {
             mensaje.textContent = "Error al crear cuenta";

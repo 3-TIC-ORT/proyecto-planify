@@ -4,7 +4,7 @@
     "contra": "lulita"
   },
   {
-    "nombre": "lulita1", 
+    "nombre": "lulita1",
     "contra": "1234"
   },
   {
@@ -14,5 +14,50 @@
   {
     "nombre": "Fele1",
     "contra": "123"
+  },
+  {
+    "nombre": "mati",
+    "contra": "12",
+    "confirmar": "12"
+  },
+  {
+    "nombre": "mati",
+    "contra": "123",
+    "confirmar": "123"
+  },
+  {
+    "nombre": "mati",
+    "contra": "1234",
+    "confirmar": "1234"
+  },
+  {
+    "nombre": "mati",
+    "contra": "124",
+    "confirmar": "124"
+  },
+  {
+    "nombre": "mati",
+    "contra": "123",
+    "confirmar": "123"
+  },
+  {
+    "nombre": "papa123",
+    "contra": "papa123",
+    "confirmar": "papa123"
+  },
+  {
+    "nombre": "a",
+    "contra": "a",
+    "confirmar": "a"
+  },
+  {
+    "nombre": "a",
+    "contra": "e",
+    "confirmar": "e"
+  },
+  {
+    "nombre": "a",
+    "contra": "e",
+    "confirmar": "e"
   }
 ]
