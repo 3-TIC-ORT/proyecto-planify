@@ -11,7 +11,7 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     e.preventDefault(); 
 
     let usuario = document.getElementById("usuario").value.trim();
-    let contra = document.getElementById("contra").value;
+    let contra = document.getElementById("password").value;
     let confirmar = document.getElementById("confirmar").value;
     let mensaje = document.getElementById("mensaje");
 
@@ -27,8 +27,8 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
         return;
     }
 
-    
-    postEvent('signup', { nombre: usuario, contra: contra, confirmar: contra }, (res) => {
+    console.log("holaaaaa")
+    postEvent('signup', { "nombre": usuario, "contra": contra, "confirmar": confirmar }, (res) => {
         if (res && res.exito) {
             mensaje.textContent = "Cuentra crada con exito"
             mensaje.className = "success"

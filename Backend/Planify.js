@@ -9,5 +9,5 @@ subscribePOSTEvent("guardarnota", guardarnota);
 subscribePOSTEvent("borrarnota" , borrarnota);
 
 
-startServer(3000, true);
+startServer();
 

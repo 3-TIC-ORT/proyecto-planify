@@ -2,6 +2,8 @@ import fs from "fs";
 import path from "path";
 
 export function signup(data) {
+  console.log("hola back")
+
   let { nombre, contra } = data;
 
   try {
