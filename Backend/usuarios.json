@@ -59,5 +59,20 @@
     "nombre": "a",
     "contra": "e",
     "confirmar": "e"
+  },
+  {
+    "nombre": "abc",
+    "contra": "abc",
+    "confirmar": "abc"
+  },
+  {
+    "nombre": "aaa",
+    "contra": "aaa",
+    "confirmar": "aaa"
+  },
+  {
+    "nombre": "sss",
+    "contra": "bbb",
+    "confirmar": "bbb"
   }
 ]
