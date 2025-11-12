@@ -15,6 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+getElement("login", { dia,mes,año},(res)=>{
+if(res&&res.notas &&res.eventos){
+notas = res.notas
+eventos = res.eventos
+}
+else{
+  alert("no se mandop los datos correctamente")
+}
+})
+
 let tareas = [
   { titulo: "examen", descripcion: "tarea de Hardwar" },
   { titulo: "pueba", descripcion: "tarea de mate" }
