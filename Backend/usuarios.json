@@ -39,5 +39,25 @@
     "nombre": "mati",
     "contra": "123",
     "confirmar": "123"
+  },
+  {
+    "nombre": "papa123",
+    "contra": "papa123",
+    "confirmar": "papa123"
+  },
+  {
+    "nombre": "a",
+    "contra": "a",
+    "confirmar": "a"
+  },
+  {
+    "nombre": "a",
+    "contra": "e",
+    "confirmar": "e"
+  },
+  {
+    "nombre": "a",
+    "contra": "e",
+    "confirmar": "e"
   }
 ]
