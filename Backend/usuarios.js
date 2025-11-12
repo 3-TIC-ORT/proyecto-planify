@@ -11,6 +11,12 @@ export function signup(data) {
 
     const dataFile = fs.readFileSync('usuarios.json', 'utf-8');
     usuarios = JSON.parse(dataFile);
+
+    const existe = usuarios.some(u => u.nombre === nombre);
+
+    if (existe) {
+      return { exito: false, mensaje: "El nombre de usuario ya está siendo utilizado" };
+    }
     
     usuarios.push( data );
     fs.writeFileSync('usuarios.json', JSON.stringify(usuarios, null, 2));

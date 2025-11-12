@@ -1,24 +1,54 @@
+
 import fs from 'fs';
 
 export function guardarnota(data) {
+  let { nombreUsuario, nota } = data;
+
   try {
-    
-    let notas = [];
+    let nota = [];
     if (fs.existsSync('notas.json')) {
-      const contenido = fs.readFileSync('notas.json', 'utf-8');
-      notas = JSON.parse(contenido);
+      const dataFile = fs.readFileSync('notas.json', 'utf-8');
+      nota = JSON.parse(dataFile);
     }
 
-       notas.push(data.nota);
+    
+    const nuevaNota = {
+      usuario: nombreUsuario,
+      texto: nota
+    };
 
-       fs.writeFileSync('notas.json', JSON.stringify(notas, null, 2));
+    notas.push(nuevaNota);
+    fs.writeFileSync('notas.json', JSON.stringify(notas, null, 2));
 
-    return { exito: true, mensaje: "Nota creada con éxito" };
+    return { exito: true, mensaje: "Nota guardada correctamente" };
+
   } catch (error) {
     console.error("Error al guardar nota:", error);
-    return { exito: false, mensaje: "Error al procesar el archivo" };
+    return { exito: false, mensaje: "Error al guardar la nota" };
   }
 }
+
+export function cargarnota(data) {
+  let { nombreUsuario } = data;
+
+  try {
+    if (!fs.existsSync('notas.json')) {
+      return { exito: true, nota: [] };
+    }
+
+    let dataFile = fs.readFileSync('notas.json', 'utf-8');
+    let nota = JSON.parse(dataFile);
+
+    let notasUsuario = nota.filter(n => n.usuario === nombreUsuario);
+
+    return { exito: true, notas: notasUsuario };
+
+  } catch (error) {
+    console.error("Error al cargar notas:", error);
+    return { exito: false, mensaje: "Error al leer las notas" };
+  }
+}
+
 
 export function borrarnota() {
   try {
@@ -26,13 +56,13 @@ export function borrarnota() {
       return { exito: false, mensaje: "No hay notas para eliminar." };
     }
 
-    const data = fs.readFileSync('notas.json', 'utf-8');
-    let notas = JSON.parse(data);
+    let data = fs.readFileSync('notas.json', 'utf-8');
+    let nota = JSON.parse(data);
 
-    if (notas.length > 0) {
+    if (nota.length > 0) {
       
-      notas.pop(); 
-      fs.writeFileSync('notas.json', JSON.stringify(notas, null, 2));
+      nota.pop(); 
+      fs.writeFileSync('notas.json', JSON.stringify(nota, null, 2));
       return { exito: true, mensaje: "Nota más reciente eliminada con éxito." };
     } else {
       return { exito: false, mensaje: "No hay notas para eliminar." };

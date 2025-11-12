@@ -8,16 +8,13 @@
       alert(" Nota guardada");
       alert("Nota guardada");
       
-      postEvent('guardarnotas', { nota: notas }, (res) => {
+      postEvent('guardarnotas', { nota }, (res) => {
         if (res && res.exito) {
             mensaje.textContent = "Nota Guardada"
             mensaje.className = "success"
-        }
+      }
     })
-    
-        
-
-    }
+  }
 
     function cargarNota() {
       let nota = localStorage.getItem("notaGuardada");
@@ -27,14 +24,15 @@
 
         alert(" No hay notas guardadas");
         alert("No hay notas guardadas");
+        
         postEvent('guardarnotas', { nota: notas }, (res) => {
           if (res && res.exito) {
               mensaje.textContent = "Nota Guardada"
               mensaje.className = "success"
           }
       })
-      }
     }
+  }
 
     function borrarNota() {
       localStorage.removeItem("notaGuardada");
