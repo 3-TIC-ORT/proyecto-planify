@@ -33,7 +33,7 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
             mensaje.textContent = "Cuentra crada con exito"
             mensaje.className = "success"
             setTimeout(() => {
-                window.location.href ="Frontend/pantalla-principal/panatallaprincipal.html"
+                window.location.replace ="Frontend/pantalla-principal/panatallaprincipal.html"
             })
         }
         else {
