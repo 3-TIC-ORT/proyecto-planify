@@ -7,6 +7,7 @@ subscribePOSTEvent("signup", signup);
 subscribePOSTEvent("login", login);
 subscribePOSTEvent("guardarnota", guardarnota);
 subscribePOSTEvent("borrarnota" , borrarnota);
+subscribeGETEvent("cargarnota" , cargarnota)
 
 
 startServer(3000, true);

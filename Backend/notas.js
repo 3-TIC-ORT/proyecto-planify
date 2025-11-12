@@ -8,7 +8,7 @@ export function guardarnota(data) {
     let nota = [];
     if (fs.existsSync('notas.json')) {
       const dataFile = fs.readFileSync('notas.json', 'utf-8');
-      nota = JSON.parse(dataFile);
+     nota = JSON.parse(dataFile);
     }
 
     
@@ -17,7 +17,7 @@ export function guardarnota(data) {
       texto: nota
     };
 
-    notas.push(nuevaNota);
+    nota.push(nuevaNota);
     fs.writeFileSync('notas.json', JSON.stringify(notas, null, 2));
 
     return { exito: true, mensaje: "Nota guardada correctamente" };
