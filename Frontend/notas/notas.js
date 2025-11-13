@@ -1,15 +1,15 @@
   connect2Server()
-  let nota = document.getElementById("textarea")
+  let nota = document.getElementById("textarea").value;
   
   let boton2 = document.getElementById("boton2")
   
   function guardarNota() {
-      const texto = document.getElementById("texto")
+      const texto = document.getElementById("textarea").value
       localStorage.setItem("notaGuardada", texto)
  
       alert(" Nota guardada");
       
-      postEvent('guardarnota', { nota : nota}, (res) => {
+      postEvent('guardarnota', { "nota" : texto}, (res) => {
         if (res && res.exito) {
             mensaje.textContent = "Nota Guardada"
             mensaje.className = "success"

@@ -1,10 +1,8 @@
-
 import fs from 'fs';
 
-import fs from "fs";
-
 export function guardarnota(data) {
-  const { nombreUsuario, nota } = data;
+  console.log("datos recibidos")
+  const { nota } = data;
 
   try {
     let notas = [];
@@ -14,7 +12,6 @@ export function guardarnota(data) {
     }
 
     const nuevaNota = {
-      usuario: nombreUsuario,
       texto: nota
     };
 
@@ -41,7 +38,7 @@ export function cargarnota(data) {
 
     let notasUsuario = nota.filter(n => n.usuario === nombreUsuario);
 
-    return { exito: true, notas: notasUsuario };
+    return { exito: true, nota: notasUsuario };
 
   } catch (error) {
     console.error("Error al cargar notas:", error);
