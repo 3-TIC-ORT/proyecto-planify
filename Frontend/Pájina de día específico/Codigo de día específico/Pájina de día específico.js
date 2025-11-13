@@ -1,3 +1,5 @@
+connect2Server()
+
 const cuadradoTareas = document.getElementById("cuadrado-tareas");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (dia && mes && año && contenedor) {
     contenedor.textContent = `${dia} / ${mes} / ${año}`;
   }
-
-  getEvent("login", localStorage["usuario"], { dia, mes, año }, (res) => {
+if( dia && mes && año){
+  getEvent("", localStorage["usuario"], { dia, mes, año }, (res) => {
     if (res && res.notas && res.eventos) {
       const notas = res.notas;
       const eventos = res.eventos;
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         tarjeta.appendChild(titulo);
         cuadradoTareas.appendChild(tarjeta);
+        
       });
 
 
@@ -43,4 +46,5 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("No se mandaron los datos correctamente");
     }
   });
-});
+  }
+})
