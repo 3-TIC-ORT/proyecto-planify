@@ -1,4 +1,3 @@
-
 const cuadradoTareas = document.getElementById("cuadrado-tareas");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,35 +11,36 @@ document.addEventListener("DOMContentLoaded", () => {
   if (dia && mes && año && contenedor) {
     contenedor.textContent = `${dia} / ${mes} / ${año}`;
   }
+
+  getEvent("login", localStorage["usuario"], { dia, mes, año }, (res) => {
+    if (res && res.notas && res.eventos) {
+      const notas = res.notas;
+      const eventos = res.eventos;
+
+      notas.forEach(nota => {
+        let tarjeta = document.createElement("div");
+        tarjeta.classList.add("tarjeta");
+
+        const titulo = document.createElement("h2");
+        titulo.textContent = nota;
+
+        tarjeta.appendChild(titulo);
+        cuadradoTareas.appendChild(tarjeta);
+      });
+
+
+      eventos.forEach(evento => {
+        let tarea = document.createElement("div");
+        tarea.classList.add("tarea");
+
+        const titulo = document.createElement("h2");
+        titulo.textContent = evento;
+
+        tarea.appendChild(titulo);
+        cuadradoTareas.appendChild(tarea);
+      });
+    } else {
+      alert("No se mandaron los datos correctamente");
+    }
+  });
 });
-
-
-getElement("login", { dia,mes,año},(res)=>{
-if(res&&res.notas &&res.eventos){
-notas = res.notas
-eventos = res.eventos
-}
-else{
-  alert("no se mandop los datos correctamente")
-}
-})
-
-let tareas = [
-  { titulo: "examen", descripcion: "tarea de Hardwar" },
-  { titulo: "pueba", descripcion: "tarea de mate" }
-];
-
-tareas.forEach(tarea => {
-  let tarjeta = document.createElement("div");
-  tarjeta.classList.add("tarjeta");
-
-  const titulo = document.createElement("h2");
-  titulo.textContent = `${tarea.titulo}: ${tarea.descripcion}`;
-
-  tarjeta.appendChild(titulo);
-  cuadradoTareas.appendChild(tarjeta);
-});
-
-
-
-
