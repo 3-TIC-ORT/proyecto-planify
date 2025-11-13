@@ -1,14 +1,15 @@
-  let nota = document.getElementById("textarea")
-
+  connect2Server()
+  let nota = document.getElementById("textarea").value;
+  
+  let boton2 = document.getElementById("boton2")
   
   function guardarNota() {
-      let texto = document.getElementById("texto").value;
-      localStorage.setItem("notaGuardada", texto);
+      const texto = document.getElementById("textarea").value
+      localStorage.setItem("notaGuardada", texto)
  
       alert(" Nota guardada");
-      alert("Nota guardada");
       
-      postEvent('guardarnotas', { nota }, (res) => {
+      postEvent('guardarnota', { "nota" : texto}, (res) => {
         if (res && res.exito) {
             mensaje.textContent = "Nota Guardada"
             mensaje.className = "success"
@@ -17,13 +18,11 @@
   }
 
     function cargarNota() {
-      let nota = localStorage.getItem("notaGuardada");
+      let nota = localStorage.getItem("notaGuardada")
       if (nota) {
         document.getElementById("texto").value = nota;
       } else {
-
-        alert(" No hay notas guardadas");
-        alert("No hay notas guardadas");
+        alert("No hay notas guardadas")
         
         postEvent('guardarnotas', { nota: notas }, (res) => {
           if (res && res.exito) {
@@ -35,16 +34,16 @@
   }
 
     function borrarNota() {
-      localStorage.removeItem("notaGuardada");
-      document.getElementById("texto").value = "";
-      alert(" Nota borrada");
+      localStorage.removeItem("notaGuardada")
+      document.getElementById("texto").value = ""
+      alert(" Nota borrada")
 
     }
 
-    const botonmenu = document.querySelector(".menudesplegable");
-    const menulateral = document.querySelector(".menulateral");
+    const botonmenu = document.querySelector(".menudesplegable")
+    const menulateral = document.querySelector(".menulateral")
     botonmenu.addEventListener("click", () => {
-      menulateral.classList.toggle("activo");
+      menulateral.classList.toggle("activo")
     });
     
     
@@ -73,16 +72,12 @@
       window.location.href ="../notas/notas.html"
     });
 
-    window.history.pushState(null, "", window.location.href);
-window.addEventListener("popstate", function () {
-  window.history.pushState(null, "", window.location.href);
-});window.history.pushState(null, "", window.location.href);
-window.addEventListener("popstate", function () {
-  window.history.pushState(null, "", window.location.href);
-});
 
 
 
 
+boton2.addEventListener("click" , () =>{
+  guardarNota()
+})
     
  

@@ -1,27 +1,24 @@
-
 import fs from 'fs';
 
 export function guardarnota(data) {
-  let { nombreUsuario, nota } = data;
+  console.log("datos recibidos")
+  const { nota, nombreUsuario } = data;
 
   try {
-    let nota = [];
-    if (fs.existsSync('notas.json')) {
-      const dataFile = fs.readFileSync('notas.json', 'utf-8');
-     nota = JSON.parse(dataFile);
+    let notas = [];
+    if (fs.existsSync("notas.json")) {
+      const dataFile = fs.readFileSync("notas.json", "utf-8");
+      notas = JSON.parse(dataFile);
     }
 
-    
     const nuevaNota = {
-      usuario: nombreUsuario,
       texto: nota
     };
 
-    nota.push(nuevaNota);
-    fs.writeFileSync('notas.json', JSON.stringify(notas, null, 2));
+    notas.push(nuevaNota);
+    fs.writeFileSync("notas.json", JSON.stringify(notas, null, 2));
 
     return { exito: true, mensaje: "Nota guardada correctamente" };
-
   } catch (error) {
     console.error("Error al guardar nota:", error);
     return { exito: false, mensaje: "Error al guardar la nota" };
@@ -41,7 +38,7 @@ export function cargarnota(data) {
 
     let notasUsuario = nota.filter(n => n.usuario === nombreUsuario);
 
-    return { exito: true, notas: notasUsuario };
+    return { exito: true, nota: notasUsuario };
 
   } catch (error) {
     console.error("Error al cargar notas:", error);
