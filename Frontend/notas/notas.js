@@ -2,6 +2,7 @@
   let nota = document.getElementById("textarea").value;
   
   let boton2 = document.getElementById("boton2")
+  let boton = document.getElementById("boton")
   
   function guardarNota() {
       const texto = document.getElementById("textarea").value
@@ -9,7 +10,7 @@
  
       alert(" Nota guardada");
       
-      postEvent('guardarnota', { "nota" : texto}, (res) => {
+      postEvent('guardarnota', { "nota" : texto }, (res) => {
         if (res && res.exito) {
             mensaje.textContent = "Nota Guardada"
             mensaje.className = "success"
@@ -18,20 +19,16 @@
   }
 
     function cargarNota() {
-      let nota = localStorage.getItem("notaGuardada")
-      if (nota) {
-        document.getElementById("texto").value = nota;
-      } else {
-        alert("No hay notas guardadas")
-        
-        postEvent('guardarnotas', { nota: notas }, (res) => {
+
+      const texto = document.getElementById("textarea").value
+        getEvent('cargarnota', { "nota": texto }, (res) => {
           if (res && res.exito) {
-              mensaje.textContent = "Nota Guardada"
+              mensaje.textContent = "Nota cargada"
               mensaje.className = "success"
           }
       })
     }
-  }
+  
 
     function borrarNota() {
       localStorage.removeItem("notaGuardada")
@@ -51,7 +48,7 @@
     const gastos = document.getElementById("gastos")
     const tareas = document.getElementById("tareas")
     const cerrarsesion = document.getElementById("cerrarsesion")
-    const notas = document.getElementById("notas")
+    const notass = document.getElementById("notas")
     
     Pantallaprincipal.addEventListener("click", () => {
       window.location.href= "../pantalla-principal/panatallaprincipal.html"
@@ -68,7 +65,7 @@
       window.location.href ="../Pantalla de gastos/Pantalla de gastos.html"
     });
     
-    notas.addEventListener("click", () => {
+    notass.addEventListener("click", () => {
       window.location.href ="../notas/notas.html"
     });
 
@@ -79,5 +76,11 @@
 boton2.addEventListener("click" , () =>{
   guardarNota()
 })
+
+
+boton.addEventListener("click" , () => {
+  cargarNota()
+})
+
     
  
