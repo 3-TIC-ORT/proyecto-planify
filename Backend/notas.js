@@ -1,7 +1,6 @@
 import fs from 'fs';
 
 export function guardarnota(data) {
-  console.log("datos recibidos")
   const { nota, nombreUsuario } = data;
 
   try {
