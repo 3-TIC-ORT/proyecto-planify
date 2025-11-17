@@ -1,3 +1,5 @@
+connect2Server();
+
 const nombreInput = document.getElementById("nombre");
 const select = document.getElementById("evento");
 const direcion = document.getElementById("direcion");
@@ -102,6 +104,7 @@ function guardarEvento() {
     return;
   }
 
+  
   const evento = {
     nombre,
     categoria,
@@ -110,7 +113,15 @@ function guardarEvento() {
     mes,
     direccion: categoria === "reunion" ? direcion.value.trim() : null
   };
-
+  postEvent("eventos", evento, (res) => {
+    if(res&&res.exito){
+      console.log("se mandaron los dactos correctamente")
+    }
+    else {
+ console.log("se mandaron los dactos incorrectamente")
+    }
+  });
+  
   eventos.push(evento);
   console.log(eventos);
 
@@ -121,7 +132,6 @@ function guardarEvento() {
 
   alert("Evento guardado correctamente!");
 
-  postEvent('eventos', { nombre : nombre, categoria : categoria, dia : dia , nivel : nivel, direcion : direcion })
   
 }
 
