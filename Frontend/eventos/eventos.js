@@ -120,7 +120,7 @@ function guardarEvento() {
     else {
  console.log("se mandaron los dactos incorrectamente")
     }
-  });
+  })
   
   eventos.push(evento);
   console.log(eventos);

@@ -10,23 +10,6 @@ let valoresI = []
 let fechas = []
 let chart;
 
-document.addEventListener("DOMContentLoaded", () => {
-  postEvent('historial', {
-    gastos: ingreso,
-    ingresos: gasto,
-    fecha: fecha,
-    usuario: localStorage["usuario"]
-  }, (res) => {
-    if (res && res.ingreso && res.gasto && res.fecha) {
-      valoresG.push(...res.valoresG);
-      valoresI.push(...res.valoresI);
-      fechas.push(...res.fechas);
-    } else {
-      alert("No se volvió ningún dato del backend");
-    }
-  });
-});
-
 
 
 document.getElementById("btnGenerar").addEventListener("click", () => {
@@ -69,10 +52,6 @@ document.getElementById("btnGenerar").addEventListener("click", () => {
     cuadro.remove();
   });
 
-  getEvent('getHistorial', (res) => {
-  
-  });
-  
   
   contenedor.appendChild(cuadro);
   
