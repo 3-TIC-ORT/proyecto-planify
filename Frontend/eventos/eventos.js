@@ -68,7 +68,7 @@ reunion2.addEventListener("input", () => {
   if (!validarDia(reunion2, mes)) reunion2.value = "";
 });
 
-function guardarEvento() {
+function guardarevento() {
   const nombre = nombreInput.value.trim();
   const categoria = select.value;
   const mes = mesInput.value.trim().toLowerCase();
@@ -107,13 +107,13 @@ function guardarEvento() {
   
   const evento = {
     nombre,
-    categoria,
     nivel,
+    categoria,
     dia: diaValor,
     mes,
     direccion: categoria === "reunion" ? direcion.value.trim() : null
   };
-  postEvent("eventos", evento, (res) => {
+  postEvent("guardarevento", evento, (res) => {
     if(res&&res.exito){
       console.log("se mandaron los dactos correctamente")
     }
