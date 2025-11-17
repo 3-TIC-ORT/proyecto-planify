@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 if( dia && mes && año){
   getEvent("", localStorage["usuario"], { dia, mes, año }, (res) => {
+   //* no hay función del backend
     if (res && res.notas && res.eventos) {
       const notas = res.notas;
       const eventos = res.eventos;
@@ -31,7 +32,6 @@ if( dia && mes && año){
         
       });
 
-
       eventos.forEach(evento => {
         let tarea = document.createElement("div");
         tarea.classList.add("tarea");
@@ -46,5 +46,5 @@ if( dia && mes && año){
       alert("No se mandaron los datos correctamente");
     }
   });
-  }
+}
 })
