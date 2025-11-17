@@ -19,8 +19,12 @@
   }
 
     function cargarNota() {
-      console.log("me gusta la poronga de la mama de toto")
-
+      const texto = document.getElementById("textarea").value
+      getEvent('cargarnota', {}, (res) => {
+        if (res && res.exito) {
+          console.log("todo joya")
+        }
+    })
     }
   
 
