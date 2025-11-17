@@ -1,5 +1,7 @@
   connect2Server()
   let nota = document.getElementById("textarea").value;
+
+ 
   
   let boton2 = document.getElementById("boton2")
   let boton = document.getElementById("boton")
@@ -20,9 +22,12 @@
 
     function cargarNota() {
       const texto = document.getElementById("textarea").value
-      getEvent('cargarnota', {}, (res) => {
+      getEvent("cargarnota", {}, (res) => {
         if (res && res.exito) {
-          console.log("todo joya")
+          
+          const div = document.getElementById("Romanos1010")
+          div.textContent = notas.join("../Backend/notas.json")
+          
         }
     })
     }
@@ -79,6 +84,9 @@ boton2.addEventListener("click" , () =>{
 boton.addEventListener("click" , () => {
   cargarNota()
 })
+
+
+
 
     
  
