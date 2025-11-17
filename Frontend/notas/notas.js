@@ -19,14 +19,8 @@
   }
 
     function cargarNota() {
+      console.log("me gusta la poronga de la mama de toto")
 
-      const texto = document.getElementById("textarea").value
-        getEvent('cargarnota', { "nota": texto }, (res) => {
-          if (res && res.exito) {
-              mensaje.textContent = "Nota cargada"
-              mensaje.className = "success"
-          }
-      })
     }
   
 
