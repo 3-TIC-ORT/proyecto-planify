@@ -19,14 +19,12 @@
   }
 
     function cargarNota() {
-
       const texto = document.getElementById("textarea").value
-        getEvent('cargarnota', { "nota": texto }, (res) => {
-          if (res && res.exito) {
-              mensaje.textContent = "Nota cargada"
-              mensaje.className = "success"
-          }
-      })
+      getEvent('cargarnota', {}, (res) => {
+        if (res && res.exito) {
+          console.log("todo joya")
+        }
+    })
     }
   
 
