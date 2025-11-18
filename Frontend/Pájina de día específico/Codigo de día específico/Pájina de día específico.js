@@ -63,18 +63,18 @@ const cerrarsesion = document.getElementById("cerrarsesion")
 const notas = document.getElementById("notas")
 
 Pantallaprincipal.addEventListener("click", () => {
-  window.location.href = "./../pantalla-principal/panatallaprincipal.html"
+  window.location.href = "../../pantalla-principal/panatallaprincipal.html"
 });
 cerrarsesion.addEventListener("click", () => {
-  window.location.href = "./../crear cuenta/crear-cuenta.html"
+  window.location.href = "../../crear cuenta/crear-cuenta.html"
 });
 
 tareas.addEventListener("click", () => {
-  window.location.href = "./../eventos/eventos.html"
+  window.location.href = "../../eventos/eventos.html"
 });
 
 gastos.addEventListener("click", () => {
-  window.location.href = "./../Pantalla de gastos/Pantalla de gastos.html"
+  window.location.href = "../../Pantalla de gastos/Pantalla de gastos.html"
 });
 
 notas.addEventListener("click", () => {
