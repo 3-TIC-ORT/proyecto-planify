@@ -86,3 +86,93 @@ box-shadow: 5px 5px 10px lightgray;
     align-items: center;
     flex-direction: column;
 }
+
+.menulateral {
+    height: 100%;
+    width: 22%;
+    position: absolute;
+    background: #11555A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
+    z-index: 2;
+    gap: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    display: none;
+  }
+    
+  
+  
+  .menulateral.activo{
+  display: flex;
+  }
+  
+  
+  
+  
+  .texto{
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-top: 1px;
+  
+  
+  }
+  
+  .titulos{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-left: 1rem;
+    margin-top: 4.5rem;
+  }
+  
+  
+  
+  .fotos{
+    display: flex;
+    flex-direction: column;
+    gap: 2.9rem;
+    margin-right: 1px;
+    margin-top: 4rem;
+    padding-right: 2rem;
+    
+  
+  }
+  
+  .cerrar{
+    display: flex;
+    bottom: 1.5rem;
+    left: 1rem;
+    flex-direction: row;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap:6rem;
+  }
+  
+  .x{
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
+  }
+  
+  .menudesplegable{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 3;
+  }
+
+  .barra {
+    width: 32px;
+    height: 6px;
+    background-color: #4A4A4A;
+    border-radius: 20px;
+  }  

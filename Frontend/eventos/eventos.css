@@ -55,23 +55,80 @@ body{
   border-radius: 20px;
   }
   .menulateral {
-  height: 100vh;
-  width: 19%;
-  position: absolute;
-  background: #11555A; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
-
-  z-index: 2;
-  flex-direction: column;
-  justify-content: space-between;
-  display: none;
-  margin-left: 0;
+    height: 100%;
+    width: 22%;
+    position: absolute;
+    background: #11555A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
+    z-index: 2;
+    gap: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    display: none;
+    border-radius: 10px;
   }
-
+    
+  
+  
   .menulateral.activo{
   display: flex;
+  }
+  
+  
+  
+  
+  .texto{
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-top: 1px;
+  
+  
+  }
+  
+  .titulos {
+    display: flex
+;
+    flex-direction: column;
+    gap: 1.9rem;
+    margin-left: 1rem;
+    margin-top: 4.5rem;
+}
 
+
+  
+  
+  
+  .fotos{
+    display: flex;
+    flex-direction: column;
+    gap: 2.9rem;
+    margin-right: 1px;
+    margin-top: 4.5rem;
+    padding-right: 2rem;
+    
+  
+  }
+  
+  .cerrar{
+    display: flex;
+    bottom: 1.5rem;
+    left: 1rem;
+    flex-direction: row;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap:6rem;
+  }
+  
+  .x{
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
   }
 
   .opciones{
@@ -183,56 +240,7 @@ body{
 
 
   }
-  .notas-menu{
-
-    height: 90px;
-    width: 309px;
-    display: flex;
-    align-items: center;
-    gap: 10.7rem; 
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
-
-  .paginaprinci{
-    height: 90px;
-    width: 309px;
-    display: flex;
-    align-items: center;
-    gap: 4.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    margin-top: 50px
-
-  }
-
-  .tareas{
-    height: 90px;
-    width: 309px;
-    display: flex;
-    align-items: center;
-    gap: 3.50rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
-  .gastos{
-    height: 90px;
-    width: 309px;
-    display: flex;
-    align-items: center;
-    gap: 9.65rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
-  .cerrarse{
-    margin-bottom: 7px ;
-    margin-left: 0.5rem;  
-    
-    }
-
+ 
 
   .mitadderecha{
   height: calc(100% - 140px);
