@@ -1,6 +1,6 @@
 import fs from "fs";
 
-export function guardarevento() {
+export function guardarevento(data) {
 
   try {
     
