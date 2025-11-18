@@ -91,9 +91,9 @@ box-shadow: 5px 5px 10px lightgray;
     height: 100%;
     width: 22%;
     position: absolute;
-    background: #11555A; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #30AEB8, #11555A); /* Modern browsers */
+    background: #11555A;
+    background: -webkit-linear-gradient(to bottom, #30AEB8, #11555A); 
+    background: linear-gradient(to bottom, #30AEB8, #11555A);
     z-index: 2;
     gap: 2rem;
     flex-direction: row;
@@ -176,3 +176,8 @@ box-shadow: 5px 5px 10px lightgray;
     background-color: #4A4A4A;
     border-radius: 20px;
   }  
+  #día{
+    color: #000000;
+    font-weight: bold;
+    font-size: 2vw;
+  }
