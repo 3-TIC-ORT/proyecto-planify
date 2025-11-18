@@ -189,6 +189,8 @@ main{
   flex-direction: row;
   justify-content: space-between;
   display: none;
+  border-radius: 10px;
+
 }
   
 
@@ -212,14 +214,13 @@ margin-top: 1px;
 
 }
 
-.titulos{
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  margin-left: 1rem;
-  margin-top: 4rem;
+.titulos {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin-left: 1rem;
+    margin-top: 4.5rem;
 }
-
 
 
 .fotos{
