@@ -152,7 +152,7 @@ borrarUltimoBtn.addEventListener("click", () => {
   console.log("Eventos después de borrar:", eventos);
 });
 
-guardarBtn.addEventListener("click", guardarEvento);
+guardarBtn.addEventListener("click", guardarevento);
 
 
 const botonmenu = document.querySelector(".menudesplegable");
