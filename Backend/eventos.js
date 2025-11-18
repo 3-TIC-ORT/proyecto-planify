@@ -1,63 +1,85 @@
 import fs from "fs";
 
 export function guardarevento(data) {
-
   try {
-    
-   const { nombre, nivel, categoria, dia: diaValor, mes, direccion } = data;
+    console.log("CATEGORIA RECIBIDA:", categoria);
+console.log("CATEGORIA NORMALIZADA:", categoriaNorm);
 
-   if (!nombre || typeof nombre != "string") {
-    return { exito: false, mensaje: "Nombre invalido"};
-   }
+    const { nombre, nivel, categoria, dia: diaValor, mes, direccion } = data;
 
-   const niveleventos = ["No importante" , "Poco importante" , "Muy importante"];
-   if (!niveleventos.includes(nivel)) {
-    return { exito: false , mensaje: "Importancia no valida"};
-   }
-   const categoriaeventos = ["Reunion" , "Entrega" , "Examen"];
-   if (!categoriaeventos.includes(categoria)) {
-    return {exito: false, mensaje: "Categoria no valida"}
-   }
-   if (!mes || isNaN(mes) || mes < 1 || mes > 12) {
-    return {exito: false, mensaje: "Mes no valido"}
-   }
-   if (!diaValor || isNaN(diaValor) || diaValor < 1 || diaValor > 31) {
-    return {exito: false, mensaje: "Mes no valido"}
-   }
+    if (!nombre || typeof nombre !== "string") {
+      return { exito: false, mensaje: "nombre invalido" };
+    }
 
-   const diapormes = {
-    1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31
-   };
-   if (diaValor > diapormes[mes]) {
-    return{ exito: false, mensaje: `el mes ${mes} no tiene ${diaValor} días`};
-   }
+    // normalización (clave)
+    const nivelNorm = nivel.toLowerCase().trim();
+    const categoriaNorm = categoria.toLowerCase().trim();
+    const mesNorm = typeof mes === "string" ? mes.toLowerCase().trim() : mes;
 
-   if (categoria !== "Reunion" && direccion) {
-    return {exito: false, mensaje: "Solo reunion puede tener direccion"};
-   }
+    // validar nivel
+    const nivelesValidos = ["no importante", "poco importante", "muy importante"];
+    if (!nivelesValidos.includes(nivelNorm)) {
+      return { exito: false, mensaje: "nivel no valido" };
+    }
 
-   let evento = [];
-   if (fs.existsSync("eventos.json")) {
-    const contenido = fs.readFileSync("eventos.json", "utf8");
-    evento = contenido ? JSON.parse(contenido) :  [];
-   }
-   
-   const nuevoEvento = {
-    nombre,
-    nivel,
-    categoria,
-    dia: diaValor,
-    mes,
-    ...(tipo === "Reunion" ? { direccion } : {})
-  };
+    // validar categoria
+    const categoriasValidas = ["reunion", "entrega", "examen"];
+    if (!categoriasValidas.includes(categoriaNorm)) {
+      return { exito: false, mensaje: `categoria no valida: "${categoriaNorm}"` };
+    }
 
-  evento.push(nuevoEvento);
-  fs.writeFileSync("eventos.json" , JSON.stringify(evento, null, 2));
+    // meses con días correctos
+    const meses = {
+      enero: 31,
+      febrero: 28,
+      marzo: 31,
+      abril: 30,
+      mayo: 31,
+      junio: 30,
+      julio: 31,
+      agosto: 31,
+      septiembre: 30,
+      octubre: 31,
+      noviembre: 30,
+      diciembre: 31
+    };
 
-  return {exito: true , mensaje: "Evento guardado"}
+    if (!meses[mesNorm]) {
+      return { exito: false, mensaje: `mes no valido: "${mesNorm}"` };
+    }
 
-  } catch(error) {
-    console.error("Error al guardar evento" , error)
-    return {exito: false , mensaje: "Error al guardar el evento"}
+    // validar día
+    if (!diaValor || isNaN(diaValor) || diaValor < 1 || diaValor > meses[mesNorm]) {
+      return { exito: false, mensaje: `el mes ${mesNorm} no tiene ${diaValor} dias` };
+    }
+
+    if (categoriaNorm !== "reunion" && direccion) {
+      return { exito: false, mensaje: "solo reunion puede tener direccion" };
+    }
+
+    // leer archivo
+    let eventos = [];
+    if (fs.existsSync("eventos.json")) {
+      const contenido = fs.readFileSync("eventos.json", "utf8");
+      eventos = contenido ? JSON.parse(contenido) : [];
+    }
+
+    const nuevoEvento = {
+      nombre,
+      nivel: nivelNorm,
+      categoria: categoriaNorm,
+      dia: diaValor,
+      mes: mesNorm,
+      ...(categoriaNorm === "reunion" ? { direccion } : {})
+    };
+
+    eventos.push(nuevoEvento);
+    fs.writeFileSync("eventos.json", JSON.stringify(eventos, null, 2));
+
+    return { exito: true, mensaje: "evento guardado" };
+
+  } catch (error) {
+    console.error("error al guardar evento", error);
+    return { exito: false, mensaje: "error al guardar el evento" };
   }
 }
