@@ -13,43 +13,7 @@ const meses = [
   "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
 ]
 
-let feriados = [
-  "01-01", 
-  "03-03", 
-  "04-03", 
-  "24-03", 
-  "02-04",
-  "17-04", 
-  "18-04", 
-  "01-05", 
-  "02-05", 
-  "25-05", 
-  "16-06", 
-  "20-06", 
-  "09-07", 
-  "15-08", 
-  "17-08", 
-  "12-10",
-  "20-11", 
-  "08-12",
-  "25-12"  
-]
 
-function marcarFeriados() {
-  document.querySelectorAll(".dia").forEach(dia => {
-    if (!dia.classList.contains("anterior-mes") && !dia.classList.contains("siguiente-mes")) {
-      let diaNumero = parseInt(dia.textContent.trim())
-      let mesNumero = mes + 1
-      let diaFormateado = String(diaNumero).padStart(2, "0")
-      let mesFormateado = String(mesNumero).padStart(2, "0")
-      let diames = `${diaFormateado}-${mesFormateado}`
-
-      if (feriados.includes(diames)) {
-        dia.classList.add("feriado")
-      }
-    }
-  })
-}
 
 function generarCalendario() {
   const primerDia = new Date(año, mes, 1)
@@ -61,8 +25,8 @@ function generarCalendario() {
   let diasHTML = ""
   const offset = primerDiaSemana === 0 ? 6 : primerDiaSemana - 1
 
-  for (let x = offset; x > 0; x--) {
-    diasHTML += `<div class="dia anterior-mes">${ultimoDiaMesAnterior - x + 1}</div>`
+  for (let i = offset; i > 0; i--) {
+    diasHTML += `<div class="dia anterior-mes">${ultimoDiaMesAnterior - i + 1}</div>`
   }
 
   for (let i = 1; i <= ultimoDiaMes; i++) {
@@ -73,15 +37,15 @@ function generarCalendario() {
   const totalCeldas = offset + ultimoDiaMes
   const celdasSiguientes = 7 - (totalCeldas % 7)
   if (celdasSiguientes < 7) {
-    for (let j = 1; j <= celdasSiguientes; j++) {
-      diasHTML += `<div class="dia siguiente-mes">${j}</div>`
+    for (let i = 1; i <= celdasSiguientes; i++) {
+      diasHTML += `<div class="dia siguiente-mes">${i}</div>`
     }
   }
 
   contenedorDias.innerHTML = diasHTML;
   fecha.textContent = `${meses[mes]} ${año}`
 
-  marcarFeriados()
+
 }
 
 function mesAnterior() {
