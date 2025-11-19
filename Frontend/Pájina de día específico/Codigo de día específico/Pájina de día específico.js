@@ -78,5 +78,5 @@ gastos.addEventListener("click", () => {
 });
 
 notas.addEventListener("click", () => {
-  window.location.href = "./../notas/notas.html"
+  window.location.href = "../../notas/notas.html"
 });

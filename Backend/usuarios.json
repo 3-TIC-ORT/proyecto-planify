@@ -74,5 +74,15 @@
     "nombre": "sss",
     "contra": "bbb",
     "confirmar": "bbb"
+  },
+  {
+    "nombre": "demo1234",
+    "contra": "demo1234",
+    "confirmar": "demo1234"
+  },
+  {
+    "nombre": "demo",
+    "contra": "123",
+    "confirmar": "123"
   }
 ]

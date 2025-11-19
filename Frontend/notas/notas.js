@@ -5,6 +5,7 @@
   
   let boton2 = document.getElementById("boton2")
   let boton = document.getElementById("boton")
+  let boton3 = document.getElementById("boton3")
   
   function guardarNota() {
       const texto = document.getElementById("textarea").value
@@ -14,6 +15,9 @@
       
       postEvent('guardarnota', { "nota" : texto }, (res) => {
         if (res && res.exito) {
+
+          localStorage.setItem("notaGuardada", texto);
+
             mensaje.textContent = "Nota Guardada"
             mensaje.className = "success"
       }
@@ -22,22 +26,31 @@
 
     function cargarNota() {
       const texto = document.getElementById("textarea").value
-      getEvent("cargarnota", {}, (res) => {
-        if (res && res.exito) {
+
           
-          const div = document.getElementById("Romanos1010")
-          div.textContent = notas.join("../Backend/notas.json")
+      const nota = localStorage.getItem("notaGuardada");
+
+      const div = document.getElementById("guardardatos");
+    
+      if (nota) {
+        div.textContent = nota;      
+      } else {
+        div.textContent = "No hay notas guardadas";
+      }
+
+      alert("nota cargada")
           
         }
-    })
-    }
+    
+        
   
 
     function borrarNota() {
       localStorage.removeItem("notaGuardada")
-      document.getElementById("texto").value = ""
+      const div = document.getElementById("guardardatos");
       alert(" Nota borrada")
-
+      div.textContent =""
+      
     }
 
     const botonmenu = document.querySelector(".menudesplegable")
@@ -84,6 +97,12 @@ boton2.addEventListener("click" , () =>{
 boton.addEventListener("click" , () => {
   cargarNota()
 })
+
+boton3.addEventListener("click", () => {
+  borrarNota()
+})
+
+
 
 
 
