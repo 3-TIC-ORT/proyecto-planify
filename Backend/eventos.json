@@ -1,3 +1,9 @@
 [
-
+  {
+    "nombre": "abv",
+    "nivel": "poco importante",
+    "categoria": "examen",
+    "dia": 13,
+    "mes": "diciembre"
+  }
 ]

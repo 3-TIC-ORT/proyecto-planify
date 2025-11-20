@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 if( dia && mes && año){
   getEvent("", localStorage["usuario"], { dia, mes, año }, (res) => {
-   //* no hay función del backend
+   //la trola de tu mama leo att: felitoti
     if (res && res.notas && res.eventos) {
       const notas = res.notas;
       const eventos = res.eventos;
