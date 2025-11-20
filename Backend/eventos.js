@@ -2,19 +2,16 @@ import fs from "fs";
 
 export function guardarevento(data) {
   try {
-    console.log("CATEGORIA RECIBIDA:", categoria);
-console.log("CATEGORIA NORMALIZADA:", categoriaNorm);
-
     const { nombre, nivel, categoria, dia: diaValor, mes, direccion } = data;
 
     if (!nombre || typeof nombre !== "string") {
       return { exito: false, mensaje: "nombre invalido" };
     }
 
-    // normalización (clave)
+    // normalizar
     const nivelNorm = nivel.toLowerCase().trim();
     const categoriaNorm = categoria.toLowerCase().trim();
-    const mesNorm = typeof mes === "string" ? mes.toLowerCase().trim() : mes;
+    const mesNorm = mes.toLowerCase().trim();
 
     // validar nivel
     const nivelesValidos = ["no importante", "poco importante", "muy importante"];
@@ -28,8 +25,8 @@ console.log("CATEGORIA NORMALIZADA:", categoriaNorm);
       return { exito: false, mensaje: `categoria no valida: "${categoriaNorm}"` };
     }
 
-    // meses con días correctos
-    const meses = {
+    // meses válidos
+    const diasPorMes = {
       enero: 31,
       febrero: 28,
       marzo: 31,
@@ -41,18 +38,19 @@ console.log("CATEGORIA NORMALIZADA:", categoriaNorm);
       septiembre: 30,
       octubre: 31,
       noviembre: 30,
-      diciembre: 31
+      diciembre: 31,
     };
 
-    if (!meses[mesNorm]) {
+    if (!diasPorMes[mesNorm]) {
       return { exito: false, mensaje: `mes no valido: "${mesNorm}"` };
     }
 
     // validar día
-    if (!diaValor || isNaN(diaValor) || diaValor < 1 || diaValor > meses[mesNorm]) {
+    if (!diaValor || isNaN(diaValor) || diaValor < 1 || diaValor > diasPorMes[mesNorm]) {
       return { exito: false, mensaje: `el mes ${mesNorm} no tiene ${diaValor} dias` };
     }
 
+    // validar dirección
     if (categoriaNorm !== "reunion" && direccion) {
       return { exito: false, mensaje: "solo reunion puede tener direccion" };
     }
@@ -64,6 +62,7 @@ console.log("CATEGORIA NORMALIZADA:", categoriaNorm);
       eventos = contenido ? JSON.parse(contenido) : [];
     }
 
+    // crear evento
     const nuevoEvento = {
       nombre,
       nivel: nivelNorm,
